@@ -2805,6 +2805,232 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic_MountingPin:Conn_01x03_MountingPin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03_MountingPin"
+				(at 1.27 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connectable mounting pin connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??-1MP*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x03_MountingPin_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -4.572) (xy 1.016 -4.572)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Mounting"
+					(at 0 -4.191 0)
+					(effects
+						(font
+							(size 0.381 0.381)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 3.048)
+					(name "MountPin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -5001,6 +5227,12 @@
 		(uuid "1c2412ef-4272-4f41-a3e6-ab28cfd24e98")
 	)
 	(junction
+		(at 73.66 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1f6bf2e6-e82a-45b8-ad48-827ee2b83498")
+	)
+	(junction
 		(at 57.15 158.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5095,10 +5327,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e751eaba-d762-4e72-91d6-9f591e75c166")
-	)
-	(no_connect
-		(at 36.83 45.72)
-		(uuid "0a5eb5d1-05c8-4a44-93c4-2db594291ece")
 	)
 	(no_connect
 		(at 40.64 43.18)
@@ -5232,6 +5460,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 82.55) (xy 73.66 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "194aaa30-f535-4cd4-95bf-8a46c65327a1")
+	)
+	(wire
+		(pts
 			(xy 67.31 173.99) (xy 72.39 173.99)
 		)
 		(stroke
@@ -5339,6 +5577,16 @@
 			(type default)
 		)
 		(uuid "3143d777-01c4-4ed5-abce-3dec6e91be9a")
+	)
+	(wire
+		(pts
+			(xy 62.23 74.93) (xy 62.23 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "337106c0-4cf1-412d-b56c-0420371373de")
 	)
 	(wire
 		(pts
@@ -5972,6 +6220,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 67.31) (xy 66.04 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81946851-52f2-4530-9969-91fdf841dc84")
+	)
+	(wire
+		(pts
 			(xy 44.45 179.07) (xy 41.91 179.07)
 		)
 		(stroke
@@ -5999,6 +6257,16 @@
 			(type default)
 		)
 		(uuid "84ecfde9-c247-4ac2-823f-aa838329bb05")
+	)
+	(wire
+		(pts
+			(xy 62.23 83.82) (xy 73.66 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86035c63-fc92-48d0-b15e-6319a2b11667")
 	)
 	(wire
 		(pts
@@ -6242,6 +6510,16 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 77.47) (xy 66.04 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab6a37c8-e793-4b4a-a69c-ed0dd46feaef")
+	)
+	(wire
+		(pts
 			(xy 43.18 115.57) (xy 50.8 115.57)
 		)
 		(stroke
@@ -6342,6 +6620,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 83.82) (xy 73.66 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4923aff-4969-45ac-896e-30a7c516d8d8")
+	)
+	(wire
+		(pts
 			(xy 260.35 148.59) (xy 261.62 148.59)
 		)
 		(stroke
@@ -6409,6 +6697,16 @@
 			(type default)
 		)
 		(uuid "d5ab5015-7cd0-4ce7-a32a-3bdca879bf28")
+	)
+	(wire
+		(pts
+			(xy 68.58 74.93) (xy 62.23 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8df5be9-01a7-487c-9b72-1d38c5197fbd")
 	)
 	(wire
 		(pts
@@ -6659,6 +6957,16 @@
 			(type default)
 		)
 		(uuid "fca3a909-063f-431e-884e-55b0ad6988ac")
+	)
+	(wire
+		(pts
+			(xy 63.5 72.39) (xy 68.58 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdab18ec-94fb-42f9-941b-3307d7fba494")
 	)
 	(wire
 		(pts
@@ -7123,6 +7431,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "ONEWIRE"
+		(shape input)
+		(at 63.5 72.39 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2595feec-6d14-407e-ac08-f63cf7a0c4a3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.2296 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -8267,6 +8599,30 @@
 		(uuid "c48c204c-5452-4632-bbdc-81b478f1b553")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 35.1148 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "ONEWIRE"
+		(shape input)
+		(at 36.83 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c92caacd-eb63-4994-aa88-8cdf8114b9d0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.5596 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12620,6 +12976,171 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 73.66 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7fe04ffc-d8b9-472f-bc2f-4220c4e05ab5")
+		(property "Reference" "#PWR055"
+			(at 73.66 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 73.66 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "59c89cbd-3d27-483e-80c2-4f0c7e9073f7")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic_MountingPin:Conn_01x03_MountingPin")
+		(at 73.66 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "817d2b7f-2552-4a1c-a59b-1309baec0add")
+		(property "Reference" "J12"
+			(at 76.2 74.0155 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x03_MountingPin"
+			(at 76.2 76.5555 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal"
+			(at 73.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connectable mounting pin connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 73.66 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "05b39931-a556-4945-9a81-a1d8537d2b86")
+		)
+		(pin "MP"
+			(uuid "9145c904-9b83-439e-8299-06b0f40ffac1")
+		)
+		(pin "3"
+			(uuid "584c2ba1-2f40-4087-96a5-b7169cf48075")
+		)
+		(pin "1"
+			(uuid "401909b0-db25-403e-8387-36cae87e745b")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 198.12 90.17 0)
 		(unit 1)
 		(body_style 1)
@@ -13337,6 +13858,84 @@
 			(project "ESP32-Liligo-Disp-Temp-Hat"
 				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 66.04 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b2ddc9d-3707-4949-8d2f-270dfd566e40")
+		(property "Reference" "#PWR056"
+			(at 66.04 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 66.04 62.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 66.04 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "27a3bf96-849c-46f8-9dae-f8f845dedca9")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
