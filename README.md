@@ -307,9 +307,9 @@ Where things are:
 - Which clamp channel serves which line was reassigned in the schematic to make that possible
   (the four channels of an array are interchangeable).
 - **Cold-junction sensors** are on the **back** of the board, under the two ends of the
-  protection column, in the same orientation: U7 at (93.95, 33.4) beside J3's upper pin and
-  U8 at (93.95, 100.0) beside J8's lower pin. Their centres are about 4 mm from the line of
-  terminal pins (they were about 19 mm away on the front, which is as close as the
+  protection column, in the same orientation: U7 at (95.05, 33.4) beside J3's upper pin and
+  U8 at (95.05, 100.0) beside J8's lower pin. Their centres are about 5.4 mm from the line of
+  terminal pins, with 1.4 mm between their pads and the terminal pads (they were about 19 mm away on the front, which is as close as the
   thermocouple lines allowed there). C16 and C17 are on the back beside them. These four are
   the only bottom-side parts; the review wanted the sensors to read the terminal temperature,
   and that is worth a second assembly side. A via under the column would hit the front-side
@@ -373,8 +373,8 @@ Routing tasks:
 - [x] **1-Wire, `EXPANDER_INT`, JP3.** J1's four left-hand pins (19–22) are behind the
       thermocouple lines on both layers. The free way to them is the back layer under the
       protection column, east of the sensors. 1-Wire: R12 → one via → back layer across the top
-      (y = 26.15) → down the corridor right beside the sensors (x = 96.75, stubs under 1 mm to
-      U7 and U8) → a 2.4 mm hop on the front into J1 pin 21. `EXPANDER_INT` runs over the top
+      (y = 26.15) → down the corridor beside the sensors (x = 97.85 past U7, stepping to
+      96.75 above J1 and ending directly on U8's pin) → a 2.4 mm hop on the front into J1 pin 21. `EXPANDER_INT` runs over the top
       as well (y = 26.7), comes down at x = 113.6, passes under the jumpers to U4/R3,
       and at the J1 end uses the lane at x = 98.45 and enters pin 19 from above.
 - [x] **I²C.** From the right-hand side, nothing over the top. Front layer, no vias: U6 pins →
@@ -396,7 +396,7 @@ Routing tasks:
       copper (under U6) → diagonally to U4's via. It passes the `24V_OUT` zone at 112.75 for
       3 mm; the fill gives way by about 0.4 mm there. `JOYSTICK_CONFIRM`: 3 mm on the front
       from J10 pin 1 to a via under J10's body → back layer under the J9 `−` via → corridor
-      lane at x = 97.3/97.6 → front-side hop over `EXPANDER_INT`'s lane at y = 86.5–82.4 →
+      lane at x = 97.7/97.6 → front-side hop over `EXPANDER_INT`'s lane at y = 86.5–82.4 →
       back layer under the J6–J9 `+` lines → via at (103.4, 71.6) → front over the `−` lanes →
       via at (111.6, 69.0) → back layer north at x = 112.15 → via beside U4 pin 16. Six vias,
       the most on any signal; it is a push-button.
