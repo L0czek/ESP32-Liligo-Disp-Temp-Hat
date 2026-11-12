@@ -251,10 +251,30 @@ generic module, not measured on our unit):
   and a 100 Ω series resistor. Switches close to GND (active-low).
 - CON (KEY1) and BAK (KEY0) buttons: 10 kΩ pull-up, 100 nF to GND, switch to GND.
 - Header order is CON, SDA, SCL, PSH, TRA, TRB, BAK, GND, VCC, which matches J10 pin 1–9.
-  The module's own schematic numbers the header the other way round (pin 1 = 3V3), so
-  check the physical orientation of J10 in layout.
-  **This was never checked on a real module** (none was at hand before ordering). If the
-  order turns out reversed, the panel cannot simply be turned round in a horizontal socket.
+  The module's own schematic numbers the header the other way round (pin 1 = 3V3).
+
+**Pin order checked against the module's silkscreen** in the seller's photos (2026-11-12),
+both sides:
+
+- Front, left to right with the header along the top edge: `CON SDA SCL PSH TRA TRB BAK GND
+  VCC`. The square pad is the VCC end.
+- Back, same pads: `CONFIRM OLED_SDA OLED_SCL ENCODER_PUSH ENCODER_A ENCODER_B BACK GND 3V3`.
+- J10 pins 1–9 carry exactly these signals in this order, so a straight 1:1 cable from
+  J10 to the panel is correct. A plain pin strip is not keyed: J10 pin 1 (the left end seen
+  from above, at x = 99.6) goes to CON, pin 9 to VCC / the square pad.
+- The header comes loose with the module and is soldered by the user.
+
+**As drawn, J10 only works with a cable, not with the panel plugged straight in.** The
+original intent was probably a direct plug-in; that is open, see "Remaining work". Plugged
+in directly, only two positions have the right pin order, and neither is usable:
+
+- Display facing away from the hat, panel hanging below the hat's edge: the T-Relay is
+  12.6 mm below and continues past that edge, and the panel needs about 32 mm.
+- Pins soldered on the display side, panel standing up and facing back over the hat: the
+  display is upside down and looks at the hat.
+
+The two positions that look natural (panel standing up and facing outwards, or hanging down
+and facing inwards) have the pin order reversed, VCC on J10 pin 1.
 
 Consequences: the hat's pull-ups for the encoder and push button (R9–R11, 10 kΩ) are
 back-ups, marked do-not-populate. Fit them only if a panel without pull-ups is used. With the panel connected, the I²C bus already has the
@@ -375,6 +395,12 @@ Other things to know:
 - [ ] **BOM.** Two parts are not picked yet: R6 (1 mΩ four-terminal shunt, 2512, at least 1 W)
       and L1 (600 Ω at 100 MHz ferrite bead, 0805). Then a full list with TME order codes;
       the picks made so far are in "Chosen parts".
+- [ ] **J10: how the panel connects.** The intent was probably to plug the panel straight
+      into J10 (to be confirmed). As drawn that does not work: the natural position, panel
+      standing up at the hat's edge and facing outwards, puts VCC on J10 pin 1 (see "Panel
+      module"). If direct plug-in is wanted, J10's pin order has to be mirrored on the
+      board, which means rerouting its nine nets; also check then that the 65 mm wide panel
+      and its knob clear J11, H3 and the hat's edges. If a cable is fine, nothing changes.
 - [ ] **A second look by the original reviewer** at the finished layout.
 
 ## Working on the schematic and board files
