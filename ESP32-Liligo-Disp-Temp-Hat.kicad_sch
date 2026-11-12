@@ -3,8 +3,243 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "009103dd-1548-4237-811a-1a7f9b2e34c5")
-	(paper "A4")
+	(paper "A3")
 	(lib_symbols
+		(symbol "Power_Protection:PESD5V0L4UG"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PESD5V0L4UG"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?353*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PESD5V0L4UG_0_1"
+				(polyline
+					(pts
+						(xy -1.016 1.016) (xy -1.016 -1.016) (xy -0.508 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 0) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 1.016) (xy -1.016 0) (xy 1.016 -1.016) (xy 1.016 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PESD5V0L4UG_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "K1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PESD5V0L4UG_2_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "K2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PESD5V0L4UG_3_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "K3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PESD5V0L4UG_4_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "K4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Sensor_Temperature:DS18B20Z"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -7377,7 +7612,7 @@
 		)
 		(uuid "fe32a96c-226a-473c-9642-3f49d0c800fc")
 	)
-	(global_label "TC3-"
+	(global_label "TC3-_IN"
 		(shape input)
 		(at 234.95 151.13 0)
 		(fields_autoplaced yes)
@@ -7569,7 +7804,7 @@
 			)
 		)
 	)
-	(global_label "TC0+"
+	(global_label "TC0+_IN"
 		(shape input)
 		(at 234.95 110.49 0)
 		(fields_autoplaced yes)
@@ -7665,7 +7900,7 @@
 			)
 		)
 	)
-	(global_label "TC4+"
+	(global_label "TC4+_IN"
 		(shape input)
 		(at 261.62 110.49 0)
 		(fields_autoplaced yes)
@@ -7737,7 +7972,7 @@
 			)
 		)
 	)
-	(global_label "TC5+"
+	(global_label "TC5+_IN"
 		(shape input)
 		(at 261.62 123.19 0)
 		(fields_autoplaced yes)
@@ -7880,7 +8115,7 @@
 			)
 		)
 	)
-	(global_label "TC7+"
+	(global_label "TC7+_IN"
 		(shape input)
 		(at 261.62 148.59 0)
 		(fields_autoplaced yes)
@@ -7952,7 +8187,7 @@
 			)
 		)
 	)
-	(global_label "TC1+"
+	(global_label "TC1+_IN"
 		(shape input)
 		(at 234.95 123.19 0)
 		(fields_autoplaced yes)
@@ -7976,7 +8211,7 @@
 			)
 		)
 	)
-	(global_label "TC6+"
+	(global_label "TC6+_IN"
 		(shape input)
 		(at 261.62 135.89 0)
 		(fields_autoplaced yes)
@@ -8192,7 +8427,7 @@
 			)
 		)
 	)
-	(global_label "TC1-"
+	(global_label "TC1-_IN"
 		(shape input)
 		(at 234.95 125.73 0)
 		(fields_autoplaced yes)
@@ -8408,7 +8643,7 @@
 			)
 		)
 	)
-	(global_label "TC7-"
+	(global_label "TC7-_IN"
 		(shape input)
 		(at 261.62 151.13 0)
 		(fields_autoplaced yes)
@@ -8456,7 +8691,7 @@
 			)
 		)
 	)
-	(global_label "TC4-"
+	(global_label "TC4-_IN"
 		(shape input)
 		(at 261.62 113.03 0)
 		(fields_autoplaced yes)
@@ -8648,7 +8883,7 @@
 			)
 		)
 	)
-	(global_label "TC6-"
+	(global_label "TC6-_IN"
 		(shape input)
 		(at 261.62 138.43 0)
 		(fields_autoplaced yes)
@@ -8888,7 +9123,7 @@
 			)
 		)
 	)
-	(global_label "TC2+"
+	(global_label "TC2+_IN"
 		(shape input)
 		(at 234.95 135.89 0)
 		(fields_autoplaced yes)
@@ -9008,7 +9243,7 @@
 			)
 		)
 	)
-	(global_label "TC5-"
+	(global_label "TC5-_IN"
 		(shape input)
 		(at 261.62 125.73 0)
 		(fields_autoplaced yes)
@@ -9032,7 +9267,7 @@
 			)
 		)
 	)
-	(global_label "TC2-"
+	(global_label "TC2-_IN"
 		(shape input)
 		(at 234.95 138.43 0)
 		(fields_autoplaced yes)
@@ -9128,7 +9363,7 @@
 			)
 		)
 	)
-	(global_label "TC0-"
+	(global_label "TC0-_IN"
 		(shape input)
 		(at 234.95 113.03 0)
 		(fields_autoplaced yes)
@@ -9176,7 +9411,7 @@
 			)
 		)
 	)
-	(global_label "TC3+"
+	(global_label "TC3+_IN"
 		(shape input)
 		(at 234.95 148.59 0)
 		(fields_autoplaced yes)
@@ -10964,7 +11199,7 @@
 				)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "300R"
 			(at 217.17 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20078,6 +20313,3954 @@
 			(project "ESP32-Liligo-Disp-Temp-Hat"
 				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
 					(reference "#PWR066")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 30.48 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "85394578-bd6d-450f-8dc6-0744d92b84f5")
+		(property "Reference" "R14"
+			(at 323.85 27.94 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 27.94 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5a2b15c7-9f47-4e4d-af08-833561dc689b")
+		)
+		(pin "2"
+			(uuid "967fc276-3378-4baf-a49a-3a38f0a3ac1d")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC0+_IN"
+		(shape input)
+		(at 322.58 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a67e318c-bda7-49c8-9502-589f87129db5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC0+"
+		(shape input)
+		(at 330.2 30.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "72a21bdb-a4b7-4444-ab6f-a95eb1f275fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 35.56 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a9a74c01-9f98-410f-a913-22b1489c7f20")
+		(property "Reference" "R15"
+			(at 323.85 33.02 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 33.02 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dd6b5221-c61f-4bb0-b307-2bea67377759")
+		)
+		(pin "2"
+			(uuid "a8ac6ec2-62fe-4d26-8b33-662c9593408a")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC0-_IN"
+		(shape input)
+		(at 322.58 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "16becf8e-aeac-4098-aa80-5676e836206e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC0-"
+		(shape input)
+		(at 330.2 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bd15a761-74ec-4e15-ac15-6edeef467582")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 40.64 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b751bf79-afe6-413d-9583-8e357a8f13b7")
+		(property "Reference" "R16"
+			(at 323.85 38.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 38.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4af6530c-5c23-42e0-a56f-ba82f0572369")
+		)
+		(pin "2"
+			(uuid "015dc9a7-6f89-4121-b747-5cd7a7789e00")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC1+_IN"
+		(shape input)
+		(at 322.58 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3540aafd-bd90-40d9-bd2c-f0ffecc85467")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC1+"
+		(shape input)
+		(at 330.2 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "11c26f64-e739-45da-8d19-1acaaf91069b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 45.72 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8fdc2171-af3e-4dfb-a6a1-e6afb5de7fcb")
+		(property "Reference" "R17"
+			(at 323.85 43.18 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 43.18 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5517e67a-c98a-438d-8cec-de4b0d0424fb")
+		)
+		(pin "2"
+			(uuid "2fe7f9b5-dfb9-497a-9f7b-2abfabfbc327")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC1-_IN"
+		(shape input)
+		(at 322.58 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "95bef6a3-45b8-4eb8-8716-b1c8e45c6fc5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC1-"
+		(shape input)
+		(at 330.2 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cbfc2c38-a0be-470b-b789-eaab9c1c9c69")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 50.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "29e7df3d-d01f-47de-a2a4-c441bdc24f8a")
+		(property "Reference" "R18"
+			(at 323.85 48.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 48.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9844076d-bc72-4fe4-8016-d2a8842bf124")
+		)
+		(pin "2"
+			(uuid "302a7502-f916-4ead-8407-8bbae6eb8dcc")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC2+_IN"
+		(shape input)
+		(at 322.58 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d865c306-2d4c-4d66-9926-3ebd88029124")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC2+"
+		(shape input)
+		(at 330.2 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5036cf04-a70a-473b-baf3-0748979c0aad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 55.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "59f8d6c6-7baf-487b-94f2-ab0759f36c9f")
+		(property "Reference" "R19"
+			(at 323.85 53.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 53.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "115bc4cf-a963-47be-b88b-577ef4833953")
+		)
+		(pin "2"
+			(uuid "798733fe-9560-426b-a702-d7ce30bfa958")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC2-_IN"
+		(shape input)
+		(at 322.58 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f840a511-37f4-4410-81fe-77ae367e51e8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC2-"
+		(shape input)
+		(at 330.2 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "27f6ec35-7006-43bd-bf03-61de1b9763c2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 60.96 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1e822a64-fcfd-4507-b716-bc6fe2a7cff3")
+		(property "Reference" "R20"
+			(at 323.85 58.42 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 58.42 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3e226474-b0e9-49b7-bc67-f5eba752d949")
+		)
+		(pin "2"
+			(uuid "043c68c2-4146-4adc-b99e-b7f3a954dd9b")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC3+_IN"
+		(shape input)
+		(at 322.58 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6ac575a7-ff65-41aa-be83-344d9cb78dbf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC3+"
+		(shape input)
+		(at 330.2 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4713c34c-96c7-4b52-8c85-cb5be35e0e53")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 66.04 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ed9a3b05-64ac-4f24-95fe-ff4c7b04036e")
+		(property "Reference" "R21"
+			(at 323.85 63.5 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 63.5 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "50edb1e2-5961-45e0-b7fc-6bc9e899cce0")
+		)
+		(pin "2"
+			(uuid "49f8a67d-5244-401a-89ed-3dd6169e1e06")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC3-_IN"
+		(shape input)
+		(at 322.58 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "629919cf-59aa-4d4c-8ed6-b9f5444fade7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC3-"
+		(shape input)
+		(at 330.2 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fc327331-eaf0-449e-a873-f02b150f0e01")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 71.12 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8a8eac3e-93eb-4b33-a023-650d192984d3")
+		(property "Reference" "R22"
+			(at 323.85 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "64dfd438-9e5b-4a2c-8de1-099dfb05217a")
+		)
+		(pin "2"
+			(uuid "c196455c-8698-47e8-b85e-f13a73f186c6")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC4+_IN"
+		(shape input)
+		(at 322.58 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4a597f8c-db06-4e0d-b3c1-8a97b765c4bc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC4+"
+		(shape input)
+		(at 330.2 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0a3bc775-985b-46e7-bcab-87a27064dfa1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 76.2 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "86a62338-d418-45aa-b1f9-fb50cb258c31")
+		(property "Reference" "R23"
+			(at 323.85 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f99129b4-301a-4835-a098-b913ef3ec603")
+		)
+		(pin "2"
+			(uuid "8c7f8720-4e28-4391-a806-301b64550541")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC4-_IN"
+		(shape input)
+		(at 322.58 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "aa8ac11f-77d4-43a3-86c6-a1348c4ec5cc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC4-"
+		(shape input)
+		(at 330.2 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "69a16326-e37f-4737-bfec-7e5da830ca85")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 81.28 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5133e97b-ecae-4c68-bc4b-e838838f1af5")
+		(property "Reference" "R24"
+			(at 323.85 78.74 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 78.74 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91910924-7332-4d88-905b-b5eca563f993")
+		)
+		(pin "2"
+			(uuid "c8e5267f-73e9-4cfc-bfe7-7221ef49b8ac")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC5+_IN"
+		(shape input)
+		(at 322.58 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8be6deec-0156-4351-a876-d4e93a00fca4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC5+"
+		(shape input)
+		(at 330.2 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cd7eb3e9-f94a-451b-ac06-fc027b4ccaf6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 86.36 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "32e2722a-eb69-42ca-867d-78d419211ac1")
+		(property "Reference" "R25"
+			(at 323.85 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "71950275-36ce-4065-8daf-7c35e1497946")
+		)
+		(pin "2"
+			(uuid "62f024f3-8a47-4101-a97f-39889fc5d88e")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC5-_IN"
+		(shape input)
+		(at 322.58 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "36af7517-3256-45df-abdb-21da5cb6b929")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC5-"
+		(shape input)
+		(at 330.2 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "220ab45d-af8a-4e5b-a5c7-dea9ef5377ab")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 91.44 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "04f64907-0c62-40db-91c8-859a95ad3ed8")
+		(property "Reference" "R26"
+			(at 323.85 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7c4c1279-b3d7-4e95-8a93-55a5b55cba63")
+		)
+		(pin "2"
+			(uuid "a5590f5f-5504-4134-a53f-68857ec8499c")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC6+_IN"
+		(shape input)
+		(at 322.58 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f1fa94ad-2ecb-4030-9ece-18a008916b66")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC6+"
+		(shape input)
+		(at 330.2 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3b50e9ab-8261-43ed-9a8b-aabe0103b7f8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 96.52 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a99be9fe-8b8c-438d-ad8d-d2af43c8cfd2")
+		(property "Reference" "R27"
+			(at 323.85 93.98 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 93.98 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fc177027-9ecf-4820-b5d4-3027ec55d6f0")
+		)
+		(pin "2"
+			(uuid "acf80d44-b1f3-481c-a869-47e7a514a33d")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC6-_IN"
+		(shape input)
+		(at 322.58 96.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a46c9582-2be6-4764-abab-6a0e65982107")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC6-"
+		(shape input)
+		(at 330.2 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b4473a9d-1b2e-4ae5-9e46-85cddce4e6a1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 101.6 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "757ccb51-8494-4b66-a2bb-704e4d424c6d")
+		(property "Reference" "R28"
+			(at 323.85 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d28b554f-ba13-4718-9603-50ff41327499")
+		)
+		(pin "2"
+			(uuid "90c0dac7-b6c0-4fa3-93e7-e29e3985aeba")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC7+_IN"
+		(shape input)
+		(at 322.58 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b5358c2c-f754-4201-b280-c79753eb97c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC7+"
+		(shape input)
+		(at 330.2 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7c39a20c-9c0f-42c3-b1c5-3d36845934f6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 326.39 106.68 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "575c179c-b860-4992-9d77-387de16fdc90")
+		(property "Reference" "R29"
+			(at 323.85 104.14 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 329.565 104.14 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 326.39 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 326.39 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 326.39 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "33f8591e-b251-49bf-a5f8-39986dfbcf2e")
+		)
+		(pin "2"
+			(uuid "8dde4ae5-d489-4b44-9f5d-c659ada9848f")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC7-_IN"
+		(shape input)
+		(at 322.58 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f0dd308-7db7-4008-807f-f8481d898ba1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.58 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "TC7-"
+		(shape input)
+		(at 330.2 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0677b17a-9981-4d13-9065-b044de872981")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 365.76 45.72 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "987623cf-5683-4bfc-9e31-1a88c637ccff")
+		(property "Reference" "D1"
+			(at 367.665 45.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 363.22 45.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 365.76 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 365.76 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 365.76 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fdd2e997-3e17-4213-a82b-8e2ab1bf1044")
+		)
+		(pin "2"
+			(uuid "3c49a6f2-5685-4d50-8932-7b142b56348a")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC0+_IN"
+		(shape input)
+		(at 365.76 43.18 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b5241401-26cd-41c5-a518-970e1f1f4e45")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 365.76 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 373.38 45.72 270)
+		(unit 2)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3cfe0dc3-17dd-4041-9a04-7c56a2f91442")
+		(property "Reference" "D1"
+			(at 375.285 45.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 370.84 45.72 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 373.38 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 373.38 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 373.38 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "e13dfdc2-2818-4380-864b-3e0fe2bcb703")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D1")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(global_label "TC0-_IN"
+		(shape input)
+		(at 373.38 43.18 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e7996020-e980-4397-a24d-bbf65abd4a53")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 373.38 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 381.0 45.72 270)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "06a13e97-54eb-4bc5-89da-81e869aa6f72")
+		(property "Reference" "D1"
+			(at 382.905 45.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 378.46 45.72 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 381.0 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 381.0 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 381.0 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "43b8620e-6503-4860-9935-145ae961b98f")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D1")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(global_label "TC1+_IN"
+		(shape input)
+		(at 381.0 43.18 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2cb5e692-d809-4dde-aae4-971f176a77f3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381.0 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 388.62 45.72 270)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c5829a8c-0869-4057-83d1-9198f86e4132")
+		(property "Reference" "D1"
+			(at 390.525 45.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 386.08 45.72 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 388.62 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 388.62 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 388.62 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "26ab0e91-fd1f-45b8-a501-0217934dc37f")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D1")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(global_label "TC1-_IN"
+		(shape input)
+		(at 388.62 43.18 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b07ef85f-6a1c-4886-b717-d6ab31f78bce")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 388.62 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 365.76 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c75d9f17-9a05-42a6-9b24-4f0bc56e3152")
+		(property "Reference" "#PWR067"
+			(at 365.76 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 365.76 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 365.76 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "562ba997-69fd-4392-b26a-2bc20997e7e3")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR067")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 365.76 73.66 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d21b6c3b-5fe5-4603-878a-4932c08ff673")
+		(property "Reference" "D2"
+			(at 367.665 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 363.22 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 365.76 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 365.76 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 365.76 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5f5d2044-7d70-4b3a-94bb-f04c8b165d92")
+		)
+		(pin "2"
+			(uuid "cf9b5f79-b710-4a54-aca4-55c9ff9886f2")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC2+_IN"
+		(shape input)
+		(at 365.76 71.12 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "023d140c-77b2-4aba-ba73-f5416698a207")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 365.76 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 373.38 73.66 270)
+		(unit 2)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "aed06d73-17e2-45ce-b099-4e75c7dbebf7")
+		(property "Reference" "D2"
+			(at 375.285 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 370.84 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 373.38 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 373.38 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 373.38 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "1a909342-33cd-4ff8-abbe-1d9e54df6c27")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D2")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(global_label "TC2-_IN"
+		(shape input)
+		(at 373.38 71.12 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "39ed3205-2b4a-4db0-9d3d-43133e20830c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 373.38 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 381.0 73.66 270)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5bd729c1-ca69-4bc9-b817-9c5a1eee46e7")
+		(property "Reference" "D2"
+			(at 382.905 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 378.46 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 381.0 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 381.0 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 381.0 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "88c87397-22cd-4c55-bee3-7e55ed455ffb")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D2")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(global_label "TC3+_IN"
+		(shape input)
+		(at 381.0 71.12 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a941a32-9ad3-46c2-97b7-c81b61f0c5fa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381.0 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 388.62 73.66 270)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3480d937-b3be-49fc-9de4-791dd7c0446e")
+		(property "Reference" "D2"
+			(at 390.525 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 386.08 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 388.62 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 388.62 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 388.62 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "ff79cc2c-30c4-49e2-9f74-7700b22f91d0")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D2")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(global_label "TC3-_IN"
+		(shape input)
+		(at 388.62 71.12 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ba616ba8-2549-4fc1-8f2b-18ac63776de8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 388.62 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 365.76 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "82aed30b-9efc-4769-a172-22071a0fc794")
+		(property "Reference" "#PWR068"
+			(at 365.76 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 365.76 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 365.76 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ba6d9b7f-3da7-446a-8bd4-dca7d98e7f55")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR068")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 365.76 101.6 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6d9aa921-4de4-4fb7-a941-ec454021c797")
+		(property "Reference" "D3"
+			(at 367.665 101.6 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 363.22 101.6 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 365.76 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 365.76 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 365.76 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0b19c271-ed12-44ff-9c86-e8deb9da2392")
+		)
+		(pin "2"
+			(uuid "7801d4d6-0fe6-4eb1-addf-dc4f963d493b")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC4+_IN"
+		(shape input)
+		(at 365.76 99.06 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a5bfd9ba-133d-4f61-8cbe-0a38b8a09cae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 365.76 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 373.38 101.6 270)
+		(unit 2)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "29008569-4d29-4255-a054-c9248ff36c85")
+		(property "Reference" "D3"
+			(at 375.285 101.6 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 370.84 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 373.38 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 373.38 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 373.38 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "035df077-05c4-45f3-86bb-b7b353b5ba50")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D3")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(global_label "TC4-_IN"
+		(shape input)
+		(at 373.38 99.06 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3fbea740-8c0f-43b2-b83b-eccadaf66680")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 373.38 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 381.0 101.6 270)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0833ec5c-57dc-429d-924f-530c63066096")
+		(property "Reference" "D3"
+			(at 382.905 101.6 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 378.46 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 381.0 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 381.0 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 381.0 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "0e13b36b-1ed6-49dd-9161-c23e4450b47b")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D3")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(global_label "TC5+_IN"
+		(shape input)
+		(at 381.0 99.06 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4b34946b-491d-4653-8b8c-ed34d1cbd355")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381.0 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 388.62 101.6 270)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4d3d3269-bd6b-469b-bb1f-493cca212052")
+		(property "Reference" "D3"
+			(at 390.525 101.6 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 386.08 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 388.62 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 388.62 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 388.62 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "f458eb37-5717-4ccd-9e55-009f6704219d")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D3")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(global_label "TC5-_IN"
+		(shape input)
+		(at 388.62 99.06 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9350c151-cf70-48ae-aed4-7c6950459ed4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 388.62 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 365.76 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0e3ee5dd-2adb-4092-9626-d9c5176cfca8")
+		(property "Reference" "#PWR069"
+			(at 365.76 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 365.76 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 365.76 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d8063f1a-a360-4024-ac07-41c8142990a9")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR069")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 365.76 129.54 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cbd35152-9aaa-49e9-9fc2-3b2e742df129")
+		(property "Reference" "D4"
+			(at 367.665 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 363.22 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 365.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 365.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 365.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3cf6bcb2-c45d-4c0e-a81e-34830235f017")
+		)
+		(pin "2"
+			(uuid "10340241-31a6-4f37-9eee-758db7567897")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC6+_IN"
+		(shape input)
+		(at 365.76 127.0 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "101986de-bc0b-4802-a84d-b736816ab01f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 365.76 127.0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 373.38 129.54 270)
+		(unit 2)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0c1c1991-b481-4d67-abd1-f8a7e2a29b40")
+		(property "Reference" "D4"
+			(at 375.285 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 370.84 129.54 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 373.38 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 373.38 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 373.38 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "276cb404-b914-418f-a459-4b04711a52f7")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D4")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(global_label "TC6-_IN"
+		(shape input)
+		(at 373.38 127.0 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "45a582b5-a43f-47dd-84bc-c0f43d6f2abf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 373.38 127.0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 381.0 129.54 270)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "128d3b65-535d-4a32-abfd-9d44e22777ab")
+		(property "Reference" "D4"
+			(at 382.905 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 378.46 129.54 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 381.0 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 381.0 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 381.0 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "eb5b6cee-4562-4481-b807-c1c2a1cb2652")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D4")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(global_label "TC7+_IN"
+		(shape input)
+		(at 381.0 127.0 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e2a4f15e-eb93-4664-a688-cc061c87b8fd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 381.0 127.0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:PESD5V0L4UG")
+		(at 388.62 129.54 270)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4d77cdf3-5a19-4f6d-957e-79c7dbe7240a")
+		(property "Reference" "D4"
+			(at 390.525 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD5V0L4UG"
+			(at 386.08 129.54 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5"
+			(at 388.62 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf"
+			(at 388.62 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low capacitance unidirectional quadruple ESD protection diode array, 5.0V, Common Anode, SOT-353"
+			(at 388.62 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "0a1a3aca-7df3-4ade-b5b6-84d2754e6c01")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "D4")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(global_label "TC7-_IN"
+		(shape input)
+		(at 388.62 127.0 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a91e8ad7-fc9d-47ef-bf23-996e602243fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 388.62 127.0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 365.76 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e7a445e5-735c-4ba0-87ac-83395d931496")
+		(property "Reference" "#PWR070"
+			(at 365.76 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 365.76 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 365.76 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "807251c7-b0bd-42bf-a909-76267e05aa23")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)

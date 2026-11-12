@@ -13,7 +13,7 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 
 | Block | Parts | Notes |
 |---|---|---|
-| Thermocouple front end | J2–J9, U1, U3 (TMUX1108), U2 (MAX31856) | U1 muxes the `+` legs, U3 the `−` legs, into one MAX31856 over SPI. Input filter: R1/R2 100 Ω, C1 100 nF differential, C2/C3 10 nF to GND. |
+| Thermocouple front end | J2–J9, D1–D4, R14–R29, U1, U3 (TMUX1108), U2 (MAX31856) | Each terminal has an ESD clamp and 100 Ω in series (see "Thermocouple input protection"). U1 muxes the `+` legs, U3 the `−` legs, into one MAX31856 over SPI. Input filter: R1 100 Ω, R2 300 Ω, C1 100 nF differential, C2/C3 10 nF to GND. |
 | I/O expander | U4 (PCF8574A), U5 (74LVC1G04), JP1–JP3 | Mux address and enable, MAX31856 status, two panel buttons. |
 | Front panel | J10 (1x9 socket) | I²C display, encoder, buttons. |
 | Heater current | J11, R6 (shunt), U6 (INA226) | High-side shunt in the +24 V feed, read over I²C. See "Heater current sensing". |
@@ -93,6 +93,36 @@ review's wording "J11.2 → relay COMs" (plural), the 8 relays and the 8 thermoc
   (believed to be about 10 A on the T-Relay-8). A single 18.75 A heater on one relay would
   not be acceptable.
 
+## Thermocouple input protection
+
+**Use insulated (ungrounded-junction) thermocouple probes only.** The protection below covers
+static discharge and switching spikes. It does not cover a thermocouple line held on 24 V:
+that would destroy the clamp and probably the multiplexer.
+
+```
+terminal (TCn±_IN) ──┬── 100 Ω ── TCn± ── TMUX1108 ── ... ── MAX31856
+                     │
+              ESD clamp to GND
+```
+
+- The MAX31856 inputs withstand ±45 V, but the TMUX1108 in front of it only allows −0.5 V to
+  VDD + 0.5 V on its signal pins and is rated for 2 kV ESD, so the multiplexers are the weak point.
+- D1–D4: Nexperia PESD5V0L4UG, four clamps per package, one package per pair of terminals
+  (D1: J2/J3, D2: J4/J5, D3: J6/J7, D4: J8/J9). Place each one right at its terminals.
+- R14–R29: 100 Ω in each line, between the clamp and the multiplexer.
+- R2 is 300 Ω, not 100 Ω. The bias point is at the multiplexer output, so both added 100 Ω
+  resistors of a channel end up in the T+ path (R1 + 2 × 100 Ω). The MAX31856 datasheet
+  ("Effect of Series Resistance") says to match the two paths: offset = I_B × ΔR_S + ΔI_B × R_S,
+  with I_B up to 65 nA. Unmatched, 200 Ω would add up to 13 µV; matched, about 2 µV (0.05 °C, type K).
+- Series resistance per input stays far below 5 kΩ, so the fast open-circuit detection mode
+  (`OCFAULT = 01`) still applies.
+- Clamp leakage (25 nA per TME's listing, at 5 V; lower at the 0.7 V the lines sit at) flows
+  through 100 Ω at most: under 3 µV.
+
+Considered and not used: 2.2 kΩ + BAV199 rail clamps + 100 Ω per line, which would survive a
+continuous 24 V on any line. It needs 48 parts, R2 of about 4.75 kΩ, the slower open-circuit
+mode, and costs up to about 20 µV (0.5 °C) worst case.
+
 ## Cold-junction sensing (optional)
 
 A thermocouple reading is the tip temperature minus the temperature of the terminals J2–J9,
@@ -159,6 +189,7 @@ Parts picked so far, as input for a BOM at the end. Prices are TME gross, single
 |---|---|---|---|
 | J11 | Degson [`DG638-9.52-02P`](https://www.tme.eu/pl/details/DG638-9.52-02P/), 4.49 zł | `TerminalBlock_Ningbo-Kagnex_HB9500_1x02_P9.5mm` | 32 A, 4 mm² wire, 9.52 mm pitch, 0.9 mm square pins. The footprint is deliberately generic: 9.5 mm pitch, 2 mm holes, 3.3 × 6.6 mm pads, so any 9.5 mm 30 A block (screw or barrier type) or a soldered wire fits. The pin is loose in the hole; hold the block square and fill the joint fully. |
 | U6 | TI `INA226AIDGSR` | `TSSOP-10_3x3mm_P0.5mm` | In stock at TME (confirmed by the user, price not looked up). |
+| D1–D4 | Nexperia [`PESD5V0L4UG.115`](https://www.tme.eu/pl/details/PESD5V0L4UG.115/), 1.23 zł | `SOT-353_SC-70-5` | 4-channel ESD clamp, 5 V, common anode. 5900 in stock. |
 | R6 | 1 mΩ 4-terminal 2512, Vishay WSK2512 type | `R_Shunt_Vishay_WSK2512_6332Metric_T2.21mm` | Exact part not picked yet. Needs ≥ 1 W. |
 | L1 | Ferrite bead, 600 Ω at 100 MHz, 0805 | `L_0805_2012Metric` | Exact part not picked yet. |
 
@@ -180,8 +211,8 @@ Must fix:
 - [x] 3. Replace J11 (was rated about 8 A, heater draws about 18.75 A). Now a generic 9.5 mm pitch
       footprint with 2 mm holes; default part Degson `DG638-9.52-02P` (32 A). See "Chosen parts".
 - [x] 4. Current sensing: INA226 on the 24 V side with a 4-terminal shunt (details below).
-- [ ] 5. Protect the 16 thermocouple lines: series resistor on each line and low-leakage ESD/TVS clamps
-      at the terminals. Use insulated (ungrounded-junction) probes only.
+- [x] 5. Protect the 16 thermocouple lines: ESD clamp arrays D1–D4 at the terminals, 100 Ω series
+      resistors R14–R29, R2 raised to 300 Ω. See "Thermocouple input protection".
 
 Should fix:
 
@@ -216,3 +247,4 @@ Layout only (not done by Claude):
 
   and diff the netlist against the one from before the change.
 - Baseline ERC: 3 `power_pin_not_driven` violations, 0 others.
+- The sheet is A3 (it was A4) to make room for the protection block on the right.
