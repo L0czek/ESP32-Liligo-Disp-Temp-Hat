@@ -7,7 +7,7 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 - Base board: [LilyGO T-Relay-8](https://www.amazon.pl/dp/B0B6TY79WN) —
   [vendor repo](https://github.com/Xinyuan-LilyGO/LilyGo-T-Relay) (schematic, DXF outline, pinmap)
 - Front panel: [1.3" SH1106 OLED with encoder and buttons](https://allegro.pl/oferta/wyswietlacz-oled-1-3-sh1106-bialy-z-enkoderem-przyciskami-panel-sterowania-18116662587)
-- Load: 24 V heater, about 18.75 A, switched by the T-Relay relays
+- Load: 24 V heaters switched by the T-Relay relays, about 18.75 A in total (assumed to be the sum of several heaters)
 
 ## Blocks
 
@@ -82,9 +82,16 @@ PSU+ → J11.1 (24V_IN) → R6 → J11.2 (24V_OUT) → relay COMs → heater →
 - The review asked for 2 mΩ / 3 W. 1 mΩ was chosen because the WSK2512 is a 1 W part and
   2 mΩ would run it at 0.7 W; resolution is still about 2.5 mA per LSB.
 
-Open point for the system owner: the T-Relay-8 relays are believed to be rated about 10 A per
-contact, so 18.75 A must not go through a single relay. How the heater is split across relays
-is not known here.
+Working assumption (not confirmed by the system owner): the board controls several heaters
+independently, one per relay, and 18.75 A (450 W at 24 V) is their **sum**. That fits the
+review's wording "J11.2 → relay COMs" (plural), the 8 relays and the 8 thermocouple inputs.
+`24V_OUT` then feeds the COM terminals of all heater relays, and J11 and R6 carry the total.
+
+- The INA226 measures the total only. Firmware can get a single heater's current from the
+  step in the reading when that relay switches.
+- Still to confirm with the owner: each heater must stay within one relay contact's rating
+  (believed to be about 10 A on the T-Relay-8). A single 18.75 A heater on one relay would
+  not be acceptable.
 
 ## U4 (PCF8574A) port map
 
