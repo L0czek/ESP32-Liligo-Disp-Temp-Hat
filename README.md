@@ -27,8 +27,13 @@ repo, header P5) and the vendor pinmap image; both agree.
 
 **The two rows are numbered the other way round on the two boards.** Hat J1 pin 1 (3V3) mates
 with T-Relay P5 pin 2. In general hat odd pin n ↔ P5 pin n+1, hat even pin n ↔ P5 pin n−1.
-The layout must place J1 so that this holds (review item 15); if the rows are swapped, 3V3
-lands on GND.
+This is what you get from a socket mounted on the underside of the hat, facing down onto the
+T-Relay's pins, so it is intended and the schematic needs no change for it.
+
+For layout (review item 15): J1 is a socket soldered on the **bottom** of the hat. Put the
+footprint on the back side so silkscreen, courtyard and 3D model are on the correct side, and
+check that pad 1 sits over the T-Relay's 3V3 pin (P5 pin 2). If the rows end up swapped, 3V3
+lands on GND. In the board as of 2026-11-12 the J1 footprint is still on the front side.
 
 | J1 (hat) | P5 (T-Relay) | ESP32 | Signal | Notes |
 |---|---|---|---|---|
