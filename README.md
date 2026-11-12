@@ -9,6 +9,21 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 - Front panel: [1.3" SH1106 OLED with encoder and buttons](https://allegro.pl/oferta/wyswietlacz-oled-1-3-sh1106-bialy-z-enkoderem-przyciskami-panel-sterowania-18116662587)
 - Load: 24 V heaters switched by the T-Relay relays, about 18.75 A in total (assumed to be the sum of several heaters)
 
+> **This branch (`variant/mux-near-u2`) is an experiment, not the main design.** It answers "what
+> if the two multiplexers went back beside U2, where the original board had them?" while keeping
+> everything else from `master` (fit to the T-Relay, heater copper, protection column, sensors
+> on the back, I²C from the right). U1, U3, U5, C6, C7 and C9 are at their original positions.
+> The schematic is unchanged, including the J6–J9 channel order. The sections below still
+> describe `master`; where they mention the multiplexers at the centre of the terminal row,
+> this branch differs.
+>
+> What it gains over `master`: U1's output to R1 is 9 mm instead of 35 mm, C6/C7 are 2.5 mm
+> from the supply pins instead of 15–21 mm, the address and enable lines are 20–40 mm instead
+> of 42–65 mm. What it costs: the sixteen thermocouple lines total 793 mm instead of 678 mm,
+> the `+` lines of J6–J9 get two vias each and J9's is 108 mm long, `+`/`−` lengths per
+> terminal differ by 14–31 mm instead of 1–20 mm, and `JOYSTICK_CONFIRM` needs six vias.
+> DRC: no errors, 0 unconnected, parity 0. First pass; the J6–J9 `+` lines could be shortened.
+
 ## Blocks
 
 | Block | Parts | Notes |
