@@ -27,13 +27,35 @@ repo, header P5) and the vendor pinmap image; both agree.
 
 **The two rows are numbered the other way round on the two boards.** Hat J1 pin 1 (3V3) mates
 with T-Relay P5 pin 2. In general hat odd pin n ↔ P5 pin n+1, hat even pin n ↔ P5 pin n−1.
-This is what you get from a socket mounted on the underside of the hat, facing down onto the
-T-Relay's pins, so it is intended and the schematic needs no change for it.
+J1 is a socket soldered on the **bottom** of the hat, facing down onto the T-Relay's pins.
 
-For layout: J1 is a socket soldered on the **bottom** of the hat. Put the
-footprint on the back side so silkscreen, courtyard and 3D model are on the correct side, and
-check that pad 1 sits over the T-Relay's 3V3 pin (P5 pin 2). If the rows end up swapped, 3V3
-lands on GND. In the board as of 2026-11-12 the J1 footprint is still on the front side.
+**Do not flip the J1 footprint to the back side in KiCad.** The schematic's numbering matches
+the footprint exactly as it is placed now: on the front layer, pad 1 at (121.54, 161.93).
+Seen from above, pad 1 (3V3) is the right-hand end of the lower row, which is where the
+T-Relay has 3V3 (checked against the silkscreen labels in the vendor DXF). Flipping the
+footprint mirrors the pads and would swap the two rows, putting 3V3 on GND. The only cost of
+leaving it on the front is that its silkscreen and courtyard are drawn on the wrong side.
+
+### How the hat sits on the T-Relay-8
+
+From the vendor DXF (`dxf/T-Relay8-ESP32.dxf`; T-Relay board is 85 × 170 mm). With J1 mated,
+a point on the hat at (x, y) is above the T-Relay point (x − 41.54, y − 86.03) mm, measured
+from the T-Relay's top-left corner with the relays on the left.
+
+- The hat covers the T-Relay from x = 42.3 to 90.6 mm and y = −3.5 to 96.2 mm: the upper half,
+  to the right of the relays. It overhangs the T-Relay's right edge by 5.6 mm and its top edge
+  by 3.5 mm.
+- Relay bodies end at about x = 38 mm, so the hat's left edge clears them by about 4 mm.
+  **The hat cannot grow to the left.** Up and down are limited by the 100 mm board size, so
+  the only direction it could grow is to the right, further off the T-Relay's edge.
+- **The hat's mounting holes H1–H4 do not line up with anything on the T-Relay.** The T-Relay
+  has three Ø4 mm holes in one column, at (50.0, 17.6), (48.1, 73.5) and (48.1, 158.6). The
+  first two are under the hat, at hat coordinates (91.6, 103.6) and (89.6, 159.5), which is
+  under the J2–J9 terminal column. As drawn, the hat is held only by the J1 header, 78 mm
+  from its far end.
+- **The ESP32 module is under the hat.** It sits at T-Relay x = 59–77.5 mm, y = −6.4 to 25.6 mm,
+  antenna at the top. On the hat that is x = 100.5–119, and the antenna is under y = 82.5–86,
+  below J12 and the VCC/GND planes. Copper there will detune the Wi-Fi antenna.
 
 | J1 (hat) | P5 (T-Relay) | ESP32 | Signal | Notes |
 |---|---|---|---|---|
@@ -217,9 +239,12 @@ What the update brought in:
 
 Tasks:
 
-- [ ] **J1 on the bottom side.** Flip the footprint to the back and check pad 1 sits over the
-      T-Relay's 3V3 pin (P5 pin 2). See "J1". Swapped rows would short 3V3 to GND.
-- [ ] **J1 position and mounting holes** against the T-Relay-8 outline (`dxf/` in the vendor repo).
+- [ ] **J1 stays where it is, on the front layer.** Do not flip it (see "J1"). The socket is
+      soldered from the bottom.
+- [ ] **Mechanical support.** Decide how the hat is held besides the header; H1–H4 match no hole
+      on the T-Relay (see "How the hat sits on the T-Relay-8").
+- [ ] **Antenna keep-out.** Remove plane and track copper above the ESP32 antenna, roughly
+      x = 98–122, y = 82.5–90 on all layers.
 - [ ] **Heater path** (J11, R6, `24V_IN`, `24V_OUT`): short, wide copper on both layers, ideally
       2 oz, sized for about 19 A. Remove the old ground connection at J11. No heater current may
       flow in GND any more. Keep clearance between 24 V copper and the 3.3 V circuitry.
