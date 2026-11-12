@@ -1,0 +1,6 @@
+(version 1)
+
+(rule "24V to inner planes"
+	(layer inner)
+	(condition "A.NetClass == 'Power24V' && B.Type == 'Zone'")
+	(constraint clearance (min 0.5mm)))

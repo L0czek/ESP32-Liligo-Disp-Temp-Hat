@@ -505,6 +505,11 @@ Other things to know:
 - Design rules: clearance 0.2 mm, default track 0.3 mm, vias
   0.6/0.3 mm, hole clearance 0.28 mm; net class `Power24V` for the `24V_*` nets. All within
   JLCPCB's standard four-layer limits.
+  - One custom rule (`ESP32-Liligo-Disp-Temp-Hat.kicad_dru`): the inner planes keep 0.5 mm
+    from the `24V_*` nets, the same as the outer layers, instead of the general 0.2 mm. The
+    fifteen stitching vias and both J11 pins pass through the 3V3 and GND planes, and a short
+    there would put 24 V on the ESP32's supply. It only changes the plane fill: no part or
+    track moved, both planes are still one piece.
 
 ## Remaining work
 
