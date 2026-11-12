@@ -19,7 +19,7 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 |---|---|---|
 | Thermocouple front end | J2–J9, D1–D4, R14–R29, U1, U3 (TMUX1108), U2 (MAX31856) | Each terminal has an ESD clamp and 100 Ω in series (see "Thermocouple input protection"). U1 muxes the `+` legs, U3 the `−` legs, into one MAX31856 over SPI. Input filter: R1 100 Ω, R2 300 Ω, C1 100 nF differential, C2/C3 10 nF to GND. |
 | I/O expander | U4 (PCF8574A), U5 (74LVC1G04), JP1–JP3 | Mux address and enable, MAX31856 status, two panel buttons. |
-| Front panel | J10 (1x9 socket) | I²C display, encoder, buttons. |
+| Front panel | J10 (1x9 socket) | I²C display, encoder, buttons. The panel plugs in on a right-angle header and lies flat past the hat's lower edge. |
 | Heater current | J11, R6 (shunt), U6 (INA226) | High-side shunt in the +24 V feed, read over I²C. See "Heater current sensing". |
 | 1-Wire | J12 (JST PH 3-pin), R12, U7, U8 | External DS18B20 probes on J12, plus two on-board DS18B20Z (U7, U8) for cold-junction sensing. Recommended; the board works without them, less accurately. |
 | Supply | L1, C10–C14 | `VCC` = 3V3 from the T-Relay; `VAA` = analog rail for U2, filtered by ferrite bead L1. |
@@ -262,26 +262,49 @@ both sides:
 - Front, left to right with the header along the top edge: `CON SDA SCL PSH TRA TRB BAK GND
   VCC`. The square pad is the VCC end.
 - Back, same pads: `CONFIRM OLED_SDA OLED_SCL ENCODER_PUSH ENCODER_A ENCODER_B BACK GND 3V3`.
-- J10 pins 1–9 carry exactly these signals in this order, so a straight 1:1 cable from
-  J10 to the panel is correct. A plain pin strip is not keyed: J10 pin 1 (the left end seen
-  from above, at x = 99.6) goes to CON, pin 9 to VCC / the square pad.
-- The header comes loose with the module and is soldered by the user.
-
-**As drawn, J10 only works with a cable, not with the panel plugged straight in.** The
-original intent was probably a direct plug-in; that is open, see "Remaining work". Plugged
-in directly, only two positions have the right pin order, and neither is usable:
-
-- Display facing away from the hat, panel hanging below the hat's edge: the T-Relay is
-  12.6 mm below and continues past that edge, and the panel needs about 32 mm.
-- Pins soldered on the display side, panel standing up and facing back over the hat: the
-  display is upside down and looks at the hat.
-
-The two positions that look natural (panel standing up and facing outwards, or hanging down
-and facing inwards) have the pin order reversed, VCC on J10 pin 1.
+- J10 pins 1–9 carry exactly these signals in this order.
+- A straight header comes loose with the module. It is not used: see below.
 
 Consequences: the hat's pull-ups for the encoder and push button (R9–R11, 10 kΩ) are
 back-ups, marked do-not-populate. Fit them only if a panel without pull-ups is used. With the panel connected, the I²C bus already has the
 panel's 10 kΩ in parallel with R4/R5.
+
+### How the panel connects
+
+**The panel gets a right-angle 1 × 9 pin header and plugs straight into J10. It lies flat,
+as an extension of the hat past its lower edge, screen up.** Nothing changes on the hat.
+
+- **Pin order is right.** Seen from above, the panel lies the same way round as in a front
+  photo (header along the top edge, CON on the left), and J10 has pin 1 on the left: CON
+  lands on pin 1, VCC on pin 9. This matches the `CON` and `VCC` labels on the hat.
+- **Solder the header on the panel's back**, pins pointing out past the header edge. The
+  panel then sits about 3 mm above the hat's surface, about 15 mm above the T-Relay.
+- **Position** (sheet coordinates): about x = 87.6–154.1, y = 121.4–156.8.
+  - 8 mm clear of the relays on the left.
+  - Only low parts of the T-Relay are under it (the tallest are 3.8 mm).
+  - It ends before the T-Relay's USB-C connector and power terminal.
+  - **It sticks out about 28 mm past the right edge of both boards**, because the panel is
+    66 mm wide and its header is near its left end.
+- **It needs support.** On its own it hangs on the nine pins, and pressing the encoder or
+  the buttons levers on them from up to about 45 mm away. The panel's two left mounting
+  holes are above the T-Relay and can take spacers of about 15 mm; the two right ones are
+  beyond the boards' edge.
+- The display reads the right way up for someone standing at the T-Relay's power-input end.
+- It covers the lower part of the T-Relay (optocouplers, relay indicator LEDs).
+
+The heights and the stand-off from the hat's edge assume a typical 2.54 mm right-angle
+header and were not measured; the mounting-hole positions were read off the photo.
+
+Other ways of connecting it, and why not:
+
+- **A straight header, panel standing up at the hat's edge and facing outwards:** pin order
+  reversed, VCC on J10 pin 1, and the panel's corner hits a relay. This is the trap: it is
+  what a straight header naturally gives.
+- **A straight header, panel hanging down and facing outwards:** right pin order, but it
+  needs about 32 mm below J10 and the T-Relay is 12.6 mm below.
+- **A 1:1 cable:** also correct electrically (J10 pin 1 to CON … pin 9 to VCC), if the
+  panel should go somewhere else, for example on an enclosure's front. A plain pin strip
+  is not keyed, so watch which end is pin 1.
 
 ## BOM
 
@@ -366,9 +389,12 @@ reels or lots of 173 and more, so the pick is an ordinary two-terminal strip res
 | J1 | 1 | 2 × 11 socket, 2.54 mm, 8.5 mm high, soldered on the **bottom** | |
 | P5 on the T-Relay | 1 | 2 × 11 pin header, 2.54 mm | soldered on the T-Relay; with J1 it sets the 11 mm gap |
 | J10 | 1 | 1 × 9 socket, 2.54 mm, right-angle | |
+| Panel header | 1 | 1 × 9 pin header, 2.54 mm, **right-angle** | soldered on the back of the panel; not the straight header that comes with it |
 
 Not fitted: R9–R11 (10 kΩ, back-up pull-ups, see "Panel module"), JP1–JP3 (solder jumpers).
 Mechanical: three M3 nylon spacers, 11 mm, for H1, H3 and H4 (H2 stays empty).
+For the panel: two M3 nylon spacers of about 15 mm under its two left mounting holes, length
+to be fitted on the real parts.
 
 ### Parts considered and dropped
 
@@ -510,16 +536,6 @@ Other things to know:
     fifteen stitching vias and both J11 pins pass through the 3V3 and GND planes, and a short
     there would put 24 V on the ESP32's supply. It only changes the plane fill: no part or
     track moved, both planes are still one piece.
-
-## Remaining work
-
-- [ ] **J10: how the panel connects.** The intent was probably to plug the panel straight
-      into J10 (to be confirmed). As drawn that does not work: the natural position, panel
-      standing up at the hat's edge and facing outwards, puts VCC on J10 pin 1 (see "Panel
-      module"). If direct plug-in is wanted, J10's pin order has to be mirrored on the
-      board, which means rerouting its nine nets; also check then that the 65 mm wide panel
-      and its knob clear J11, H3 and the hat's edges. If a cable is fine, nothing changes.
-- [ ] **A second look by the original reviewer** at the finished layout.
 
 ## Working on the schematic and board files
 
