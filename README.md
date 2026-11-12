@@ -18,7 +18,7 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 | Front panel | J10 (1x9 socket) | I²C display, encoder, buttons. |
 | Heater current | J11, R6 (shunt), U6 (INA215) | Low-side shunt, analog output to the ESP32 ADC. Under rework, see review item 4. |
 | 1-Wire | J12 (JST PH 3-pin) | External DS18B20 probes. |
-| Supply | L1, C10–C14 | `VCC` = 3V3 from the T-Relay; `VAA` = filtered analog rail through L1. |
+| Supply | L1, C10–C14 | `VCC` = 3V3 from the T-Relay; `VAA` = analog rail for U2 and U6, filtered by ferrite bead L1. |
 
 ## J1: connection to the T-Relay-8
 
@@ -112,9 +112,9 @@ Should fix:
 - [ ] 6. 10 kΩ pull-ups on ENCODER_A, ENCODER_B, JOYSTICK_PUSH (leave unfitted if the panel has them).
 - [ ] 7. 10 kΩ pull-up on TC_CS, so the MAX31856 stays off MISO (IO2, boot strap) during boot.
 - [ ] 8. Cold-junction sensing: 2× DS18B20Z (SO-8) on the hat, one at each end of the J2–J9 row.
-- [ ] 9. I²C pull-ups R4/R5 from 10 kΩ to 4.7 kΩ.
-- [ ] 10. L1 value is entered as "100uF". Replace with a ferrite bead (about 600 Ω) or a correct inductor value.
-- [ ] 11. C10–C13 from 20 µF to 22 µF.
+- [x] 9. I²C pull-ups R4/R5 from 10 kΩ to 4.7 kΩ.
+- [x] 10. L1 value was entered as "100uF". Now a ferrite bead, 600 Ω at 100 MHz, 0805 (footprint changed from 1210).
+- [x] 11. C10–C13 from 20 µF to 22 µF.
 
 Layout only (not done by Claude):
 

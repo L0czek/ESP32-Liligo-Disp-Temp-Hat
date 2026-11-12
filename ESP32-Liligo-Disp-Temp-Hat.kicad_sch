@@ -9186,7 +9186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "4K7"
 			(at 50.8 151.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10454,7 +10454,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "4K7"
 			(at 59.69 151.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10929,7 +10929,7 @@
 				)
 			)
 		)
-		(property "Value" "100uF"
+		(property "Value" "FB 600R@100MHz"
 			(at 127 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10939,7 +10939,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_1210_3225Metric"
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 127 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -11868,7 +11868,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20uF"
+		(property "Value" "22uF"
 			(at 138.43 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14045,7 +14045,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20uF"
+		(property "Value" "22uF"
 			(at 120.65 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17025,7 +17025,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20uF"
+		(property "Value" "22uF"
 			(at 151.13 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17107,7 +17107,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20uF"
+		(property "Value" "22uF"
 			(at 107.95 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
