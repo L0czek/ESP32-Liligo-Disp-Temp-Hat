@@ -174,12 +174,21 @@ Address `0x38` with JP1–JP3 in their default position (A0–A2 to GND).
 
 | Port | Signal | Direction |
 |---|---|---|
-| P0–P2 | TC_A0–TC_A2 (mux channel; channel n = TCn) | out |
+| P0–P2 | TC_A0–TC_A2 (mux channel; channel n = TCn, see the terminal table below) | out |
 | P3 | mux enable, inverted by U5: P3 low = muxes on. High at power-up, so muxes start disabled. | out |
 | P4 | JOYSTICK_CONFIRM | in |
 | P5 | JOYSTICK_BACK | in |
 | P6 | TC_DRDY | in |
 | P7 | TC_FAULT | in |
+
+Mux channel per terminal. The bottom four run backwards: the multiplexers sit level with the
+J5/J6 gap, one pin row facing each half of the terminal row, and the TMUX1108 pin order only
+lets the lines of J6–J9 reach their row without crossing in this order. Firmware needs the
+lookup table; the terminals themselves are not renumbered.
+
+| Terminal | J2 | J3 | J4 | J5 | J6 | J7 | J8 | J9 |
+|---|---|---|---|---|---|---|---|---|
+| Mux channel (TCn, address on TC_A2..A0) | 0 | 1 | 2 | 3 | 7 | 6 | 5 | 4 |
 
 ## J10: front panel
 
@@ -283,20 +292,30 @@ Where things are:
   two inner lines tap straight down or up to the clamp; the two outer lines tap through the
   gap between the pads of the inner line's resistor. That keeps terminal → clamp → resistor on
   the front layer with no crossings. Two lines are special: J2 pin 2 and J9 pin 1 sit beside
-  the mounting holes H2 and H4, so their tracks go round the left of the neighbouring pin.
+  the mounting holes H2 and H4, so their tracks go round the left of the neighbouring pin
+  (same layer, 45° corners).
 - Which clamp channel serves which line was reassigned in the schematic to make that possible
   (the four channels of an array are interchangeable).
 - **Cold-junction sensors** are just right of the column at the two ends of the terminal row,
-  in the same orientation and 34.4 mm either side of its centre: U7 at (105.9, 32.3), level
-  with J3, and U8 at (105.9, 101.1), level with J8. Terminal pins run from y = 19.7 to 113.7.
-  Each has its capacitor (C16, C17) above it. They are about 16 mm from the terminal pins;
+  in the same orientation and 34.4 mm either side of its centre: U7 at (107.5, 32.3), level
+  with J3, and U8 at (107.5, 101.1), level with J8. Terminal pins run from y = 19.7 to 113.7.
+  Each has its capacitor (C16, C17) above it. They are about 18 mm from the terminal pins
+  (accepted for now: the ground plane under both evens the temperature out);
   they had to leave the column so that all four groups could be identical. U8 is about 26 mm
   from the shunt.
 - **Heater path** at the right edge above J1: J11 with its wire entry facing outward, R6 directly
   behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14. A corridor
   about 6 mm wide is free between that column and the protection column.
-- **Supply filter** (L1, C10–C13) is where the original design had it, next to U2.
+- **Multiplexers** U1 (`+` lines) and U3 (`−` lines) are turned 90° and sit side by side at
+  the centre of the terminal row (y = 67.0), right of the protection column. Their north pin
+  rows take channels 0–3 from J2–J5, their south rows channels 7–4 from J6–J9. C6 is above U1;
+  C7 is still at its old place about 9 mm from U3 and can move closer.
+- **Supply filter** (L1, C11, C13) is where the original design had it, next to U2. The two
+  bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 in the area the
+  multiplexers left (both sit on the VCC plane through their own vias).
 - **Pull-ups:** R12 by J12, R13 by U2, R9–R11 (not fitted) in a row above J10.
+- **Track widths:** 0.3 mm for signals, 0.2 mm only for the short stubs onto fine-pitch pins
+  (clamp arrays, INA226), 0.8 mm on a few original power tracks, 2 mm class for 24 V.
 
 Routing tasks:
 
@@ -309,10 +328,16 @@ Routing tasks:
       10/9; `Vbus` reaches `24V_OUT` on the back layer; supply, ground and C14 are connected.
       Still open on U6: SDA and SCL (pins 4, 5), which belong to the digital routing.
 - [x] **Thermocouple inputs.** All sixteen lines are routed: terminal pin → clamp → series resistor
-      on the front layer by a fixed pattern, then resistor → multiplexer by a small grid router
-      that joined each resistor to the restored original track of its net. The `+` and `−` of
-      a channel run in the same corridor but are not paired side by side everywhere; tidy by
-      hand if wanted.
+      on the front layer by a fixed pattern, then resistor → multiplexer as plain L shapes
+      (horizontal from the resistor, one 45° corner, vertical into the pin). The `+` lines stay
+      on the front to U1 with no vias. The `−` lines cross them on the back to U3: one via at
+      the resistor, one under U3's body. The J8 and J9 lines pass through J1's pin rows, each
+      pair in one gap between pins (`+` front, `−` back), with a short diagonal either side.
+      U3's output goes straight up to R2; U1's is enclosed by its own lines, so it runs on the
+      back under both chips to R1.
+- [ ] **Multiplexer address, enable and supply pins** lost their old guide tracks when the chips
+      moved (`TC_A0`–`TC_A2`, `TC_EN`, U5); route with the digital nets. The two J1 gaps at
+      x = 102.95 and 105.49 are taken on both layers, so the J1 pins beside them escape up or down.
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
 - [ ] **J1 is on the back side.** It is a through-hole part, so its pads are reachable from both
       copper layers as before. Do not move it: its position fixes how the hat sits on the T-Relay.
