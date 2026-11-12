@@ -232,9 +232,16 @@ State of the board:
 
 - All parts are placed, on the top side. The outline is 45.7 × 99.7 mm, cut back on the right
   so that the hat is flush with the T-Relay (see "How the hat sits on the T-Relay-8").
-- **Nothing is routed.** All old tracks and vias were removed, because the new parts sit where
-  they ran and several pads changed net. The VCC and GND planes (In1, In2) are kept and refilled.
-- DRC shows no clearance, short or courtyard errors, 180 unconnected items (the routing to do),
+- **Routing is partly restored.** All tracks were first removed, because the new parts sit where
+  many of them ran and several pads changed net. Then 137 original track segments and vias (of 495) were
+  put back by script: only those whose pads are all still on the same net and have not moved
+  by more than 2 mm (ends on slightly moved pads were stretched to fit), and only if DRC stayed
+  clean with them. That covers the core around U1, U3, U4, U2 and the jumpers: the multiplexer
+  outputs and input filter (U1/U3 → R1/R2/C1–C3 → U2), `TC_A2`, `TC_DRDY`, `TC_FAULT`, the
+  U4–U5 enable line, the JP1/JP2 address lines, and the local VCC/GND stubs and plane vias.
+  Everything that touches J1, J11, the terminals, the I²C pull-ups or the supply filter still
+  has to be routed. The VCC and GND planes (In1, In2) are kept and refilled.
+- DRC shows no clearance, short or courtyard errors, 139 unconnected items (the routing to do),
   and silkscreen warnings.
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
   on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
