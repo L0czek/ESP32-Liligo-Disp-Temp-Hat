@@ -362,9 +362,10 @@ Routing tasks:
       (`I2C_SDA`), 97.2 (`EXPANDER_INT`), 97.75 (`I2C_SCL`) and 98.3 (`ONEWIRE`). 1-Wire enters
       the corridor from U7 at y = 35.25, ends on J1 pin 21, goes straight down on the front between J1's first two pin
       columns (crossing the I²C lines) and continues on the back to U8. `EXPANDER_INT` comes up
-      through the same gap on the back and enters pin 19 from between the pin rows. The other three run up the corridor, across the
-      top of the board at y = 26.15 to 27.25 (above the first `−` line) and down the right
-      side to U4, R4, R5 and R3.
+      through the same gap on the back and enters pin 19 from between the pin rows. The other three run up the corridor, cross the
+      top of the board at y = 26.15 to 27.25 (above the first `−` line) only as far as the U3
+      line bundle, come down beside it at x = 113.0 to 114.2 and pass under the jumpers at
+      y = 40.0 to 41.2 to the right side of U4, R4, R5 and R3.
 - [ ] **I²C to U6 and J10, panel signals** (`JOYSTICK_*`, `ENCODER_*`): all in the area below
       and right of J1; plan as one piece. The two J1 gaps at x = 102.95 and 105.49 are taken on
       both layers.
