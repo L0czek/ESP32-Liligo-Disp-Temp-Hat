@@ -22,19 +22,18 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 
 ## J1: connection to the T-Relay-8
 
-Checked against the official T-Relay-8 schematic (`Schematic/T_Relay8_ESP32.pdf` in the vendor
-repo, header P5) and the vendor pinmap image; both agree.
+J1 is a 2x11 socket soldered on the **bottom** of the hat, facing down onto the T-Relay's pin
+header P5. Its footprint is on the back side of the board, so the board file shows what is
+really built: pads, silkscreen, courtyard and 3D model are all on the bottom.
 
-**The two rows are numbered the other way round on the two boards.** Hat J1 pin 1 (3V3) mates
-with T-Relay P5 pin 2. In general hat odd pin n ↔ P5 pin n+1, hat even pin n ↔ P5 pin n−1.
-J1 is a socket soldered on the **bottom** of the hat, facing down onto the T-Relay's pins.
+**J1's pin numbers are the same as LilyGO's P5 pin numbers.** J1 pin n mates with P5 pin n.
+Checked against the official T-Relay-8 schematic (`Schematic/T_Relay8_ESP32.pdf`, header P5),
+the vendor pinmap image and the silkscreen labels in the vendor DXF; all three agree. On the
+board, pad 2 (3V3) is at (124.54, 92.39) and pad 1 (GND) at (124.54, 89.85), which is the
+right-hand end of the header seen from above with the relays on the left.
 
-**Do not flip the J1 footprint to the back side in KiCad.** The schematic's numbering matches
-the footprint exactly as it is placed now: on the front layer, pad 1 at (124.54, 92.39).
-Seen from above, pad 1 (3V3) is the right-hand end of the lower row, which is where the
-T-Relay has 3V3 (checked against the silkscreen labels in the vendor DXF). Flipping the
-footprint mirrors the pads and would swap the two rows, putting 3V3 on GND. The only cost of
-leaving it on the front is that its silkscreen and courtyard are drawn on the wrong side.
+(Before 2026-11-12 the footprint sat on the front layer with the two rows numbered the other
+way round, pin 1 = 3V3. That was electrically the same but drew the socket on the wrong side.)
 
 ### How the hat sits on the T-Relay-8
 
@@ -59,24 +58,24 @@ T-Relay's top-left corner with the relays on the left.
   H4 at (97.3, 112.4). H2 at (97.8, 20.3) is above the T-Relay's reset button, so it gets none.
   The hat also covers that reset button.
 
-| J1 (hat) | P5 (T-Relay) | ESP32 | Signal | Notes |
-|---|---|---|---|---|
-| 1, 3 | 2, 4 | 3V3 | VCC | |
-| 2, 4 | 1, 3 | GND | GND | |
-| 5 | 6 | IO2 | TC_MISO | Boot strap. LilyGO names this net `GPIO2/MISO`. |
-| 6 | 5 | IO14 | TC_SCK | LilyGO: `GPIO14/CLK` |
-| 7 | 8 | IO4 | TC_CS | Pulled up by R13 (4.7 kΩ) so the MAX31856 stays deselected, and off IO2, during boot |
-| 8 | 7 | IO15 | TC_MOSI | Boot strap. LilyGO: `GPIO15/MOSI` |
-| 9, 11, 12, 13, 14 | 10, 12, 11, 14, 13 | NC | — | Not connected on the T-Relay |
-| 10 | 9 | IO35 | ENCODER_B | Input-only |
-| 15 | 16 | IO36 | free | Input-only, ADC1. See note below. |
-| 16 | 15 | IO39 | JOYSTICK_PUSH | Input-only. See note below. |
-| 17 | 18 | GND | GND | |
-| 18 | 17 | IO34 | ENCODER_A | Input-only |
-| 19 | 20 | IO27 | I2C_SDA | |
-| 20 | 19 | IO26 | EXPANDER_INT | Pulled up by R3 |
-| 21 | 22 | IO23 | I2C_SCL | |
-| 22 | 21 | IO22 | ONEWIRE | The only free bidirectional pin; 1-Wire needs one |
+| J1 = P5 pin | ESP32 | Signal | Notes |
+|---|---|---|---|
+| 1, 3 | GND | GND | |
+| 2, 4 | 3V3 | VCC | |
+| 5 | IO14 | TC_SCK | LilyGO names this net `GPIO14/CLK` |
+| 6 | IO2 | TC_MISO | Boot strap. LilyGO: `GPIO2/MISO` |
+| 7 | IO15 | TC_MOSI | Boot strap. LilyGO: `GPIO15/MOSI` |
+| 8 | IO4 | TC_CS | Pulled up by R13 (4.7 kΩ) so the MAX31856 stays deselected, and off IO2, during boot |
+| 9 | IO35 | ENCODER_B | Input-only |
+| 10–14 | NC | — | Not connected on the T-Relay |
+| 15 | IO39 | JOYSTICK_PUSH | Input-only. See note below. |
+| 16 | IO36 | free | Input-only, ADC1. See note below. |
+| 17 | IO34 | ENCODER_A | Input-only |
+| 18 | GND | GND | |
+| 19 | IO26 | EXPANDER_INT | Pulled up by R3 |
+| 20 | IO27 | I2C_SDA | |
+| 21 | IO22 | ONEWIRE | The only free bidirectional pin; 1-Wire needs one |
+| 22 | IO23 | I2C_SCL | |
 
 - IO34, IO35, IO36 and IO39 are input-only and have no internal pull-ups or pull-downs.
   The front panel provides 10 kΩ pull-ups for the encoder and push button.
@@ -286,8 +285,8 @@ Routing tasks:
 - [ ] **Thermocouple inputs.** Terminal pad → clamp pin → series resistor → multiplexer, with the
       `+` and `−` of each channel routed together and no vias if possible.
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
-- [ ] **J1 stays where it is, on the front layer.** Do not flip it (see "J1"). The socket is
-      soldered from the bottom.
+- [ ] **J1 is on the back side.** It is a through-hole part, so its pads are reachable from both
+      copper layers as before. Do not move it: its position fixes how the hat sits on the T-Relay.
 - [ ] **J11 footprint check.** The footprint is generic (9.5 mm pitch, 2 mm holes). The default
       part, Degson DG638-9.52-02P, has a 19.04 × 16 mm body with the pin row 4.9 mm from its
       back face.
