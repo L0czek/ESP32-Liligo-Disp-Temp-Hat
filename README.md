@@ -269,8 +269,15 @@ What the hand routing did:
   straight down between the pads of the inner resistor to the clamp.
 - **Thermocouple lines to the multiplexers** run as one bundle on the front between the column
   and U1/U3, with the lower channels crossing on the back.
-- **Cold-junction sensors U7 and U8 are on the back** under the column, at (91.75, 35.8) and
-  (91.75, 105.2), with C16 and C17 beside them.
+- **Cold-junction sensors U7 and U8 are on the back** under the column, at (91.75, 32.06) and
+  (91.75, 108.30): mirror images about the middle of the terminal row (y = 70.18). C16 and C17
+  sit 4.8 mm above their sensor, at x = 90.54.
+- **Clamp ground vias are outside the clamps**, 1.2–1.5 mm out on the three-pin side, at
+  x = 90.94. The group's inner line runs 0.37 mm further left beside the via, so the via has
+  0.38 mm to both neighbours.
+  - At D1 and D4 the via comes out between the pad rows of the sensor on the back; that is
+    what fixes the sensors' positions. At U8 the TC7+ track passes between the rows as well.
+  - U8's ground pin goes to H4's pad, because the TC7+ track separates it from D4's via.
 - **Heater path** as before: `24V_IN` and `24V_OUT` zones on both outer layers between J11 and
   R6 with fifteen 0.8 mm stitching vias, Kelvin pair to U6.
 - **SPI, I²C, 1-Wire and the panel lines** go round the heater copper on the right: five
