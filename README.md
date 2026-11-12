@@ -308,13 +308,14 @@ Where things are:
   about 6 mm wide is free between that column and the protection column.
 - **Multiplexers** U1 (`+` lines) and U3 (`−` lines) are turned 90° and sit side by side at
   the centre of the terminal row (y = 67.0), right of the protection column. Their north pin
-  rows take channels 0–3 from J2–J5, their south rows channels 7–4 from J6–J9. C6 is above U1;
-  C7 stays at its old place about 9 mm from U3: there is no room for an 0805 beside U3
-  (1.7 mm between it and L1), and for a slow analog switch on a supply plane that is fine.
+  rows take channels 0–3 from J2–J5, their south rows channels 7–4 from J6–J9. Their two
+  100 nF capacitors C7 and C6 are stacked at x = 107.2, 10 to 15 mm north of the chips, sharing
+  one ground via: every closer spot is taken by a thermocouple or control line on one of the
+  layers. For slow analog switches fed from a supply plane that is acceptable.
 - **Supply filter** (L1, C11, C13) is where the original design had it, next to U2. The two
-  bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 in the area the
-  multiplexers left (both sit on the VCC plane through their own vias).
-- **Pull-ups:** R12 by J12, R13 by U2, R9–R11 (not fitted) in a row above J10.
+  bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 just below J1's supply pins
+  (both sit on the VCC plane through their own vias).
+- **Pull-ups:** R12 by J12, R13 just below J1 pin 8 (it stood in the SPI strip beside U2), R9–R11 (not fitted) in a row above J10.
 - **Track widths:** 0.3 mm for signals, 0.2 mm only for the short stubs onto fine-pitch pins
   (clamp arrays, INA226), 0.8 mm on a few original power tracks, 2 mm class for 24 V.
 
@@ -343,9 +344,23 @@ Routing tasks:
       via right beside the GND pin (the pin is the sensor's main thermal path). C16 also
       connects straight to J12's supply and ground pins. Vias sit where no `−` line passes on
       the back. All supply nets are complete; only signal nets are open now.
-- [ ] **Multiplexer address and enable pins** lost their old guide tracks when the chips
-      moved (`TC_A0`–`TC_A2`, `TC_EN`, U5); route with the digital nets. The two J1 gaps at
-      x = 102.95 and 105.49 are taken on both layers, so the J1 pins beside them escape up or down.
+- [x] **Multiplexer control** (`TC_A0`–`TC_A2`, `TC_EN`, U4 P3 → U5). The sixteen thermocouple
+      lines enclose both multiplexers on both layers, which decides everything here. U1: `TC_EN`
+      and `TC_A0` come straight down from the north on the front; `TC_A2` comes down beside them,
+      passes between the chips and goes under U1's body to pin 15; `TC_A1` is joined to U3's pin
+      16 by one front track just below both chips. U3: each control pin has a via, and the four
+      lines run north on the back as a bus beside U1's output (x = 109.9 to 112.8) up to U4.
+      The ground vias of U1/U3 are under the bodies to keep the strip below the chips free.
+- [x] **SPI to U2.** The only way past the 24 V copper is the strip between it and the right
+      board edge (x = 123 to 129, both layers, under J11's body). `TC_CS` and `TC_SCK` run
+      there on the front, `TC_MOSI` and `TC_MISO` on the back, then turn left above J1 into
+      pins 5–8. The same strip is meant for `JOYSTICK_BACK` and the other signals that used
+      to cross where the heater copper is now.
+- [ ] **J1 fan-out, 1-Wire, I²C, panel signals.** The two J1 gaps at x = 102.95 and 105.49 are
+      taken on both layers, so the J1 pins beside them escape up or down.
+- **Check after every scripted change:** KiCad re-nets a track that touches copper of another
+      net when it saves. `route7a.py`-style scripts compare each track's net before and after
+      the save; three old panel guides had become stubs on `TC4-` this way and were removed.
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
 - [ ] **J1 is on the back side.** It is a through-hole part, so its pads are reachable from both
       copper layers as before. Do not move it: its position fixes how the hat sits on the T-Relay.
