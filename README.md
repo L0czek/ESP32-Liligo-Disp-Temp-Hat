@@ -22,30 +22,41 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 
 ## J1: connection to the T-Relay-8
 
-J1 pin 1 is the 3V3 corner of the T-Relay header. GPIOs are read from the vendor
-T-Relay-8 pinmap. IO34, IO35, IO36 and IO39 are **input-only and have no internal
-pull-ups**. IO26 is on ADC2, which does not work while WiFi is on.
+Checked against the official T-Relay-8 schematic (`Schematic/T_Relay8_ESP32.pdf` in the vendor
+repo, header P5) and the vendor pinmap image; both agree.
 
-| J1 | ESP32 | Signal now | After review item 1 |
-|---|---|---|---|
-| 1, 3 | 3V3 | VCC | |
-| 2, 4, 17 | GND | GND | |
-| 5 | IO2 (boot strap) | TC_MISO | |
-| 6 | IO14 | TC_SCK | |
-| 7 | IO4 | TC_CS | |
-| 8 | IO15 (boot strap) | TC_MOSI | |
-| 9, 11, 12, 13, 14 | NC | — | |
-| 10 | IO35 (input-only) | ONEWIRE | ENCODER_B |
-| 15 | IO36 (input-only, ADC1) | EXPANDER_INT | free |
-| 16 | IO39 (input-only) | ENCODER_B | JOYSTICK_PUSH |
-| 18 | IO34 (input-only) | ENCODER_A | |
-| 19 | IO27 | I2C_SDA | |
-| 20 | IO26 (ADC2) | — (was CURRENT_SHUNT) | EXPANDER_INT |
-| 21 | IO23 | I2C_SCL | |
-| 22 | IO22 | JOYSTICK_PUSH | ONEWIRE |
+**The two rows are numbered the other way round on the two boards.** Hat J1 pin 1 (3V3) mates
+with T-Relay P5 pin 2. In general hat odd pin n ↔ P5 pin n+1, hat even pin n ↔ P5 pin n−1.
+The layout must place J1 so that this holds (review item 15); if the rows are swapped, 3V3
+lands on GND.
 
-Relays on the T-Relay-8 use IO33, IO32, IO13, IO12, IO21, IO19, IO18, IO5; IO25 is the
-red LED. None of these reach the hat.
+| J1 (hat) | P5 (T-Relay) | ESP32 | Signal | Notes |
+|---|---|---|---|---|
+| 1, 3 | 2, 4 | 3V3 | VCC | |
+| 2, 4 | 1, 3 | GND | GND | |
+| 5 | 6 | IO2 | TC_MISO | Boot strap. LilyGO names this net `GPIO2/MISO`. |
+| 6 | 5 | IO14 | TC_SCK | LilyGO: `GPIO14/CLK` |
+| 7 | 8 | IO4 | TC_CS | |
+| 8 | 7 | IO15 | TC_MOSI | Boot strap. LilyGO: `GPIO15/MOSI` |
+| 9, 11, 12, 13, 14 | 10, 12, 11, 14, 13 | NC | — | Not connected on the T-Relay |
+| 10 | 9 | IO35 | ENCODER_B | Input-only |
+| 15 | 16 | IO36 | free | Input-only, ADC1. See note below. |
+| 16 | 15 | IO39 | JOYSTICK_PUSH | Input-only. See note below. |
+| 17 | 18 | GND | GND | |
+| 18 | 17 | IO34 | ENCODER_A | Input-only |
+| 19 | 20 | IO27 | I2C_SDA | |
+| 20 | 19 | IO26 | EXPANDER_INT | Pulled up by R3 |
+| 21 | 22 | IO23 | I2C_SCL | |
+| 22 | 21 | IO22 | ONEWIRE | The only free bidirectional pin; 1-Wire needs one |
+
+- IO34, IO35, IO36 and IO39 are input-only and have no internal pull-ups or pull-downs.
+  The front panel provides 10 kΩ pull-ups for the encoder and push button.
+- IO36 and IO39 can see very short spurious low pulses when the ESP32's ADC is used or Wi-Fi
+  runs with modem sleep (documented by Espressif). Do not use an edge interrupt on
+  JOYSTICK_PUSH without debouncing; polling or a debounce of a millisecond or more is enough.
+  This is why the push button, not an encoder phase or the expander interrupt, sits on IO39.
+- On the T-Relay-8 none of the header GPIOs connect to anything else on the board.
+  Relays use IO21, IO19, IO18, IO5, IO12, IO13, IO32, IO33; IO25 is the red LED.
 
 ## Heater current sensing
 
@@ -135,7 +146,8 @@ values are chosen during the work and recorded here.
 
 Must fix:
 
-- [ ] 1. Remap J1 (table above). ONEWIRE is on an input-only pin.
+- [x] 1. Remap J1. ONEWIRE was on an input-only pin (IO35); it is now on IO22, with the other
+      signals shuffled onto input-only pins (table in "J1").
 - [ ] 2. 4.7 kΩ pull-up from ONEWIRE to VCC.
 - [x] 3. Replace J11 (was rated about 8 A, heater draws about 18.75 A). Now a generic 9.5 mm pitch
       footprint with 2 mm holes; default part Degson `DG638-9.52-02P` (32 A). See "Chosen parts".

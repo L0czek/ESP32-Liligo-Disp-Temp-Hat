@@ -6914,7 +6914,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 38.1) (xy 53.34 38.1)
+			(xy 40.64 33.02) (xy 36.83 33.02)
 		)
 		(stroke
 			(width 0)
@@ -7228,7 +7228,7 @@
 			)
 		)
 	)
-	(global_label "ENCODER_B"
+	(global_label "JOYSTICK_PUSH"
 		(shape input)
 		(at 36.83 38.1 180)
 		(fields_autoplaced yes)
@@ -7422,17 +7422,16 @@
 	)
 	(global_label "EXPANDER_INT"
 		(shape input)
-		(at 57.15 38.1 0)
-		(fields_autoplaced yes)
+		(at 36.83 33.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "257474e5-6648-4ff0-af1e-172a5b1b1988")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.7423 38.1 0)
+			(at 36.83 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7440,7 +7439,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 	)
@@ -8260,7 +8259,7 @@
 			)
 		)
 	)
-	(global_label "JOYSTICK_PUSH"
+	(global_label "ONEWIRE"
 		(shape input)
 		(at 36.83 30.48 180)
 		(fields_autoplaced yes)
@@ -8596,7 +8595,7 @@
 			)
 		)
 	)
-	(global_label "ONEWIRE"
+	(global_label "ENCODER_B"
 		(shape input)
 		(at 36.83 45.72 180)
 		(fields_autoplaced yes)
@@ -17963,7 +17962,7 @@
 		(uuid "62629ab0-a1a6-4bc8-a214-f5da8303fda0")
 	)
 	(no_connect
-		(at 40.64 33.02)
+		(at 53.34 38.1)
 		(uuid "dc07d156-c1b9-49df-b5af-91d010ba7f49")
 	)
 	(sheet_instances
