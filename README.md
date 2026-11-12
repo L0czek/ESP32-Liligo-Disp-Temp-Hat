@@ -30,7 +30,7 @@ with T-Relay P5 pin 2. In general hat odd pin n ↔ P5 pin n+1, hat even pin n �
 J1 is a socket soldered on the **bottom** of the hat, facing down onto the T-Relay's pins.
 
 **Do not flip the J1 footprint to the back side in KiCad.** The schematic's numbering matches
-the footprint exactly as it is placed now: on the front layer, pad 1 at (121.54, 161.93).
+the footprint exactly as it is placed now: on the front layer, pad 1 at (121.54, 95.89).
 Seen from above, pad 1 (3V3) is the right-hand end of the lower row, which is where the
 T-Relay has 3V3 (checked against the silkscreen labels in the vendor DXF). Flipping the
 footprint mirrors the pads and would swap the two rows, putting 3V3 on GND. The only cost of
@@ -39,7 +39,7 @@ leaving it on the front is that its silkscreen and courtyard are drawn on the wr
 ### How the hat sits on the T-Relay-8
 
 From the vendor DXF (`dxf/T-Relay8-ESP32.dxf`; T-Relay board is 85 × 170 mm). With J1 mated,
-a point on the hat at (x, y) is above the T-Relay point (x − 41.54, y − 86.03) mm, measured
+a point on the hat at (x, y) is above the T-Relay point (x − 41.54, y − 19.99) mm, measured
 from the T-Relay's top-left corner with the relays on the left.
 
 - The hat covers the T-Relay from x = 42.3 to 90.6 mm and y = −3.5 to 96.2 mm: the upper half,
@@ -50,11 +50,11 @@ from the T-Relay's top-left corner with the relays on the left.
   the only direction it could grow is to the right, further off the T-Relay's edge.
 - **The hat's mounting holes H1–H4 do not line up with anything on the T-Relay.** The T-Relay
   has three Ø4 mm holes in one column, at (50.0, 17.6), (48.1, 73.5) and (48.1, 158.6). The
-  first two are under the hat, at hat coordinates (91.6, 103.6) and (89.6, 159.5), which is
+  first two are under the hat, at hat coordinates (91.6, 37.6) and (89.6, 93.4), which is
   under the J2–J9 terminal column. As drawn, the hat is held only by the J1 header, 78 mm
   from its far end.
 - **The ESP32 module is under the hat.** It sits at T-Relay x = 59–77.5 mm, y = −6.4 to 25.6 mm,
-  antenna at the top. On the hat that is x = 100.5–119, and the antenna is under y = 82.5–86,
+  antenna at the top. On the hat that is x = 100.5–119, and the antenna is under y = 16.5–20,
   below J12 and the VCC/GND planes. Copper there will detune the Wi-Fi antenna.
 
 | J1 (hat) | P5 (T-Relay) | ESP32 | Signal | Notes |
@@ -242,7 +242,10 @@ State of the board:
   the vendor repo. It is drawn 11 mm below the hat's underside, which is an assumed stack
   height for the header and socket; correct the model's Z offset once the real gap is measured.
   If J1 ever moves on the hat, `REF1` and the `Dwgs.User` outline have to move with it.
-- A rule area "ESP32 antenna keep-out" (x = 98–122, y = 82.4–90, all copper layers) stops
+- Board coordinates in this README are sheet coordinates in the PCB editor. On 2026-11-12 the
+  whole drawing was moved up by 66.04 mm (26 × 2.54) so that the hat and the T-Relay outline
+  fit on the A4 sheet; coordinates in commit messages before that are 66.04 mm larger in y.
+- A rule area "ESP32 antenna keep-out" (x = 98–122, y = 16.4–24, all copper layers) stops
   zone fills above the ESP32's antenna. Tracks and pads are still allowed there, because J12
   sits in that area.
 
@@ -255,7 +258,7 @@ Where the new parts are:
 - **Cold-junction sensors** in the same column: U7 between J3 and J4, U8 between J6 and J7,
   each with its capacitor beside it. They are not at the two ends of the row (the mounting
   holes and J1 are in the way); firmware should treat them as two points along the row at
-  y = 105.3 and 145.4 mm (terminals run from y = 86 to 180 mm).
+  y = 39.3 and 79.4 mm (terminals run from y = 20 to 114 mm).
 - **Heater path** at the right edge: J11 with its wire entry facing outward, R6 directly behind
   it (pad 1 towards J11 pin 1), then R7/R8/C15, U6 and C14 to the left.
 - **Pull-ups:** R12 by J12, R13 by U2, R9–R11 (not fitted) in a row above J10.
@@ -280,7 +283,7 @@ Routing tasks:
       way round, see "J10").
 - [ ] **Mechanical support: resting spacers.** No hole on the hat can be screwed to the T-Relay
       (its two holes under the hat are inside the terminal column, and the terminals fill the
-      board's height). Instead H1, moved to (123, 92), and H4, where it always was, both sit over
+      board's height). Instead H1, now at (123, 26), and H4, where it always was, both sit over
       bare T-Relay board. Fit a spacer of the board-to-board height in each (about 11 mm, to be
       measured on the real header and socket). They carry the push when plugs go into the
       terminals; they do not hold the hat down. H2 and H3 have nothing underneath.
