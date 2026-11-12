@@ -9,27 +9,15 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 - Front panel: [1.3" SH1106 OLED with encoder and buttons](https://allegro.pl/oferta/wyswietlacz-oled-1-3-sh1106-bialy-z-enkoderem-przyciskami-panel-sterowania-18116662587)
 - Load: 24 V heaters switched by the T-Relay relays, about 18.75 A in total (assumed to be the sum of several heaters)
 
-> **This branch (`variant/mux-near-u2`) is an experiment, not the main design.** It answers "what
-> if the two multiplexers went back beside U2, where the original board had them?" while keeping
-> everything else from `master` (fit to the T-Relay, heater copper, protection column, sensors
-> on the back, I²C from the right). U1, U3, U5, C6, C7 and C9 are at their original positions.
-> The schematic is unchanged, including the J6–J9 channel order. The sections below still
-> describe `master`; where they mention the multiplexers at the centre of the terminal row,
-> this branch differs.
->
-> What it gains over `master`: U1's output to R1 is 9 mm instead of 35 mm, C6/C7 are 2.5 mm
-> from the supply pins instead of 15–21 mm, the address and enable lines are 20–40 mm instead
-> of 42–65 mm. What it costs: the sixteen thermocouple lines total 779 mm instead of 678 mm,
-> the `+` lines of J6–J9 get two vias each and J9's is 108 mm long, `+`/`−` lengths per
-> terminal differ by 14–37 mm instead of 1–20 mm, and `JOYSTICK_CONFIRM` needs six vias.
-> DRC: no errors, 0 unconnected, parity 0.
->
-> Second pass: the `−` lanes of J6–J9 run 3.8 mm from their `+` partners (was 6 mm) and each
-> ends on its own via under U3, reached from the south. They cannot be stacked exactly under
-> the `+` lines, because that would close both layers and leave `JOYSTICK_CONFIRM` no way
-> across. The length of the J6–J9 `+` lines (53–108 mm) is inherent in having the multiplexers
-> at the top: only about 6 mm of each is detour. All but two segments on the board are now at
-> multiples of 45°.
+> **Layout history in one paragraph.** The task was to apply a design review to an existing,
+> routed board. The fit to the T-Relay, the heater copper, the protection column and the pin
+> fix at J1 forced most of the original routing to be redrawn. For a while the two multiplexers
+> also sat in the middle of the terminal row (commits `2c7392e` to `dc937d4`), which made the
+> thermocouple lines short and straight but stretched the multiplexer-to-ADC path to 35 mm and
+> put the decoupling 15–21 mm away. They are back beside U2 where the original had them
+> (`d9a4a17`, `184783d`): multiplexer output 9 mm, decoupling 2.5 mm from the pins, control
+> lines 20–40 mm. The price is longer thermocouple lines from the lower terminals (53–108 mm,
+> two vias on each `+` line of J6–J9).
 
 ## Blocks
 
@@ -203,9 +191,9 @@ Address `0x38` with JP1–JP3 in their default position (A0–A2 to GND).
 | P6 | TC_DRDY | in |
 | P7 | TC_FAULT | in |
 
-Mux channel per terminal. The bottom four run backwards: the multiplexers sit level with the
-J5/J6 gap, one pin row facing each half of the terminal row, and the TMUX1108 pin order only
-lets the lines of J6–J9 reach their row without crossing in this order. Firmware needs the
+Mux channel per terminal. The bottom four run backwards: the lines of J6–J9 come up from below
+and wrap round to the multiplexers' right-hand pin column, and the TMUX1108 pin order only lets
+them reach it without crossing in this order. Firmware needs the
 lookup table; the terminals themselves are not renumbered.
 
 | Terminal | J2 | J3 | J4 | J5 | J6 | J7 | J8 | J9 |
@@ -330,14 +318,12 @@ Where things are:
 - **Heater path** at the right edge above J1: J11 with its wire entry facing outward, R6 directly
   behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14. A corridor
   about 6 mm wide is free between that column and the protection column.
-- **Multiplexers** U1 (`+` lines) and U3 (`−` lines) are turned 90° and sit side by side at
-  the centre of the terminal row (y = 67.0), right of the protection column. Their north pin
-  rows take channels 0–3 from J2–J5, their south rows channels 7–4 from J6–J9. Their two
-  100 nF capacitors C7 and C6 are stacked at x = 107.2, 10 to 15 mm north of the chips, sharing
-  one ground via: every closer spot is taken by a thermocouple or control line on one of the
-  layers. For slow analog switches fed from a supply plane that is acceptable.
+- **Multiplexers** U1 (`+` lines) and U3 (`−` lines) are where the original design had them,
+  beside U2: U1 at (104.45, 44.84), U3 at (104.45, 55.64), unrotated, with U5, C9, C6 and C7 at
+  their original places too. C6 and C7 are 2.5 mm from the supply pins. The left pin column
+  takes channels 0–3 (J2–J5), the right one channels 7–4 (J6–J9).
 - **Supply filter** (L1, C11, C13) is where the original design had it, next to U2. The two
-  bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 just below J1's supply pins, C14 (U6) left of U6
+  bulk capacitors on the VCC side moved while the multiplexers were in the middle and stayed: C12 is under L1, C10 just below J1's supply pins, C14 (U6) left of U6
   (both sit on the VCC plane through their own vias).
 - **Pull-ups:** R12 by J12, R13 just below J1 pin 8 (it stood in the SPI strip beside U2), R9–R11 (not fitted) just above their J10 pins.
 - **Track widths:** 0.3 mm for signals, 0.2 mm only for the short stubs onto fine-pitch pins
@@ -353,28 +339,32 @@ Routing tasks:
       R7 (through the gap under the shunt body). From there the pair goes to C15 and U6 pins
       10/9; `Vbus` reaches `24V_OUT` on the back layer; supply, ground and C14 are connected.
       Still open on U6: SDA and SCL (pins 4, 5), which belong to the digital routing.
-- [x] **Thermocouple inputs.** All sixteen lines are routed: terminal pin → clamp → series resistor
-      on the front layer by a fixed pattern, then resistor → multiplexer as plain L shapes
-      (horizontal from the resistor, one 45° corner, vertical into the pin). The `+` lines stay
-      on the front to U1 with no vias. The `−` lines cross them on the back to U3: one via at
-      the resistor, one under U3's body. The J8 and J9 lines pass through J1's pin rows, each
-      pair in one gap between pins (`+` front, `−` back), with a short diagonal either side.
-      U3's output goes straight up to R2; U1's is enclosed by its own lines, so it runs on the
-      back under both chips to R1.
-- [x] **Supply and ground of the new and moved parts.** VCC and GND are inner planes, so every
-      supply pad gets a 0.6 mm via beside it rather than a track. U1/U3: the two ground pins
-      face each other across the chip and are joined by one track under the body with one via
-      below; the supply pin has its via under the body. U7/U8: supply via under the body, ground
-      via right beside the GND pin (the pin is the sensor's main thermal path). C16 also
-      connects straight to J12's supply and ground pins. Vias sit where no `−` line passes on
-      the back. All supply nets are complete; only signal nets are open now.
-- [x] **Multiplexer control** (`TC_A0`–`TC_A2`, `TC_EN`, U4 P3 → U5). The sixteen thermocouple
-      lines enclose both multiplexers on both layers, which decides everything here. U1: `TC_EN`
-      and `TC_A0` come straight down from the north on the front; `TC_A2` comes down beside them,
-      passes between the chips and goes under U1's body to pin 15; `TC_A1` is joined to U3's pin
-      16 by one front track just below both chips. U3: each control pin has a via, and the four
-      lines run north on the back as a bus beside U1's output (x = 109.9 to 112.8) up to U4.
-      The ground vias of U1/U3 are under the bodies to keep the strip below the chips free.
+- [x] **Thermocouple inputs.** Terminal pin → clamp → series resistor is on the front layer by
+      a fixed pattern. From the resistors to the multiplexers:
+      - J2–J5 `+`: front layer, two lanes (x = 100.0, 100.5) in the 1.9 mm between the column
+        and the multiplexers, straight into U1's left pins. No vias.
+      - J2–J5 `−`: via beside the resistor (x = 99.35), back-layer lanes under the left pad
+        column (x = 100.6–101.8), vias under U3's body.
+      - J6–J9 `−`: via at the resistor, back layer; lanes at x = 104.4–106.35, each ending on
+        its own via under U3, reached from the south. They run 3.8 mm from their `+` partners.
+      - J6–J9 `+`: front layer north at x = 100.6–102.6, then east across the `−` lanes just
+        south of U3 (y = 63.6–65.55), a via, back-layer lanes at x = 109.3–111.4 past R1 and C7,
+        and into U1 from the east through vias under its body. Two vias each; 53–108 mm.
+      - The J8 and J9 lines pass through J1's pin rows (J8 pair in gap 102.95, J9 `+` in
+        108.03, J9 `−` in 105.49).
+      - U1's output: front, one short hop on the back under `TC_A1`, to R1 (9 mm). U3's output:
+        front only, to R2.
+      The `−` and `+` lanes of J6–J9 cannot be stacked exactly: that would close both layers
+      between J1 and U3 and leave `JOYSTICK_CONFIRM` no way across.
+- [x] **Supply and ground.** VCC and GND are inner planes, so supply pads get a 0.6 mm via
+      beside them rather than a track. U1/U3: the two ground pins face each other across the
+      chip and are joined by one track under the body with one via; the supply pin goes to a
+      via and to C6/C7 right beside it; C7's ground is on U3's ground pin. U7/U8: see
+      "Cold-junction sensors". C16/C17 are on the back with the sensors.
+- [x] **Multiplexer control** (`TC_A0`–`TC_A2`, `TC_EN`, U4 P3 → U5). `TC_EN`, `TC_A0` and
+      `TC_A2` link U1 and U3 on the back, as three lanes under the two chip bodies
+      (x = 102.45, 103.1, 103.7). `TC_A1` and U4 P3 → U5 use the original front-side routes.
+      `TC_A0` reaches U4 pin 10 on the back at y = 41.9 with a via under U4.
 - [x] **SPI to U2.** The only way past the 24 V copper is the strip between it and the right
       board edge (x = 123 to 129, both layers, under J11's body). `TC_CS` and `TC_SCK` run
       there on the front, `TC_MOSI` and `TC_MISO` on the back, then turn left above J1 into
@@ -385,7 +375,7 @@ Routing tasks:
       protection column, east of the sensors. 1-Wire: R12 → one via → back layer across the top
       (y = 26.15) → down the corridor right beside the sensors (x = 96.75, stubs under 1 mm to
       U7 and U8) → a 2.4 mm hop on the front into J1 pin 21. `EXPANDER_INT` runs over the top
-      as well (y = 26.7), comes down beside the U3 bundle, passes under the jumpers to U4/R3,
+      as well (y = 26.7), comes down at x = 113.6, passes under the jumpers to U4/R3,
       and at the J1 end uses the lane at x = 98.45 and enters pin 19 from above.
 - [x] **I²C.** From the right-hand side, nothing over the top. Front layer, no vias: U6 pins →
       J1 gaps at x = 110.57 (SDA) and 113.11 (SCL) → diagonals to J10 pins 2 and 3. To U4: one
@@ -405,13 +395,13 @@ Routing tasks:
       only, J10 pin 7 → J1 gap 110.57 → north along x = 110.1–110.35 just west of the heater
       copper (under U6) → diagonally to U4's via. It passes the `24V_OUT` zone at 112.75 for
       3 mm; the fill gives way by about 0.4 mm there. `JOYSTICK_CONFIRM`: 3 mm on the front
-      from J10 pin 1 to a via under J10's body → back layer under the J9 `−` via (which moved
-      0.8 mm up so three tracks fit) → corridor lane at x = 97.3/97.6 → front-side hop over
-      `EXPANDER_INT`'s lane at y = 54 → back through the gap between the J4 and J5 `−` lines
-      → via at (106.8, 46.5) → front along the band north of R1 to U4 pin 16. Four vias, the
-      most on any signal; it is a push-button.
+      from J10 pin 1 to a via under J10's body → back layer under the J9 `−` via → corridor
+      lane at x = 97.3/97.6 → front-side hop over `EXPANDER_INT`'s lane at y = 86.5–82.4 →
+      back layer under the J6–J9 `+` lines → via at (103.4, 71.6) → front over the `−` lanes →
+      via at (111.6, 69.0) → back layer north at x = 112.15 → via beside U4 pin 16. Six vias,
+      the most on any signal; it is a push-button.
 - **All nets are routed** (0 unconnected, no DRC errors, parity 0). Remaining DRC warnings are
-      silkscreen only.
+      silkscreen only. All but two segments run at multiples of 45°.
 - **Check after every scripted change:** KiCad re-nets a track that touches copper of another
       net when it saves. `route7a.py`-style scripts compare each track's net before and after
       the save; three old panel guides had become stubs on `TC4-` this way and were removed.
