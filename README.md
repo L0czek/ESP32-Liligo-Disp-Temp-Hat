@@ -19,10 +19,17 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 >
 > What it gains over `master`: U1's output to R1 is 9 mm instead of 35 mm, C6/C7 are 2.5 mm
 > from the supply pins instead of 15–21 mm, the address and enable lines are 20–40 mm instead
-> of 42–65 mm. What it costs: the sixteen thermocouple lines total 793 mm instead of 678 mm,
+> of 42–65 mm. What it costs: the sixteen thermocouple lines total 779 mm instead of 678 mm,
 > the `+` lines of J6–J9 get two vias each and J9's is 108 mm long, `+`/`−` lengths per
-> terminal differ by 14–31 mm instead of 1–20 mm, and `JOYSTICK_CONFIRM` needs six vias.
-> DRC: no errors, 0 unconnected, parity 0. First pass; the J6–J9 `+` lines could be shortened.
+> terminal differ by 14–37 mm instead of 1–20 mm, and `JOYSTICK_CONFIRM` needs six vias.
+> DRC: no errors, 0 unconnected, parity 0.
+>
+> Second pass: the `−` lanes of J6–J9 run 3.8 mm from their `+` partners (was 6 mm) and each
+> ends on its own via under U3, reached from the south. They cannot be stacked exactly under
+> the `+` lines, because that would close both layers and leave `JOYSTICK_CONFIRM` no way
+> across. The length of the J6–J9 `+` lines (53–108 mm) is inherent in having the multiplexers
+> at the top: only about 6 mm of each is detour. All but two segments on the board are now at
+> multiples of 45°.
 
 ## Blocks
 
