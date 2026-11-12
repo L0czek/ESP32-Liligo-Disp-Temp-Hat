@@ -249,8 +249,11 @@ were redrawn:
 
 - **Right-hand bundle on the back** (SDA, 1-Wire, MOSI, `JOYSTICK_BACK`, MISO): nested corners
   below the heater copper, then along J1's top row at 0.55–0.6 mm pitch into their pins.
-- **Chip select and R13:** R13 sits on the track between J1 pins 7 and 5; the line leaves it
+- **Chip select and R13:** R13 sits on the track between J1 pins 9 and 7; the line leaves it
   to the right under the heater copper and turns up outside it.
+- **One track per gap between J1's pin columns**, so front and back tracks do not lie on top
+  of each other there. The exception is the leftmost gap: SDA (front) and SCL (back) share it
+  for 1.8 mm, because both end on the two leftmost pins and nothing else leads to them.
 - **I²C from U6:** SCL changes to the back just above J1; SDA stays on the front.
 - **TC6−, TC7− and `JOYSTICK_CONFIRM`** turn 3.3–3.5 mm earlier to pass above J1's left pins;
   TC5+'s via moved 0.9 mm to make room. R19 and R24 are back 0.57 mm off their pin axis, as
