@@ -16,9 +16,9 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 | Thermocouple front end | J2–J9, U1, U3 (TMUX1108), U2 (MAX31856) | U1 muxes the `+` legs, U3 the `−` legs, into one MAX31856 over SPI. Input filter: R1/R2 100 Ω, C1 100 nF differential, C2/C3 10 nF to GND. |
 | I/O expander | U4 (PCF8574A), U5 (74LVC1G04), JP1–JP3 | Mux address and enable, MAX31856 status, two panel buttons. |
 | Front panel | J10 (1x9 socket) | I²C display, encoder, buttons. |
-| Heater current | J11, R6 (shunt), U6 (INA215) | Low-side shunt, analog output to the ESP32 ADC. Under rework, see review item 4. |
+| Heater current | J11, R6 (shunt), U6 (INA226) | High-side shunt in the +24 V feed, read over I²C. See "Heater current sensing". |
 | 1-Wire | J12 (JST PH 3-pin) | External DS18B20 probes. |
-| Supply | L1, C10–C14 | `VCC` = 3V3 from the T-Relay; `VAA` = analog rail for U2 and U6, filtered by ferrite bead L1. |
+| Supply | L1, C10–C14 | `VCC` = 3V3 from the T-Relay; `VAA` = analog rail for U2, filtered by ferrite bead L1. |
 
 ## J1: connection to the T-Relay-8
 
@@ -36,16 +36,39 @@ pull-ups**. IO26 is on ADC2, which does not work while WiFi is on.
 | 8 | IO15 (boot strap) | TC_MOSI | |
 | 9, 11, 12, 13, 14 | NC | — | |
 | 10 | IO35 (input-only) | ONEWIRE | ENCODER_B |
-| 15 | IO36 (input-only, ADC1) | EXPANDER_INT | CURRENT_SHUNT |
+| 15 | IO36 (input-only, ADC1) | EXPANDER_INT | free |
 | 16 | IO39 (input-only) | ENCODER_B | JOYSTICK_PUSH |
 | 18 | IO34 (input-only) | ENCODER_A | |
 | 19 | IO27 | I2C_SDA | |
-| 20 | IO26 (ADC2) | CURRENT_SHUNT | EXPANDER_INT |
+| 20 | IO26 (ADC2) | — (was CURRENT_SHUNT) | EXPANDER_INT |
 | 21 | IO23 | I2C_SCL | |
 | 22 | IO22 | JOYSTICK_PUSH | ONEWIRE |
 
 Relays on the T-Relay-8 use IO33, IO32, IO13, IO12, IO21, IO19, IO18, IO5; IO25 is the
 red LED. None of these reach the hat.
+
+## Heater current sensing
+
+```
+PSU+ → J11.1 (24V_IN) → R6 → J11.2 (24V_OUT) → relay COMs → heater → PSU−
+```
+
+- The hat sits in the positive feed. No heater current flows in the hat's GND.
+- R6 is a 1 mΩ 4-terminal (Kelvin) shunt, Vishay WSK2512 footprint. Pads 1/4 carry the current,
+  pads 2/3 go only to the INA226 inputs. At 18.75 A: 18.75 mV, 0.35 W.
+- U6 is an INA226AIDGS at I²C address `0x40` (A0 = A1 = GND), powered from `VCC`, decoupled by C14.
+  `Vbus` is on `24V_OUT`, so firmware can also read the supply voltage after the shunt.
+  The `Alert` pin is not connected: firmware polls over I²C, and the relays are driven by the
+  ESP32 anyway, so a hardware alert would not switch anything off faster.
+- R7/R8 (10 Ω) and C15 (100 nF) filter the sense inputs (TI's recommended input filter, corner
+  about 80 kHz). They keep relay switching spikes and RF out of the converter and limit current
+  into the inputs during transients. 10 Ω is TI's upper limit; the gain error it adds is negligible.
+- The review asked for 2 mΩ / 3 W. 1 mΩ was chosen because the WSK2512 is a 1 W part and
+  2 mΩ would run it at 0.7 W; resolution is still about 2.5 mA per LSB.
+
+Open point for the system owner: the T-Relay-8 relays are believed to be rated about 10 A per
+contact, so 18.75 A must not go through a single relay. How the heater is split across relays
+is not known here.
 
 ## U4 (PCF8574A) port map
 
@@ -98,12 +121,12 @@ values are chosen during the work and recorded here.
 
 Must fix:
 
-- [ ] 1. Remap J1 (table above). ONEWIRE is on an input-only pin and CURRENT_SHUNT on ADC2.
+- [ ] 1. Remap J1 (table above). ONEWIRE is on an input-only pin.
 - [ ] 2. 4.7 kΩ pull-up from ONEWIRE to VCC.
-- [ ] 3. Replace J11 (rated about 8 A, heater draws about 18.75 A) with a 30 A terminal block or M4 lugs.
-- [ ] 4. Current sensing. Recommended: INA226 on the 24 V side over I²C with a 2 mΩ 4-terminal 2512 shunt
-      (PSU+ → J11.1 → shunt → J11.2 → relay COMs). Alternative: keep INA215 with a 1 mΩ Kelvin shunt,
-      separate HEATER_RTN net tied to GND at one point, 1 kΩ/100 nF on OUT. **Option not chosen yet.**
+- [ ] 3. Replace J11 (rated about 8 A, heater draws about 18.75 A). Chosen part: Degson
+      [`DG638-9.52-02P`](https://www.tme.eu/pl/details/DG638-9.52-02P/) (32 A, 4 mm², 9.52 mm pitch).
+      No stock KiCad footprint fits it, so the schematic still carries the old footprint.
+- [x] 4. Current sensing: INA226 on the 24 V side with a 4-terminal shunt (details below).
 - [ ] 5. Protect the 16 thermocouple lines: series resistor on each line and low-leakage ESD/TVS clamps
       at the terminals. Use insulated (ungrounded-junction) probes only.
 
