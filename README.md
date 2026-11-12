@@ -100,7 +100,7 @@ static discharge and switching spikes. It does not cover a thermocouple line hel
 that would destroy the clamp and probably the multiplexer.
 
 ```
-terminal (TCn±_IN) ──┬── 100 Ω ── TCn± ── TMUX1108 ── ... ── MAX31856
+terminal J2–J9 ──────┬── 100 Ω ── TCn± ── TMUX1108 ── ... ── MAX31856
                      │
               ESD clamp to GND
 ```
@@ -109,6 +109,9 @@ terminal (TCn±_IN) ──┬── 100 Ω ── TCn± ── TMUX1108 ── .
   VDD + 0.5 V on its signal pins and is rated for 2 kV ESD, so the multiplexers are the weak point.
 - D1–D4: Nexperia PESD5V0L4UG, four clamps per package, one package per pair of terminals
   (D1: J2/J3, D2: J4/J5, D3: J6/J7, D4: J8/J9). Place each one right at its terminals.
+  The schematic symbol is KiCad's generic 4-diode array (`SP0504BAJT`: same pinout, same
+  SOT-353 footprint) with the value set to PESD5V0L4UG, because the library's own PESD symbol
+  is split into four separate diode units and reads badly.
 - R14–R29: 100 Ω in each line, between the clamp and the multiplexer.
 - R2 is 300 Ω, not 100 Ω. The bias point is at the multiplexer output, so both added 100 Ω
   resistors of a channel end up in the T+ path (R1 + 2 × 100 Ω). The MAX31856 datasheet
@@ -247,4 +250,3 @@ Layout only (not done by Claude):
 
   and diff the netlist against the one from before the change.
 - Baseline ERC: 3 `power_pin_not_driven` violations, 0 others.
-- The sheet is A3 (it was A4) to make room for the protection block on the right.
