@@ -254,7 +254,7 @@ State of the board:
   DRC-clean but has 34 dangling track ends. Some restored tracks cross the area around R6 and
   J11 where the 24 V copper has to go; move them when routing the heater path. The VCC and GND
   planes (In1, In2) are kept and refilled.
-- DRC shows no clearance, short or courtyard errors, 116 unconnected items (the routing to do), 34 dangling track ends (expected, see above),
+- DRC shows no clearance, short or courtyard errors, 101 unconnected items (the routing to do), 34 dangling track ends (expected, see above),
   and silkscreen warnings.
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
   on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
@@ -293,12 +293,14 @@ Where things are:
 
 Routing tasks:
 
-- [ ] **Heater path** (`24V_IN`, `24V_OUT` between J11 and R6): short, wide copper on both outer
-      layers, ideally 2 oz, sized for about 19 A. The inner planes are VCC and GND, so cut them
-      back under this copper. Keep clearance between 24 V and the 3.3 V circuitry.
-- [ ] **Kelvin routing at the shunt.** R6 pads 2 and 3 as a tight pair to R7/R8, then C15,
-      then U6 pins 10/9. Nothing else connects to those two tracks. `Vbus` (U6 pin 8) gets a
-      thin track from `24V_OUT`.
+- [x] **Heater path.** `24V_IN` and `24V_OUT` are filled zones on both outer layers between J11
+      and R6 (4.5 to 9 mm wide per layer, solid pad connections), stitched front to back with
+      0.8 mm vias. They are sized for about 19 A at 1 oz; ordering 2 oz outer copper is an
+      optional upgrade. The planes underneath are left whole.
+- [x] **Kelvin pair and INA226.** R6's two small sense pads feed only R8 (straight across) and
+      R7 (through the gap under the shunt body). From there the pair goes to C15 and U6 pins
+      10/9; `Vbus` reaches `24V_OUT` on the back layer; supply, ground and C14 are connected.
+      Still open on U6: SDA and SCL (pins 4, 5), which belong to the digital routing.
 - [ ] **Thermocouple inputs.** Terminal pad → clamp pin → series resistor → multiplexer, with the
       `+` and `−` of each channel routed together and no vias if possible.
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
