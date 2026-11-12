@@ -200,16 +200,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f377f5cc-3a5c-4d08-8075-b7a5dbcc986d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/a4e62f3e-7d3c-4c1c-be8e-a189e30027e2")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "4" "5" "6" "7" "8" "9")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1291,12 +1297,6 @@
 		(path "/8fdc2171-af3e-4dfb-a6a1-e6afb5de7fcb")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1433,16 +1433,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "14418467-b13e-46dc-98b6-2e4e906b7d72")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/ff23d174-cfd1-4722-96cc-b7f397f4267f")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1465,29 +1471,27 @@
 			(layer "F.SilkS")
 			(uuid "790554ac-18ff-4979-bc64-f7ba5a1723bd")
 		)
-		(fp_poly
-			(pts
-				(xy -2.3 -1.15) (xy 2.3 -1.15) (xy 2.3 1.15) (xy -2.3 1.15)
-			)
+		(fp_rect
+			(start -2.3 -1.15)
+			(end 2.3 1.15)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "70e11579-4a54-4602-ac62-9b6653e6e403")
+			(uuid "35cf81c8-a21a-4179-be4c-759685f56dbd")
 		)
-		(fp_poly
-			(pts
-				(xy -1.6 -0.8) (xy 1.6 -0.8) (xy 1.6 0.8) (xy -1.6 0.8)
-			)
+		(fp_rect
+			(start -1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "763ba244-7165-4f05-bba1-61bfe2c496b9")
+			(uuid "53f838a0-0239-4ae5-bafd-613f4183ac09")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 180)
@@ -1501,7 +1505,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.475001 0)
+			(at -1.475 0)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -1510,7 +1514,7 @@
 			(uuid "81df0dbb-30dc-4b2c-8cd1-9ddd8a9d4c56")
 		)
 		(pad "2" smd roundrect
-			(at 1.475001 0)
+			(at 1.475 0)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -1581,16 +1585,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "89c89b1a-48dd-4e9b-96cb-cc373fa08846")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/5f761472-f06b-45a8-b933-9d44b710efbd")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1613,29 +1623,27 @@
 			(layer "F.SilkS")
 			(uuid "b04857f3-cc12-4e0b-8ebe-1c7d77da3e1f")
 		)
-		(fp_poly
-			(pts
-				(xy -2.3 -1.15) (xy 2.3 -1.15) (xy 2.3 1.15) (xy -2.3 1.15)
-			)
+		(fp_rect
+			(start -2.3 -1.15)
+			(end 2.3 1.15)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "103831e6-c0a8-4fed-98ab-c6c14f19bdfa")
+			(uuid "38365adb-bab1-41b7-980a-a5aacf27c4f4")
 		)
-		(fp_poly
-			(pts
-				(xy -1.6 -0.8) (xy 1.6 -0.8) (xy 1.6 0.8) (xy -1.6 0.8)
-			)
+		(fp_rect
+			(start -1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "9e3c2da1-a135-448c-ab6e-3a709bbb0bc6")
+			(uuid "db22ee34-c7bd-4f75-bdda-d49b6be0421e")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -1649,7 +1657,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.475001 0 270)
+			(at -1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -1658,7 +1666,7 @@
 			(uuid "ed76d81c-4cea-4cbb-b1c1-160f4f6f4898")
 		)
 		(pad "2" smd roundrect
-			(at 1.475001 0 270)
+			(at 1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -1729,20 +1737,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a8340de0-7dde-452c-99da-db16753feed5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/e2c43e4f-d6b9-40c1-a8ff-a54c02e2fcd4")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -1753,7 +1767,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1783,7 +1797,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1803,7 +1817,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1812,7 +1826,17 @@
 			(uuid "8dd57a0d-47db-4f4d-8e19-8b060933c9b3")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "759cb053-6179-4dab-90a9-81782238086d")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -1832,37 +1856,7 @@
 			(uuid "d07a52df-8136-4efb-a665-f3ad3cdad5b2")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e49e20c8-a18c-4813-92f7-60da6100f8f3")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "0fb06063-87a3-484c-989e-b8d7dee703a9")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "759cb053-6179-4dab-90a9-81782238086d")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -1872,7 +1866,27 @@
 			(uuid "cd06c3f0-33e6-4438-9a75-f512d6998c02")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e49e20c8-a18c-4813-92f7-60da6100f8f3")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "0fb06063-87a3-484c-989e-b8d7dee703a9")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -1903,7 +1917,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1932,7 +1946,7 @@
 			(uuid "d5f98c0a-2755-4dec-b949-130b0236508b")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -1942,7 +1956,7 @@
 			(uuid "26c775a9-5d20-438c-8289-2212b92d1f61")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -1953,7 +1967,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1993,7 +2007,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2002,7 +2016,7 @@
 			(uuid "9cf7eff5-d2f0-4d40-87f0-18029cee7438")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -2021,6 +2035,17 @@
 			(layer "F.SilkS")
 			(uuid "4a9047e5-07dd-4534-bfde-b6bf1dfabdec")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "1805d269-42a3-44ad-9d9c-b13429139aa1")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -2033,8 +2058,8 @@
 			(uuid "94ca84d0-624c-4707-a982-54cd8275df3b")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -2043,32 +2068,19 @@
 			(layer "F.SilkS")
 			(uuid "d7d20c78-2a2d-4c3b-82ad-0f415d788b5d")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "5f35045b-0425-487d-8bae-f47d227a8001")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "ba0c4268-da5a-4ab5-9c08-ee930a52bebe")
+			(uuid "a3342ab4-eba8-4d30-a511-1560d1aac395")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -2079,7 +2091,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -2087,17 +2099,16 @@
 			(layer "F.Fab")
 			(uuid "320ff942-020d-450d-a530-17331bff9255")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "9ab3fb43-b457-44f7-9b6b-53b1f875784c")
+			(uuid "f9380028-1974-4b3e-846d-955c86f62d8a")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -2123,7 +2134,7 @@
 			(uuid "1115ff3a-ef97-4299-8374-e26a0c4e6fad")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -2196,20 +2207,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "fdf99eca-b59b-411a-9063-03a5d203309a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/bb88278e-3bb0-4d67-9a9e-ea1fbf6bbb45")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -2220,7 +2237,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2250,7 +2267,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2270,7 +2287,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2279,7 +2296,17 @@
 			(uuid "039d6a14-f00b-42ce-9b1b-376a9c26df4d")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "3a92a0e7-8267-41fd-9d87-9688c3f4395e")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -2299,37 +2326,7 @@
 			(uuid "4faec39a-6522-4ff6-b9d3-dc08a27cbeb0")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e1aac6f5-6c61-4d9e-a5ba-6342bcf5dfb2")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f4aef0e6-f95b-48fb-8d72-9e83877ca6f4")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "3a92a0e7-8267-41fd-9d87-9688c3f4395e")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -2339,7 +2336,27 @@
 			(uuid "fe317ae6-a9b9-4f75-8cb3-296e13954239")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e1aac6f5-6c61-4d9e-a5ba-6342bcf5dfb2")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f4aef0e6-f95b-48fb-8d72-9e83877ca6f4")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -2370,7 +2387,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2399,7 +2416,7 @@
 			(uuid "14ff5b74-d699-4c09-a5ed-154a63d7a3fd")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -2409,7 +2426,7 @@
 			(uuid "a132cc5f-8c63-4ea9-a2ba-6f4bc45807f5")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -2420,7 +2437,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2460,7 +2477,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2469,7 +2486,7 @@
 			(uuid "a9cbcb11-9420-4cea-b279-14190a89007d")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -2488,6 +2505,17 @@
 			(layer "F.SilkS")
 			(uuid "75d9185a-967c-4296-97db-1e38d1c56be9")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5c583e0f-04f1-4929-82bd-e8a255bc0e57")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -2500,8 +2528,8 @@
 			(uuid "a55f6d25-8a5d-477c-aee6-6094b1135dbd")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -2510,32 +2538,19 @@
 			(layer "F.SilkS")
 			(uuid "9e1a632a-071b-476c-af22-b7752861f7b2")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "361faf5d-bf0a-4248-b4da-6cceeed9560a")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "7440f702-dde0-4e47-bf36-34d4c92d1505")
+			(uuid "40bf3df8-16ad-4969-b851-a9fca832b17c")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -2546,7 +2561,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -2554,17 +2569,16 @@
 			(layer "F.Fab")
 			(uuid "fb2d40fa-7403-4f0e-83d5-6529ac74bf58")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "7a7394c1-a230-4f57-aa4c-7a5ad050b96f")
+			(uuid "421d67ad-1500-4c14-a7b2-728f8362e590")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -2590,7 +2604,7 @@
 			(uuid "6b522892-6148-458a-9841-89076f987393")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -2679,12 +2693,6 @@
 		(path "/04f64907-0c62-40db-91c8-859a95ad3ed8")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2837,12 +2845,6 @@
 		(path "/5133e97b-ecae-4c68-bc4b-e838838f1af5")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2979,16 +2981,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "74b57b21-d1c6-4996-a929-fc55c56b5fb5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/c24bfe02-3606-49da-b8f4-62c081f912c6")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -3184,16 +3192,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a02318b7-8fa2-4db0-8d11-a2742f422bbd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/68d1ebff-dda2-4f1f-a45b-b76d5d9476d9")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3330,16 +3344,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "4af089e9-b73a-4a94-8dac-0d488587b15f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/1eaa04e0-3536-4040-97f4-07fc5ce8c64d")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3362,29 +3382,27 @@
 			(layer "F.SilkS")
 			(uuid "72168c5f-d8e9-4570-b95a-440d4511c601")
 		)
-		(fp_poly
-			(pts
-				(xy -1.68 -0.95) (xy 1.68 -0.95) (xy 1.68 0.95) (xy -1.68 0.95)
-			)
+		(fp_rect
+			(start -1.68 -0.95)
+			(end 1.68 0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "169c9699-7fb5-48b5-ba0c-28bcce069994")
+			(uuid "42559fb5-9568-41e1-b057-85cf75555458")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "8e0b0ae8-1070-4cfe-a502-4e441f706ae1")
+			(uuid "b2e7e53f-70fe-4a98-a1c3-475210c10216")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -3478,31 +3496,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1fc0e0a4-f9ec-4876-a639-bfda7596cf8f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/8afcb72a-4a5c-4e4f-878a-2c18df31898f")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "daf0c9bb-b3b2-4d84-97bf-87f4cee238d7")
-		)
-		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -3510,29 +3524,37 @@
 			(layer "F.SilkS")
 			(uuid "0f1ba4fb-27e5-40b9-8b69-26e7d9ec8940")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
+		(fp_line
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
 			)
+			(layer "F.SilkS")
+			(uuid "daf0c9bb-b3b2-4d84-97bf-87f4cee238d7")
+		)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "544187fa-5f1e-44d3-9685-6d7e0186e403")
+			(uuid "ba7d7aad-3e98-4c48-b2b1-2ed356b3d97b")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "00865b73-12a7-455f-9e96-7ffe0e2e0037")
+			(uuid "03186f3d-33ad-489e-bbff-b0929fe3b4e4")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -3546,7 +3568,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3555,7 +3577,7 @@
 			(uuid "e57440ca-2e4a-4c92-b056-f9492784f6d8")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3626,18 +3648,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "dd8a174a-3e47-402c-89f1-fa88f2cae8cf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SSOP*4.4x6.5mm?P0.65mm*")
 		(path "/4feffc59-3ee7-413a-96e0-daee47773d53")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "2" "4" "1" "6" "7" "9" "3" "8" "13" "5" "15" "18" "10" "11" "12"
-					"14" "16" "17" "19" "20"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3662,7 +3688,7 @@
 		)
 		(fp_poly
 			(pts
-				(xy -3.91 -2.929999) (xy -4.24 -2.69) (xy -4.24 -3.17)
+				(xy -3.91 -2.93) (xy -4.24 -2.69) (xy -4.24 -3.17)
 			)
 			(stroke
 				(width 0.12)
@@ -3673,18 +3699,8 @@
 			(uuid "5ea4717c-7b8b-4432-866f-8bbbf159c1a2")
 		)
 		(fp_line
-			(start 3.9 3.379999)
-			(end 2.450001 3.38)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "ac297cdf-14c9-455f-a29e-366e360a4bee")
-		)
-		(fp_line
-			(start 3.9 -3.379999)
-			(end 3.9 3.379999)
+			(start 3.9 3.38)
+			(end 2.45 3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -3693,24 +3709,14 @@
 			(uuid "ae588c44-98af-48cb-9d43-061c817aaf24")
 		)
 		(fp_line
-			(start 2.450001 3.38)
-			(end 2.45 3.5)
+			(start 3.9 -3.38)
+			(end 3.9 3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "558ae07e-cb2f-4d87-8c09-e0dc43ba8a70")
-		)
-		(fp_line
-			(start 2.450001 -3.38)
-			(end 3.9 -3.379999)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "225fc8b7-e951-4371-bec0-b001f89a95b8")
+			(uuid "ac297cdf-14c9-455f-a29e-366e360a4bee")
 		)
 		(fp_line
 			(start 2.45 3.5)
@@ -3723,8 +3729,28 @@
 			(uuid "63730565-22a8-4efb-9d05-47c4e4573021")
 		)
 		(fp_line
+			(start 2.45 3.38)
+			(end 2.45 3.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "558ae07e-cb2f-4d87-8c09-e0dc43ba8a70")
+		)
+		(fp_line
+			(start 2.45 -3.38)
+			(end 3.9 -3.38)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "05503706-185e-4710-83d3-ee416587607f")
+		)
+		(fp_line
 			(start 2.45 -3.5)
-			(end 2.450001 -3.38)
+			(end 2.45 -3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -3734,13 +3760,33 @@
 		)
 		(fp_line
 			(start -2.45 3.5)
-			(end -2.450001 3.38)
+			(end -2.45 3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
 			(uuid "5fa5e8f3-6beb-44f8-8b8e-c37ecfebe7c1")
+		)
+		(fp_line
+			(start -2.45 3.38)
+			(end -3.9 3.38)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "489757d5-3536-41c8-980c-285fe8cfd5a1")
+		)
+		(fp_line
+			(start -2.45 -3.38)
+			(end -2.45 -3.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "0a499ce2-3c6e-4de5-9fcf-24b4f74e806a")
 		)
 		(fp_line
 			(start -2.45 -3.5)
@@ -3753,8 +3799,8 @@
 			(uuid "851389b5-de05-4766-b0fe-39072935f7d0")
 		)
 		(fp_line
-			(start -2.450001 3.38)
-			(end -3.9 3.379999)
+			(start -3.9 3.38)
+			(end -3.9 -3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -3763,34 +3809,14 @@
 			(uuid "693cce59-a193-43fc-8dee-ea639ee958ca")
 		)
 		(fp_line
-			(start -2.450001 -3.38)
-			(end -2.45 -3.5)
+			(start -3.9 -3.38)
+			(end -2.45 -3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "0a499ce2-3c6e-4de5-9fcf-24b4f74e806a")
-		)
-		(fp_line
-			(start -3.9 3.379999)
-			(end -3.9 -3.379999)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "489757d5-3536-41c8-980c-285fe8cfd5a1")
-		)
-		(fp_line
-			(start -3.9 -3.379999)
-			(end -2.450001 -3.38)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "05503706-185e-4710-83d3-ee416587607f")
+			(uuid "225fc8b7-e951-4371-bec0-b001f89a95b8")
 		)
 		(fp_poly
 			(pts
@@ -3836,7 +3862,7 @@
 			(uuid "3a9e862b-96a1-41d4-b3e2-46782bf2bfe6")
 		)
 		(pad "3" smd roundrect
-			(at -2.875 -1.625001 180)
+			(at -2.875 -1.625 180)
 			(size 1.55 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3886,7 +3912,7 @@
 			(uuid "d5a39f69-6818-48a4-b7b9-0fb80b2987fa")
 		)
 		(pad "8" smd roundrect
-			(at -2.875 1.625001 180)
+			(at -2.875 1.625 180)
 			(size 1.55 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3936,7 +3962,7 @@
 			(uuid "1afede86-4d1e-4d21-bfa0-17561f172667")
 		)
 		(pad "13" smd roundrect
-			(at 2.875 1.625001 180)
+			(at 2.875 1.625 180)
 			(size 1.55 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3986,7 +4012,7 @@
 			(uuid "443b981f-4a63-46ec-af51-6dd73a173751")
 		)
 		(pad "18" smd roundrect
-			(at 2.875 -1.625001 180)
+			(at 2.875 -1.625 180)
 			(size 1.55 0.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -4086,12 +4112,6 @@
 		(path "/1aed3d58-d068-4717-8f05-4242374de22c")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3")
-			)
-		)
 		(zone_connect 1)
 		(attr exclude_from_bom allow_soldermask_bridges)
 		(net_tie_pad_groups "1,2")
@@ -4108,17 +4128,16 @@
 			(layer "F.Cu")
 			(uuid "e1a61bfb-7e96-4541-8a76-423e7928b6c4")
 		)
-		(fp_poly
-			(pts
-				(xy -0.75 -0.75) (xy 0.75 -0.75) (xy 0.75 0.75) (xy -0.75 0.75)
-			)
+		(fp_rect
+			(start -0.75 -0.75)
+			(end 0.75 0.75)
 			(stroke
 				(width 0)
 				(type default)
 			)
 			(fill yes)
 			(layer "F.Mask")
-			(uuid "e5ad8417-66e0-4049-b961-eeefa781b868")
+			(uuid "75741f31-420e-4d30-9c8e-6735b60bf8ad")
 		)
 		(fp_line
 			(start -1.5 1.5)
@@ -4423,12 +4442,6 @@
 		(path "/85394578-bd6d-450f-8dc6-0744d92b84f5")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4581,12 +4594,6 @@
 		(path "/575c179c-b860-4992-9d77-387de16fdc90")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4731,12 +4738,6 @@
 		(path "/582d1256-64e5-4fb3-83ad-5df0d6667313")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3")
-			)
-		)
 		(zone_connect 1)
 		(attr exclude_from_bom allow_soldermask_bridges)
 		(net_tie_pad_groups "1,2")
@@ -4753,17 +4754,16 @@
 			(layer "F.Cu")
 			(uuid "8e963c16-6c26-4498-a664-34514231516a")
 		)
-		(fp_poly
-			(pts
-				(xy -0.75 -0.75) (xy 0.75 -0.75) (xy 0.75 0.75) (xy -0.75 0.75)
-			)
+		(fp_rect
+			(start -0.75 -0.75)
+			(end 0.75 0.75)
 			(stroke
 				(width 0)
 				(type default)
 			)
 			(fill yes)
 			(layer "F.Mask")
-			(uuid "7fcb0738-bb72-4792-ba9a-092f33b5b021")
+			(uuid "0d22f9dd-db2f-435a-bd0a-bdb53577c3be")
 		)
 		(fp_line
 			(start -1.5 1.5)
@@ -5068,12 +5068,6 @@
 		(path "/944faa6b-6776-4f06-92b9-9350bed130d8")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5226,12 +5220,6 @@
 		(path "/4cc14eb1-87f1-4343-9fef-8842abf6a6f8")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5384,12 +5372,6 @@
 		(path "/0407ad27-5a1b-4519-bac8-da23d9bbf8ca")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5542,12 +5524,6 @@
 		(path "/86a62338-d418-45aa-b1f9-fb50cb258c31")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5684,16 +5660,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "d497f110-c6c4-4132-9107-ed1c0e35ef26")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/f3cff3fc-44de-4b0e-aa29-4c48db5085d2")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5716,29 +5698,27 @@
 			(layer "F.SilkS")
 			(uuid "09622305-2a2f-4c15-a95c-037533ddaac6")
 		)
-		(fp_poly
-			(pts
-				(xy -2.3 -1.15) (xy 2.3 -1.15) (xy 2.3 1.15) (xy -2.3 1.15)
-			)
+		(fp_rect
+			(start -2.3 -1.15)
+			(end 2.3 1.15)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "f88727a0-a2ec-403b-b296-6b4603e794d7")
+			(uuid "95e9bec4-720d-453f-8af5-d1402c8db779")
 		)
-		(fp_poly
-			(pts
-				(xy -1.6 -0.8) (xy 1.6 -0.8) (xy 1.6 0.8) (xy -1.6 0.8)
-			)
+		(fp_rect
+			(start -1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "3faf3cd1-7874-4a8f-8964-3e4666cda5ad")
+			(uuid "d01823d0-de9d-47bd-847e-00a2f8a669bd")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -5752,7 +5732,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.475001 0 270)
+			(at -1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -5761,7 +5741,7 @@
 			(uuid "1c44187c-040d-4938-b1e7-acfb1daa98d3")
 		)
 		(pad "2" smd roundrect
-			(at 1.475001 0 270)
+			(at 1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -5848,12 +5828,6 @@
 		(path "/8a8eac3e-93eb-4b33-a023-650d192984d3")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6006,12 +5980,6 @@
 		(path "/d21b6c3b-5fe5-4603-878a-4932c08ff673")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "2" "4" "5")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6408,12 +6376,6 @@
 		(path "/cbd35152-9aaa-49e9-9fc2-3b2e742df129")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "2" "4" "5")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6794,16 +6756,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "341201f0-8f2e-42f5-9108-4cb2a067eb7c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/ea02d2dd-8887-4054-9bb7-1734a492ff83")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -6999,31 +6967,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "2b5bafa5-6140-45e3-91ec-7a9d6eac4b26")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/1a12b571-c6fe-4a20-aac3-dde250f44485")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "0d5244e2-a619-4be9-9b93-6b4ac7150be5")
-		)
-		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7031,29 +6995,37 @@
 			(layer "F.SilkS")
 			(uuid "f898bc0b-bfd2-4a8e-9e4f-d6131996ae4a")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
+		(fp_line
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
 			)
+			(layer "F.SilkS")
+			(uuid "0d5244e2-a619-4be9-9b93-6b4ac7150be5")
+		)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "eea8dc6a-b8f7-4e5d-871c-b3ac8dd0e04f")
+			(uuid "57ba500a-aa81-42a6-aecc-b18dbb66829d")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "fe5db506-8c9d-4278-ae64-22f106762454")
+			(uuid "84662019-6538-48c1-94b2-39eb53ab3f1e")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -7067,7 +7039,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7076,7 +7048,7 @@
 			(uuid "6e5779dd-91e4-4fc3-bbc8-a641720fa85a")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7163,12 +7135,6 @@
 		(path "/6d9aa921-4de4-4fb7-a941-ec454021c797")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "2" "4" "5")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7565,12 +7531,6 @@
 		(path "/a99be9fe-8b8c-438d-ad8d-d2af43c8cfd2")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7707,21 +7667,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "caa8f39a-fbe5-47a7-8e0f-01cbdc646bee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/462a0bfb-d9be-41be-89ae-d85c1218a20f")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7730,8 +7696,8 @@
 			(uuid "ca9a8100-6ee6-49cf-9321-8cabc8abad32")
 		)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7739,29 +7705,27 @@
 			(layer "F.SilkS")
 			(uuid "c2b850ce-b87f-4e61-a2c2-31557a6ed62a")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
-			)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "5b8660d3-2e34-4d93-a00c-98c254c3f8ad")
+			(uuid "eb44e8d9-1540-4734-9ed7-0d1a81e98e96")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "33a0866b-5d12-426f-ab63-a7674d92c799")
+			(uuid "0f5b1564-36ce-49fb-8500-392edd07337f")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -7775,7 +7739,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0)
+			(at -0.95 0)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7784,7 +7748,7 @@
 			(uuid "063f5564-0318-4cb8-a840-2d304caf6cc1")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0)
+			(at 0.95 0)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7855,20 +7819,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "d1437737-0ae6-4024-bdfe-6ff3e518b929")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/952a0737-9c52-46a8-bbc4-81fd6258bf6c")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -7879,7 +7849,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7909,7 +7879,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7929,7 +7899,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -7938,7 +7908,17 @@
 			(uuid "92b5dd29-83e4-44cf-beeb-45bfc8861e27")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7bf948cc-f61c-4b65-8015-f3539cc04be6")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -7958,37 +7938,7 @@
 			(uuid "b5d01814-e237-4be4-b2b7-623bd8d19730")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "fa477c37-219e-4ce7-a213-04af5787222d")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "94eba3f7-4800-4393-97ef-70edab9239ac")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "7bf948cc-f61c-4b65-8015-f3539cc04be6")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -7998,7 +7948,27 @@
 			(uuid "18a7f7d3-57cc-4255-893f-6df1832c2ac6")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fa477c37-219e-4ce7-a213-04af5787222d")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "94eba3f7-4800-4393-97ef-70edab9239ac")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -8029,7 +7999,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8058,7 +8028,7 @@
 			(uuid "996902ee-07a0-4849-900c-bf7b74280bf7")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -8068,7 +8038,7 @@
 			(uuid "6eb68c2d-6809-4896-950a-384fdac70013")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -8079,7 +8049,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8119,7 +8089,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8128,7 +8098,7 @@
 			(uuid "722c561a-5d12-464f-82be-891f19fe6d75")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -8147,6 +8117,17 @@
 			(layer "F.SilkS")
 			(uuid "0378b33d-5f0e-4599-83b5-42200d9bc5bc")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "627ef1a5-e4e5-4909-a44b-15a4b10775ba")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -8159,8 +8140,8 @@
 			(uuid "01f3f2c2-3dd6-439f-b180-65ee224ce4bd")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -8169,32 +8150,19 @@
 			(layer "F.SilkS")
 			(uuid "c04ae941-2388-40db-a75c-cec4d347d99e")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "7b0b7fb8-a045-4501-a193-70ec98ca3b54")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "805d2122-b545-412e-9a0b-d478620cd74e")
+			(uuid "f0c73dab-aeb6-4b9f-8720-7bbae80ea99a")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -8205,7 +8173,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -8213,17 +8181,16 @@
 			(layer "F.Fab")
 			(uuid "0a8adbf1-1620-468b-9ea4-8997361b33a1")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "087ac42a-12b6-4036-be99-85856199bb31")
+			(uuid "4b4ca817-735a-4327-bf48-979e582bbf8a")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -8249,7 +8216,7 @@
 			(uuid "1dcf3de5-94fd-4a9f-b8e9-b54730d3e2cd")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -8322,20 +8289,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a371ffd9-085f-4a7b-af8e-914709868488")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/5c230101-cded-4fb5-9c63-85d231c43f26")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -8346,7 +8319,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8376,7 +8349,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8396,7 +8369,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8405,7 +8378,17 @@
 			(uuid "4e7e8d27-7622-4e38-af25-83015c1beea5")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f1598e43-66d1-465d-a421-1984589bcc62")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -8425,37 +8408,7 @@
 			(uuid "bd4c0340-544d-43d6-82aa-e51d4243a9cb")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "374f22bb-49ff-4493-8671-c60d20c0fe5b")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "13bb9fcc-5467-4b8e-8031-7a485b324585")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f1598e43-66d1-465d-a421-1984589bcc62")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -8465,7 +8418,27 @@
 			(uuid "447fbf18-f275-4ef6-9221-3bd2e57e5f89")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "374f22bb-49ff-4493-8671-c60d20c0fe5b")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "13bb9fcc-5467-4b8e-8031-7a485b324585")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -8496,7 +8469,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8525,7 +8498,7 @@
 			(uuid "19c766d5-45c0-4714-9944-c949d16bc1fb")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -8535,7 +8508,7 @@
 			(uuid "07a602e5-7f83-4828-ba39-7e68e9485a1c")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -8546,7 +8519,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8586,7 +8559,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8595,7 +8568,7 @@
 			(uuid "277c9acc-b45e-4fab-86ac-f607608950ca")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -8614,6 +8587,17 @@
 			(layer "F.SilkS")
 			(uuid "d83055b1-80ce-4e55-8b17-b50c67ad6d6f")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "30a42633-c3e3-4b24-a213-1af088f69078")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -8626,8 +8610,8 @@
 			(uuid "a8dae2a5-abfb-49e3-a130-c9df603595a3")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -8636,32 +8620,19 @@
 			(layer "F.SilkS")
 			(uuid "9bd3c8ec-f7ee-4a7f-bee4-fb88d00fae22")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "fa2c0889-5b7a-45ce-abb5-775c9e7d4995")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "9caa3633-e7ed-4f8a-a865-3ee8e6b0823e")
+			(uuid "e5deadc4-0c01-4f6e-9327-a17fc3ffc53a")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -8672,7 +8643,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -8680,17 +8651,16 @@
 			(layer "F.Fab")
 			(uuid "ac1582d8-c26b-4b18-98ef-1fce49cca9e6")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "74c69f60-1b5f-4925-b107-8aba77c59363")
+			(uuid "c1a01d27-b9c6-48a2-a899-96c923835ede")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -8716,7 +8686,7 @@
 			(uuid "099bd7c8-8961-41c2-8547-8a74424f70db")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -8789,20 +8759,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "e6ee7e01-9616-4935-9c82-ac1437948c1b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/bdbc7e92-237e-4dd7-8ab8-ebebcd4181fb")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -8813,7 +8789,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8843,7 +8819,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8863,7 +8839,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8872,7 +8848,17 @@
 			(uuid "8956279a-ac38-4d53-a9cb-d73c7136226d")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "db4067dc-4288-4cd2-ae09-4338eed59d48")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -8892,37 +8878,7 @@
 			(uuid "9c324262-8000-4f82-8d44-bdddac30bf97")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "680a7e7c-2340-4d01-9056-05ce2432c19e")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "27f5a4a9-6d40-4086-994f-72396fc1ce7a")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "db4067dc-4288-4cd2-ae09-4338eed59d48")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -8932,7 +8888,27 @@
 			(uuid "4d3f692c-0b71-4ec8-b508-9b794cf86a69")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "680a7e7c-2340-4d01-9056-05ce2432c19e")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "27f5a4a9-6d40-4086-994f-72396fc1ce7a")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -8963,7 +8939,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -8992,7 +8968,7 @@
 			(uuid "64e7ad99-3d79-48fb-94bb-f3e95e7a1017")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -9002,7 +8978,7 @@
 			(uuid "0915ee4e-a8e6-4703-b1fe-8fb416419187")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -9013,7 +8989,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9053,7 +9029,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9062,7 +9038,7 @@
 			(uuid "43343298-d1ca-4b15-9d48-7365b05f7a0d")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -9081,6 +9057,17 @@
 			(layer "F.SilkS")
 			(uuid "80b5cab2-94e9-4951-a03b-e4ad7f34dd4a")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "23712789-c3d1-4baf-98db-167ced7119e8")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -9093,8 +9080,8 @@
 			(uuid "6a82296a-d1ff-4e2a-bdca-87cd6852dece")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -9103,32 +9090,19 @@
 			(layer "F.SilkS")
 			(uuid "c98122d3-bcb9-4039-ad64-4eb973c665e7")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "83db23c6-d642-4941-9c15-2b0c3e3d6d2a")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "68a29e44-6301-4683-bb19-307b96c5d88e")
+			(uuid "e8ce7299-9245-4286-bbf2-f11c0227a0c6")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -9139,7 +9113,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -9147,17 +9121,16 @@
 			(layer "F.Fab")
 			(uuid "33b31dfd-ddce-4706-ab47-c9bfdf9cffa2")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "26c68203-802c-4c98-bd4b-16859eeae81b")
+			(uuid "10db67b0-31be-4d76-9123-f7f727545886")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -9183,7 +9156,7 @@
 			(uuid "b7fe75ad-0a57-47b9-b049-d0ecae75dfd1")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -9272,12 +9245,6 @@
 		(path "/1e822a64-fcfd-4507-b716-bc6fe2a7cff3")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9414,20 +9381,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "acb3f629-9da8-4e87-ae2e-102f15f31e4e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/b8b57adf-64ec-46a7-9ecd-b452dd7be0fd")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -9438,7 +9411,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9468,7 +9441,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9488,7 +9461,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9497,7 +9470,17 @@
 			(uuid "7ff44fe1-06a1-4f67-a05f-cd08998550c7")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "168d11ba-f701-42d6-8354-8e3590d23966")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -9517,37 +9500,7 @@
 			(uuid "358582c2-29c7-48fb-b38c-d8101e87ce90")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "15536cb4-c80d-4376-b611-a0911a423fa0")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "bfe56715-b052-44dd-97dd-a6186df25279")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "168d11ba-f701-42d6-8354-8e3590d23966")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -9557,7 +9510,27 @@
 			(uuid "be2a4847-77ac-493b-8e5d-58770c4b35a8")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "15536cb4-c80d-4376-b611-a0911a423fa0")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "bfe56715-b052-44dd-97dd-a6186df25279")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -9588,7 +9561,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9617,7 +9590,7 @@
 			(uuid "87212a85-e2d7-4b8a-8f6b-51f658acd2d0")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -9627,7 +9600,7 @@
 			(uuid "448e2965-cb8a-43a0-8356-d9b581a61bde")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -9638,7 +9611,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9678,7 +9651,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -9687,7 +9660,7 @@
 			(uuid "66c57540-d515-40eb-b4b7-051947c7d68b")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -9706,6 +9679,17 @@
 			(layer "F.SilkS")
 			(uuid "84074af8-19a2-4d33-b040-97e3d4c5217e")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ea8371e1-9255-4fa2-87ef-63bd707cfbb1")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -9718,8 +9702,8 @@
 			(uuid "1247a8b1-2ecb-4b94-959f-8310213722eb")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -9728,32 +9712,19 @@
 			(layer "F.SilkS")
 			(uuid "05a6d0b2-622d-4c48-ac9a-f00ee9a93218")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "5f7da566-fa43-4ed3-af6c-2be12827ed49")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "6e9b7cfb-0794-4f0b-97ec-a680130baaf9")
+			(uuid "86414e11-199f-4d03-bb99-46bbe59456ed")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -9764,7 +9735,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -9772,17 +9743,16 @@
 			(layer "F.Fab")
 			(uuid "007750e6-ad01-401a-be9a-fc283727267f")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "63b350a4-d03c-481f-b90e-b278d2c30b75")
+			(uuid "763bbe4b-21de-45e9-b6c9-bf3e4dd4cd4f")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -9808,7 +9778,7 @@
 			(uuid "d96d5bd7-73d1-4ec1-926d-543e1f48c2b4")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -9897,12 +9867,6 @@
 		(path "/a9a74c01-9f98-410f-a913-22b1489c7f20")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10039,16 +10003,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "23bd6132-bff1-4a9a-8b62-cac7d21bb95c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/062c91dd-29fe-4490-a89b-58e98ed4f820")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10071,29 +10041,27 @@
 			(layer "F.SilkS")
 			(uuid "966b9d0a-0147-45bb-86a2-ac86c65f8550")
 		)
-		(fp_poly
-			(pts
-				(xy -1.68 -0.95) (xy 1.68 -0.95) (xy 1.68 0.95) (xy -1.68 0.95)
-			)
+		(fp_rect
+			(start -1.68 -0.95)
+			(end 1.68 0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "d10af52a-086e-4d15-b25e-f57ca473ca2e")
+			(uuid "023a480e-a3eb-4844-8533-9129a0384aa3")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "13d03669-ad97-4fca-800b-0bef81b6c7d7")
+			(uuid "1c4e0f01-b050-4a04-bc52-941e4c96ff0b")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -10203,12 +10171,6 @@
 		(path "/d72f6082-1367-4484-8265-a6b60058be4c")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "8" "10" "9" "6" "7" "1" "2" "4" "5" "3")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10605,12 +10567,6 @@
 		(path "/59f8d6c6-7baf-487b-94f2-ab0759f36c9f")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10747,16 +10703,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1c1370d4-874b-4bed-98f2-d9fe8f0988d7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "TSSOP*14*4.4x5mm*P0.65mm*")
 		(path "/af3b8f86-5ed6-4d05-adb6-c518b7657eef")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "4" "3" "2" "6" "5" "1" "8" "14" "7" "13" "9" "10" "11" "12")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11193,12 +11155,6 @@
 		(path "/b0138a36-cb95-4208-b567-165d3b010bc9")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11335,21 +11291,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "428d8b8c-4604-4cd8-98a3-ded23c6f04ed")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/97783b03-7bad-4002-8e78-3819f4b6a452")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -11358,8 +11320,8 @@
 			(uuid "e81914f7-14d7-4aab-be45-5004ae577177")
 		)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -11367,29 +11329,27 @@
 			(layer "F.SilkS")
 			(uuid "a26dce28-8775-4ccd-92ad-4cd71646d819")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
-			)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "9fd83dfd-d349-458c-889b-171dae3c9088")
+			(uuid "763aa957-6e13-4d67-8e36-44e995fdb866")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "48169e36-3ef9-4fa9-af93-f0b206ec390d")
+			(uuid "5374e752-6061-439d-b7f8-2bfd06682009")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -11403,7 +11363,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 90)
+			(at -0.95 0 90)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -11412,7 +11372,7 @@
 			(uuid "a0d13772-9302-4fbd-99bb-4708232795ad")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 90)
+			(at 0.95 0 90)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -11499,12 +11459,6 @@
 		(path "/757ccb51-8494-4b66-a2bb-704e4d424c6d")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11641,21 +11595,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "68a5cbe3-fda1-43e7-9872-7afaf0f2883b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/9df9f423-3517-46c1-bcc1-dd0568a3a8ff")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -11664,8 +11624,8 @@
 			(uuid "59e2a208-2aba-47a8-90bf-6814177ba86f")
 		)
 		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -11673,29 +11633,27 @@
 			(layer "F.SilkS")
 			(uuid "bfae14e1-0fa5-443b-9819-0ae4a9d2be00")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
-			)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "3cc159a3-39b4-499d-ac8e-c779e6c6ba58")
+			(uuid "4749aaf1-9af6-4e46-bc90-7ae2bf38ba3a")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "8afc511c-aa8e-4031-a8a9-72b8fdc9c293")
+			(uuid "bbe1bc7e-1003-41e2-aaab-705e5465ba6e")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -11709,7 +11667,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -11718,7 +11676,7 @@
 			(uuid "357e1d98-6d8b-4b87-b4c4-edc8d2059d0e")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -11789,31 +11747,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "3a1fa36f-cada-4666-a6e2-c6c10c517121")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/9632b36f-45e7-4af5-badc-fe246803f389")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "0677d237-d92f-49f0-bc3b-d9e4299a5c52")
-		)
-		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -11821,29 +11775,37 @@
 			(layer "F.SilkS")
 			(uuid "e194a0a4-5cb5-404e-89f7-64ce53ff6a17")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
+		(fp_line
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
 			)
+			(layer "F.SilkS")
+			(uuid "0677d237-d92f-49f0-bc3b-d9e4299a5c52")
+		)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "c9b82373-1e05-4bf4-a8c7-435e225b0566")
+			(uuid "adfe2f00-6178-4aa4-b29c-481284936438")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "db84fd2a-8f16-49d0-ab65-067ef9344f67")
+			(uuid "0320a620-1fa2-4de4-bfc3-b02e02c34f67")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -11857,7 +11819,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -11866,7 +11828,7 @@
 			(uuid "7aa58105-22a0-474c-9450-04fe0f0b6c61")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -11953,12 +11915,6 @@
 		(path "/28f1cf87-03b3-4283-a109-83468e163e0e")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12111,12 +12067,6 @@
 		(path "/ed9a3b05-64ac-4f24-95fe-ff4c7b04036e")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12253,16 +12203,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "be782937-92bd-46aa-8254-5863bfa4aa21")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/726a669d-745e-4190-b07c-5ea12b94ca10")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -12474,12 +12430,6 @@
 		(path "/9f0204b7-9b23-4de4-a576-06ead47bf62f")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12616,18 +12566,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "2b538620-5129-46e5-91f6-fa027a1fb2b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "TSSOP*4.4x5mm*P0.65mm*")
 		(path "/d09db110-e56b-4709-bbb5-8b51850bea44")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "16" "15" "2" "4" "5" "6" "7" "12" "11" "10" "9" "13" "14"
-					"3" "8"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13044,12 +12998,6 @@
 		(path "/29e7df3d-d01f-47de-a2a4-c441bdc24f8a")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13202,12 +13150,6 @@
 		(path "/ee2466b0-ea0c-4ec3-9109-554a6e8f85e5")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13352,12 +13294,6 @@
 		(path "/e35ca882-73c9-479c-bdf4-4dbbf467d651")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3")
-			)
-		)
 		(zone_connect 1)
 		(attr exclude_from_bom allow_soldermask_bridges)
 		(net_tie_pad_groups "1,2")
@@ -13374,17 +13310,16 @@
 			(layer "F.Cu")
 			(uuid "ab32d0e7-8db0-446e-886a-481158ab2f6e")
 		)
-		(fp_poly
-			(pts
-				(xy -0.75 -0.75) (xy 0.75 -0.75) (xy 0.75 0.75) (xy -0.75 0.75)
-			)
+		(fp_rect
+			(start -0.75 -0.75)
+			(end 0.75 0.75)
 			(stroke
 				(width 0)
 				(type default)
 			)
 			(fill yes)
 			(layer "F.Mask")
-			(uuid "e2ea38f2-8d56-4022-a98d-6efcb0d376ff")
+			(uuid "83fecdd9-aff0-418e-9c21-e815e7a5b3bd")
 		)
 		(fp_line
 			(start -1.5 1.5)
@@ -13627,7 +13562,7 @@
 		(layer "F.Cu")
 		(uuid "bb533dc8-9a9e-4ab9-8fb8-cabe8256bc3d")
 		(at 120.849999 79.38 90)
-		(descr "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+		(descr "terminal block Metz Connect Type701_RT11L02HGLU, 2 pins, pitch 6.35mm, size 12.7x12.5mm, drill diameter 1.3mm, pad diameter 2.5mm, https://www.metz-connect.com/externalfiles/317011/863830.PDF")
 		(tags "THT terminal block Metz Connect Type701_RT11L02HGLU pitch 6.35mm size 12.7x12.5mm drill 1.3mm pad 2.5mm")
 		(property "Reference" "J11"
 			(at 3.175 -5.62 90)
@@ -13685,6 +13620,7 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/557eaa3b-2f0d-4045-8656-289e460b5d3e")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
@@ -14056,7 +13992,7 @@
 			(remove_unused_layers no)
 			(roundrect_rratio 0.1)
 			(net "24V_IN")
-			(pinfunction "Pin_1")
+			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "986ccee1-b337-4d24-b4a8-30c986282ddd")
 		)
@@ -14067,7 +14003,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "24V_OUT")
-			(pinfunction "Pin_2")
+			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "4de5e9a9-d12b-4d78-84b8-82db9d9cafeb")
 		)
@@ -14150,12 +14086,6 @@
 		(path "/32e2722a-eb69-42ca-867d-78d419211ac1")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14292,31 +14222,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f0e720a9-4178-4783-93f6-e40dbf94f04d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/8c49e5d6-0a07-4784-9714-0328b2123a8d")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "df9fd053-f8f0-4fea-ba69-db9115e929db")
-		)
-		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -14324,29 +14250,37 @@
 			(layer "F.SilkS")
 			(uuid "507a7504-dc2e-4409-8b50-9dcaf14d208a")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
+		(fp_line
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
 			)
+			(layer "F.SilkS")
+			(uuid "df9fd053-f8f0-4fea-ba69-db9115e929db")
+		)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "52ca2559-db93-42c1-9061-3e9b070beae3")
+			(uuid "79743045-8c86-41b2-b4ac-f44e9e4c7757")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "482d9023-bb6c-4cb5-8234-fa540116280e")
+			(uuid "b51bb7ed-87e7-45f9-a666-68347f055c6c")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -14360,7 +14294,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -14369,7 +14303,7 @@
 			(uuid "a4910601-3787-4d7d-98ad-62319e7c4590")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -14440,18 +14374,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "b8bd1ca9-487b-471e-92c6-0f4257d9c089")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "TSSOP*4.4x5mm*P0.65mm*")
 		(path "/6fe8178f-c0f8-4b89-9c56-0577a4a85a06")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "16" "15" "2" "4" "5" "6" "7" "12" "11" "10" "9" "13" "14"
-					"3" "8"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14852,16 +14790,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a1b7acf2-c195-46bb-8e56-76f692539df5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/37e24f26-5350-4eb6-92eb-ea1fe0b61bcb")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -15006,12 +14950,6 @@
 		(path "/b9f7c6bb-aaf0-49db-8025-45aefedb5ea0")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "4" "2" "3")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -15304,16 +15242,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "773f9265-1819-4471-9807-c0f38d42d634")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/3288d42a-135a-41c3-b6e3-9bdca12973c7")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -15336,29 +15280,27 @@
 			(layer "F.SilkS")
 			(uuid "ba37f848-535c-4bb4-a23c-42c47a2d91a5")
 		)
-		(fp_poly
-			(pts
-				(xy -1.68 -0.95) (xy 1.68 -0.95) (xy 1.68 0.95) (xy -1.68 0.95)
-			)
+		(fp_rect
+			(start -1.68 -0.95)
+			(end 1.68 0.95)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "9ea2aa5c-496f-478a-97e0-67af63f880e4")
+			(uuid "f15a056b-c9b6-4388-aa95-fd36fd9ba6b4")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "d2e59ca9-c6e4-41b8-b2ec-3eaca3d6fc41")
+			(uuid "ebb6210e-4764-4bf5-a125-8b39107d2391")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -15452,16 +15394,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "187add77-d838-4bc4-823e-3399fe17bbe0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SOT?23* Texas?R-PDSO-G5?DCK* Texas?R-PDSO-N5?DRL* Texas?X2SON*0.8x0.8mm*P0.48mm*")
 		(path "/b230458a-1b70-4fcb-8d90-85c5dd3be585")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "2" "1" "5" "3" "4")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -15547,7 +15495,7 @@
 			(uuid "b7660411-6602-45d9-b27d-1b5530454944")
 		)
 		(fp_line
-			(start -1.050001 1.7)
+			(start -1.05 1.7)
 			(end -1.05 1.5)
 			(stroke
 				(width 0.05)
@@ -15557,14 +15505,14 @@
 			(uuid "193d8f7c-73cb-42e8-a84a-67e9705f8c7d")
 		)
 		(fp_line
-			(start 1.050001 1.7)
-			(end -1.050001 1.7)
+			(start 1.05 1.7)
+			(end -1.05 1.7)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "2fe36fcc-6aa0-4a1a-99e8-b024ff2dc171")
+			(uuid "7e72bb3d-a664-49cf-8d1f-8dafd64ab1be")
 		)
 		(fp_line
 			(start -2.05 1.5)
@@ -15588,7 +15536,7 @@
 		)
 		(fp_line
 			(start 1.05 1.5)
-			(end 1.050001 1.7)
+			(end 1.05 1.7)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -15607,17 +15555,17 @@
 			(uuid "d82b03f2-b3f7-44a0-a57c-dfad6394e20c")
 		)
 		(fp_line
-			(start 1.05 0.390001)
-			(end 2.05 0.390001)
+			(start 1.05 0.39)
+			(end 2.05 0.39)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "7e72bb3d-a664-49cf-8d1f-8dafd64ab1be")
+			(uuid "2fe36fcc-6aa0-4a1a-99e8-b024ff2dc171")
 		)
 		(fp_line
-			(start 2.05 0.390001)
+			(start 2.05 0.39)
 			(end 2.05 1.5)
 			(stroke
 				(width 0.05)
@@ -15627,24 +15575,24 @@
 			(uuid "c465e77b-f3c9-4533-82fe-8e79aa12c7e3")
 		)
 		(fp_line
-			(start 1.05 -0.390001)
-			(end 1.05 0.390001)
+			(start 1.05 -0.39)
+			(end 1.05 0.39)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "880ea27d-0456-4f2d-b06c-b1395240ed58")
+		)
+		(fp_line
+			(start 2.05 -0.39)
+			(end 1.05 -0.39)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
 			(uuid "5378cfa0-9b60-4cb8-9b13-d1e315ec296f")
-		)
-		(fp_line
-			(start 2.05 -0.390001)
-			(end 1.05 -0.390001)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "e2794576-7ae0-4c13-b2f4-06fdedd607d5")
 		)
 		(fp_line
 			(start -2.05 -1.5)
@@ -15658,7 +15606,7 @@
 		)
 		(fp_line
 			(start -1.05 -1.5)
-			(end -1.050001 -1.7)
+			(end -1.05 -1.7)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -15678,7 +15626,7 @@
 		)
 		(fp_line
 			(start 2.05 -1.5)
-			(end 2.05 -0.390001)
+			(end 2.05 -0.39)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -15687,17 +15635,17 @@
 			(uuid "d53ac66b-1a41-459c-aa99-182bb5730f01")
 		)
 		(fp_line
-			(start -1.050001 -1.7)
-			(end 1.050001 -1.7)
+			(start -1.05 -1.7)
+			(end 1.05 -1.7)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "880ea27d-0456-4f2d-b06c-b1395240ed58")
+			(uuid "e2794576-7ae0-4c13-b2f4-06fdedd607d5")
 		)
 		(fp_line
-			(start 1.050001 -1.7)
+			(start 1.05 -1.7)
 			(end 1.05 -1.5)
 			(stroke
 				(width 0.05)
@@ -15708,7 +15656,7 @@
 		)
 		(fp_poly
 			(pts
-				(xy -0.4 -1.45) (xy 0.8 -1.45) (xy 0.8 1.45) (xy -0.8 1.45) (xy -0.8 -1.050001)
+				(xy -0.4 -1.45) (xy 0.8 -1.45) (xy 0.8 1.45) (xy -0.8 1.45) (xy -0.8 -1.05)
 			)
 			(stroke
 				(width 0.1)
@@ -15730,7 +15678,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.1375 -0.949999 270)
+			(at -1.1375 -0.95 270)
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -15749,7 +15697,7 @@
 			(uuid "782a561b-6b62-432e-a41e-83660abd677e")
 		)
 		(pad "3" smd roundrect
-			(at -1.1375 0.949999 270)
+			(at -1.1375 0.95 270)
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -15759,7 +15707,7 @@
 			(uuid "cf81a078-add7-45ac-a215-d37f34d40d1d")
 		)
 		(pad "4" smd roundrect
-			(at 1.1375 0.949999 270)
+			(at 1.1375 0.95 270)
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -15768,7 +15716,7 @@
 			(uuid "e40f8c4d-76e0-4cfc-ad46-6b4b54cb861c")
 		)
 		(pad "5" smd roundrect
-			(at 1.1375 -0.949999 270)
+			(at 1.1375 -0.95 270)
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -15856,12 +15804,6 @@
 		(path "/20543166-0042-44f9-9a0f-06743d04ffd4")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -16014,12 +15956,6 @@
 		(path "/413e9abf-ac9f-4806-9a7f-581af6e5ae66")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -16158,16 +16094,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/SMD_single_row_plus_mounting_pad"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "ce047a62-7b12-4242-882b-4a104b2a2026")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??-1MP*")
 		(path "/817d2b7f-2552-4a1c-a59b-1309baec0add")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "MP")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -16271,18 +16213,18 @@
 			(uuid "d499b964-8b36-4138-8a59-4c64047d4e5b")
 		)
 		(fp_line
-			(start 5.6 5.100001)
-			(end 3.09 5.100001)
+			(start 5.6 5.1)
+			(end 3.09 5.1)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "6233ac1d-b5bb-4568-a060-58087e89dbee")
+			(uuid "0883e89b-5539-48e7-b1d2-ce06813f3567")
 		)
 		(fp_line
 			(start 5.6 0.69)
-			(end 5.6 5.100001)
+			(end 5.6 5.1)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -16311,7 +16253,7 @@
 			(uuid "81c449de-c430-4e54-8431-d90e8e5d18ea")
 		)
 		(fp_line
-			(start 3.09 5.100001)
+			(start 3.09 5.1)
 			(end 3.09 4.9)
 			(stroke
 				(width 0.05)
@@ -16371,18 +16313,18 @@
 			(uuid "e8b6894e-a6c9-4258-94e4-03002bf3cb45")
 		)
 		(fp_line
-			(start -3.09 5.100001)
-			(end -5.6 5.100001)
+			(start -3.09 5.1)
+			(end -5.6 5.1)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "0883e89b-5539-48e7-b1d2-ce06813f3567")
+			(uuid "6233ac1d-b5bb-4568-a060-58087e89dbee")
 		)
 		(fp_line
 			(start -3.09 4.9)
-			(end -3.09 5.100001)
+			(end -3.09 5.1)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -16411,7 +16353,7 @@
 			(uuid "fbe6fe3d-c917-4852-8aaf-a0c7f6cf5d09")
 		)
 		(fp_line
-			(start -5.6 5.100001)
+			(start -5.6 5.1)
 			(end -5.6 0.69)
 			(stroke
 				(width 0.05)
@@ -16654,31 +16596,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "14dcf956-09af-476d-aa47-1edca6a7a988")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/de861a3b-4b8c-408d-8aa1-4c9ea774b4b3")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "78b73054-b843-4114-8abc-d41b72f800be")
-		)
-		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -16686,29 +16624,37 @@
 			(layer "F.SilkS")
 			(uuid "70f8bf17-b55d-4ad6-abcb-38a6b68ad4fd")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
+		(fp_line
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
 			)
+			(layer "F.SilkS")
+			(uuid "78b73054-b843-4114-8abc-d41b72f800be")
+		)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "ddb45a27-8e54-4beb-ae5f-61288309d92f")
+			(uuid "e00e8f56-a0d0-40b7-8ed9-889eea01a728")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "5357515e-894c-4549-8a48-34742693a8aa")
+			(uuid "efbbd9d3-31f9-40fc-8114-ffbd758239ac")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 270)
@@ -16722,7 +16668,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -16731,7 +16677,7 @@
 			(uuid "e670c0cc-868b-48a4-86b6-3dbd9ca3aabd")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -16802,20 +16748,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "69cc0c08-b2d2-4de9-95ac-17e6f1885351")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/e5aecd4d-c748-41d9-8f55-f99f3996eff3")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -16826,7 +16778,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -16856,7 +16808,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -16876,7 +16828,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -16885,7 +16837,17 @@
 			(uuid "ae1ed5c6-dd3f-4567-82b0-3049539d839f")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ade410a1-e444-4006-b457-7c0c7a2f267a")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -16905,37 +16867,7 @@
 			(uuid "36fe899f-a92c-4b12-b4ff-eb267d5e172c")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "74ac39e9-620e-4d62-ae4b-afef3c2d361b")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "286ce107-360a-41c8-8628-17e84331b5e4")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "ade410a1-e444-4006-b457-7c0c7a2f267a")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -16945,7 +16877,27 @@
 			(uuid "de3baa22-dea9-4e2c-a454-ceed4c86292d")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "74ac39e9-620e-4d62-ae4b-afef3c2d361b")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "286ce107-360a-41c8-8628-17e84331b5e4")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -16976,7 +16928,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17005,7 +16957,7 @@
 			(uuid "601992e2-4a49-41cc-b933-178949e36cf7")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -17015,7 +16967,7 @@
 			(uuid "b34aac68-9912-4326-9ec5-2606c8aee3c6")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -17026,7 +16978,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17066,7 +17018,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17075,7 +17027,7 @@
 			(uuid "43e8863b-93d3-44aa-86ad-f722fb1cd644")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -17094,6 +17046,17 @@
 			(layer "F.SilkS")
 			(uuid "39d2e29c-7717-4398-8802-01d0f4942040")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "d3472fda-c591-47bf-aa82-306cc0d9e571")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -17106,8 +17069,8 @@
 			(uuid "e7048f31-f218-4673-a2fb-52707b04f382")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -17116,32 +17079,19 @@
 			(layer "F.SilkS")
 			(uuid "1a578087-1c23-4978-999c-7603c23a95ef")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "6c65815e-6d31-4d14-a52b-b254ee1ec81d")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "dfb0de7b-267e-424b-99bf-258cb0c002d0")
+			(uuid "3f169f78-3f86-4471-8070-d2fc6cc4080f")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -17152,7 +17102,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -17160,17 +17110,16 @@
 			(layer "F.Fab")
 			(uuid "d20e285f-e468-4d5e-99c6-5cb70509ce0c")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "30443e2a-2dd5-46dc-96de-f222f8c0be95")
+			(uuid "6fe3bd29-0533-4893-84d3-3a5ef530a882")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -17196,7 +17145,7 @@
 			(uuid "fba93071-9c36-425f-a1b5-77f54d57d4a6")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -17269,16 +17218,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "857c56db-2f4c-482a-8498-536c5226e1a8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/6e0cb1bc-6862-4df7-9c42-3651e556e7a5")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -17431,12 +17386,6 @@
 		(path "/987623cf-5683-4bfc-9e31-1a88c637ccff")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "2" "4" "5")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -17817,20 +17766,26 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "e3288e35-5caf-4e8e-9a4b-381e338ee8af")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/41e356eb-2aec-4336-804c-df049e5692a3")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.12)
@@ -17841,7 +17796,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17871,7 +17826,7 @@
 		)
 		(fp_line
 			(start 1.5 -3.5)
-			(end 1.25 -2.499999)
+			(end 1.25 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17891,7 +17846,7 @@
 		)
 		(fp_line
 			(start 6.33 -2.5)
-			(end 5.83 -2.499999)
+			(end 5.83 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -17900,7 +17855,17 @@
 			(uuid "6c12b49f-80ed-4092-95aa-e4965b69e831")
 		)
 		(fp_line
-			(start 4.329999 -2.5)
+			(start 5.83 -2.5)
+			(end 5.83 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "80292eeb-a238-4fa2-a6ab-6fe07112e72e")
+		)
+		(fp_line
+			(start 4.33 -2.5)
 			(end 3.83 -2.5)
 			(stroke
 				(width 0.12)
@@ -17920,37 +17885,7 @@
 			(uuid "9bbc82a2-769e-46d4-9847-81ff873774ac")
 		)
 		(fp_line
-			(start 0.75 -2.5)
-			(end 0.750001 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "07a1bde7-afed-432a-b937-06dd9ca66c30")
-		)
-		(fp_line
-			(start -0.75 -2.5)
-			(end -1.25 -2.499999)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9967c8e0-c1a5-450d-8523-e3c2986630d1")
-		)
-		(fp_line
-			(start 5.83 -2.499999)
-			(end 5.83 -2.15)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "80292eeb-a238-4fa2-a6ab-6fe07112e72e")
-		)
-		(fp_line
-			(start 1.25 -2.499999)
+			(start 1.25 -2.5)
 			(end 0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -17960,7 +17895,27 @@
 			(uuid "4259de6c-cd4f-4eaf-9d65-cf074d7d40ba")
 		)
 		(fp_line
-			(start -1.25 -2.499999)
+			(start 0.75 -2.5)
+			(end 0.75 -2.15)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "07a1bde7-afed-432a-b937-06dd9ca66c30")
+		)
+		(fp_line
+			(start -0.75 -2.5)
+			(end -1.25 -2.5)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9967c8e0-c1a5-450d-8523-e3c2986630d1")
+		)
+		(fp_line
+			(start -1.25 -2.5)
 			(end -1.5 -3.5)
 			(stroke
 				(width 0.12)
@@ -17991,7 +17946,7 @@
 		)
 		(fp_line
 			(start 4.33 -2.15)
-			(end 4.329999 -2.5)
+			(end 4.33 -2.5)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -18020,7 +17975,7 @@
 			(uuid "4c878e5f-728c-4983-a994-146c14130e70")
 		)
 		(fp_line
-			(start 0.750001 -2.15)
+			(start 0.75 -2.15)
 			(end 1.5 -2.15)
 			(stroke
 				(width 0.12)
@@ -18030,7 +17985,7 @@
 			(uuid "d1f59371-bfa6-4bb6-8caf-01b7863b0ded")
 		)
 		(fp_line
-			(start -0.750001 -2.15)
+			(start -0.75 -2.15)
 			(end -0.75 -2.5)
 			(stroke
 				(width 0.12)
@@ -18041,7 +17996,7 @@
 		)
 		(fp_line
 			(start -1.5 -2.15)
-			(end -0.750001 -2.15)
+			(end -0.75 -2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -18081,7 +18036,7 @@
 		)
 		(fp_line
 			(start 1.5 2.15)
-			(end 0.750001 2.15)
+			(end 0.75 2.15)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -18090,7 +18045,7 @@
 			(uuid "724b6a90-deda-424e-b2bd-7d16bce2e8b5")
 		)
 		(fp_line
-			(start -0.750001 2.15)
+			(start -0.75 2.15)
 			(end -1.5 2.15)
 			(stroke
 				(width 0.12)
@@ -18109,6 +18064,17 @@
 			(layer "F.SilkS")
 			(uuid "771ac483-61e6-410a-a6bf-cf3b81b66157")
 		)
+		(fp_rect
+			(start -2.65 -4.46)
+			(end 7.73 3.01)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "1aac589c-3a60-40de-a9a0-8e5992372375")
+		)
 		(fp_arc
 			(start 4.33 2.15)
 			(mid 5.079807 1.99191)
@@ -18121,8 +18087,8 @@
 			(uuid "f63f8789-7251-477d-a7ba-2f8016f711af")
 		)
 		(fp_arc
-			(start -0.750001 2.15)
-			(mid -0.000193 1.991911)
+			(start -0.75 2.15)
+			(mid -0.000193 1.99191)
 			(end 0.749647 2.149844)
 			(stroke
 				(width 0.12)
@@ -18131,32 +18097,19 @@
 			(layer "F.SilkS")
 			(uuid "c0b49072-572c-440f-bb2d-b238934d47e5")
 		)
-		(fp_poly
-			(pts
-				(xy -2.65 -4.46) (xy 7.73 -4.46) (xy 7.73 3.01) (xy -2.65 3.009999)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "0fe1a26d-e3ce-4b0b-b201-6b79ac4c0197")
-		)
-		(fp_poly
-			(pts
-				(xy -3.040001 -4.85) (xy 8.13 -4.85) (xy 8.13 3.41) (xy -3.04 3.410001)
-			)
+		(fp_rect
+			(start -3.04 -4.85)
+			(end 8.13 3.41)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "232e6aef-8eaa-4c7e-9678-1886e2ca2e7b")
+			(uuid "ad91ecc9-27ec-44f0-a9ad-132bbdbd6800")
 		)
 		(fp_line
-			(start -3.040001 -4.85)
+			(start -3.04 -4.85)
 			(end -1.04 -4.85)
 			(stroke
 				(width 0.1)
@@ -18167,7 +18120,7 @@
 		)
 		(fp_line
 			(start -3.04 -3.6)
-			(end -3.040001 -4.85)
+			(end -3.04 -4.85)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -18175,17 +18128,16 @@
 			(layer "F.Fab")
 			(uuid "0111f1ae-15c1-4fad-8e56-7a2f9af8d62c")
 		)
-		(fp_poly
-			(pts
-				(xy -2.54 -4.35) (xy 7.62 -4.35) (xy 7.62 2.9) (xy -2.54 2.9)
-			)
+		(fp_rect
+			(start -2.54 -4.35)
+			(end 7.62 2.9)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "1cc18ae0-e074-45c3-915c-41e1cd217c97")
+			(uuid "7040dc99-1df2-47b0-a079-5f7db4b40771")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 2.54 -3.65 90)
@@ -18211,7 +18163,7 @@
 			(uuid "eb5bb904-233d-4e5e-9b41-b7aecf5f2543")
 		)
 		(pad "2" thru_hole oval
-			(at 5.079999 0 90)
+			(at 5.08 0 90)
 			(size 1.8 3.6)
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
@@ -18284,16 +18236,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "24a2a103-85f5-4359-bca4-431ec6e7be0b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/9f2e70ca-7d27-48aa-82ad-f121200eccf9")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -18316,29 +18274,27 @@
 			(layer "F.SilkS")
 			(uuid "3ad3b078-a665-4e9c-b65e-e85f15085d28")
 		)
-		(fp_poly
-			(pts
-				(xy -2.3 -1.15) (xy 2.3 -1.15) (xy 2.3 1.15) (xy -2.3 1.15)
-			)
+		(fp_rect
+			(start -2.3 -1.15)
+			(end 2.3 1.15)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "618b32d3-647e-455a-90b7-2218864d9b9e")
+			(uuid "b4718f76-5ff6-4f50-a875-0d703e07daba")
 		)
-		(fp_poly
-			(pts
-				(xy -1.6 -0.8) (xy 1.6 -0.8) (xy 1.6 0.8) (xy -1.6 0.8)
-			)
+		(fp_rect
+			(start -1.6 -0.8)
+			(end 1.6 0.8)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "d74c82fe-a322-4be4-bc84-c9549fbd90be")
+			(uuid "f5d663d2-0bf8-4e0f-9756-72295c700cb5")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 180)
@@ -18352,7 +18308,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.475001 0)
+			(at -1.475 0)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -18361,7 +18317,7 @@
 			(uuid "e2dc8a9d-1e98-4cb4-9222-6bac9fe33048")
 		)
 		(pad "2" smd roundrect
-			(at 1.475001 0)
+			(at 1.475 0)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -22672,12 +22628,6 @@
 		(path "/b751bf79-afe6-413d-9583-8e357a8f13b7")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -22814,16 +22764,22 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a7074d4c-10cd-485e-af2d-fa5df112c780")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/a1719e7a-ed96-4bdd-b51b-1414944ec30a")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -23019,31 +22975,27 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "08adb676-c22a-421f-9741-58876dbeddee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/86e6956b-d11b-439a-89e2-d3f3bb7608e9")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.261253 0.735)
-			(end 0.261253 0.735)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "7887d4b1-8f29-453b-a552-de642bcc3808")
-		)
-		(fp_line
-			(start -0.261253 -0.735)
-			(end 0.261253 -0.735)
+			(start -0.261252 0.735)
+			(end 0.261252 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -23051,29 +23003,37 @@
 			(layer "F.SilkS")
 			(uuid "1027dd2f-49b3-45ad-aad1-58bba180d6a3")
 		)
-		(fp_poly
-			(pts
-				(xy -1.7 -0.98) (xy 1.7 -0.98) (xy 1.7 0.98) (xy -1.7 0.98)
+		(fp_line
+			(start -0.261252 -0.735)
+			(end 0.261252 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
 			)
+			(layer "F.SilkS")
+			(uuid "7887d4b1-8f29-453b-a552-de642bcc3808")
+		)
+		(fp_rect
+			(start -1.7 -0.98)
+			(end 1.7 0.98)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "b7f2db0f-b421-4e83-a551-1b6d6ef34a03")
+			(uuid "40e01334-5bcb-4c15-bde8-229267654aef")
 		)
-		(fp_poly
-			(pts
-				(xy -1 -0.625) (xy 1 -0.625) (xy 1 0.625) (xy -1 0.625)
-			)
+		(fp_rect
+			(start -1 -0.625)
+			(end 1 0.625)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "45dfa157-95b1-4088-b798-69fd06f2e333")
+			(uuid "5e5cad45-13a5-44a7-90cf-72ec09dceab4")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 90)
@@ -23087,7 +23047,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.949999 0 270)
+			(at -0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -23096,7 +23056,7 @@
 			(uuid "45e4cba2-43c7-4969-a5c5-46767e62ec07")
 		)
 		(pad "2" smd roundrect
-			(at 0.949999 0 270)
+			(at 0.95 0 270)
 			(size 1 1.45)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -23188,12 +23148,6 @@
 		(path "/e6ffd779-d054-4f5d-83b1-7d1941b42c62")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -23352,12 +23306,6 @@
 		(path "/d038c035-fb6e-4827-995a-69f2c5e6f3e7")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "6" "3" "5" "7" "8" "4")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -23740,12 +23688,6 @@
 		(path "/3d092844-9378-4894-9435-c07f7eed4c4a")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "6" "3" "5" "7" "8" "4")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -24128,12 +24070,6 @@
 		(path "/25385e70-38e2-46ba-bfaa-89c8af363cc7")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -24275,18 +24211,23 @@
 				(justify mirror)
 			)
 		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
+			(at 0 0 270)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "cc88ff67-6d8d-4e2d-bd00-9576fbbbd1d7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/73f62e9b-8724-4d2e-bb34-4ce5277622a2")
 		(sheetname "/")
 		(sheetfile "ESP32-Liligo-Disp-Temp-Hat.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "5" "7" "9" "11" "13" "15" "17" "19" "21" "2" "4" "6" "8"
-					"10" "12" "14" "16" "18" "20" "22"
-				)
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -24300,7 +24241,7 @@
 			(uuid "191879f8-490d-450b-b690-d8736e1041b4")
 		)
 		(fp_line
-			(start 1.33 -1.270001)
+			(start 1.33 -1.27)
 			(end 1.33 -26.73)
 			(stroke
 				(width 0.12)
@@ -24311,7 +24252,7 @@
 		)
 		(fp_line
 			(start -1.27 -1.27)
-			(end 1.33 -1.270001)
+			(end 1.33 -1.27)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -24340,7 +24281,7 @@
 			(uuid "dd309af8-5080-4749-9ef2-873cb3b22094")
 		)
 		(fp_line
-			(start -1.270001 1.33)
+			(start -1.27 1.33)
 			(end -1.27 -1.27)
 			(stroke
 				(width 0.12)
@@ -24361,7 +24302,7 @@
 		)
 		(fp_line
 			(start -3.87 1.33)
-			(end -1.270001 1.33)
+			(end -1.27 1.33)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -24410,6 +24351,16 @@
 			(uuid "113fb7a3-2b63-4e5d-8f88-4560d7911c51")
 		)
 		(fp_line
+			(start 1.27 -26.67)
+			(end -3.81 -26.67)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "B.Fab")
+			(uuid "dc668349-00ad-4a44-a3f1-ac54af45e7d3")
+		)
+		(fp_line
 			(start -3.81 -26.67)
 			(end -3.81 1.27)
 			(stroke
@@ -24420,18 +24371,8 @@
 			(uuid "90fa0938-80ae-4b91-94ad-7c42ec6c74db")
 		)
 		(fp_line
-			(start 1.27 -26.669999)
-			(end -3.81 -26.67)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "B.Fab")
-			(uuid "dc668349-00ad-4a44-a3f1-ac54af45e7d3")
-		)
-		(fp_line
 			(start 1.27 0.27)
-			(end 1.27 -26.669999)
+			(end 1.27 -26.67)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -24516,7 +24457,7 @@
 			(uuid "120a4613-7cf3-49e6-8be3-ceae79d96d5e")
 		)
 		(pad "5" thru_hole circle
-			(at 0 -5.079999 90)
+			(at 0 -5.08 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -24567,7 +24508,7 @@
 			(remove_unused_layers no)
 			(net "ENCODER_B")
 			(pinfunction "Pin_9_9")
-			(pintype "passive+no_connect")
+			(pintype "passive")
 			(uuid "3ff7a80e-5ceb-4997-9167-3b0d78b394ab")
 		)
 		(pad "10" thru_hole circle
@@ -24578,7 +24519,7 @@
 			(remove_unused_layers no)
 			(net "unconnected-(J1-Pin_10-Pad10)")
 			(pinfunction "Pin_10_10")
-			(pintype "passive")
+			(pintype "passive+no_connect")
 			(uuid "6f34bf17-fc88-4601-b86d-d43ba38b3239")
 		)
 		(pad "11" thru_hole circle
@@ -24626,14 +24567,14 @@
 			(uuid "1edf3351-42a8-4aef-94e7-62681b1c2e4b")
 		)
 		(pad "15" thru_hole circle
-			(at 0 -17.780001 90)
+			(at 0 -17.78 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "JOYSTICK_PUSH")
 			(pinfunction "Pin_15_15")
-			(pintype "passive+no_connect")
+			(pintype "passive")
 			(uuid "2809dfa3-9e0e-415c-9109-8c134dc1d45d")
 		)
 		(pad "16" thru_hole circle
@@ -24644,7 +24585,7 @@
 			(remove_unused_layers no)
 			(net "unconnected-(J1-Pin_16-Pad16)")
 			(pinfunction "Pin_16_16")
-			(pintype "passive")
+			(pintype "passive+no_connect")
 			(uuid "56f8b5f7-4bd6-4de6-be82-592a4db1c45c")
 		)
 		(pad "17" thru_hole circle
