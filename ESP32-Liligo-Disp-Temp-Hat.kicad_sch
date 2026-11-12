@@ -11899,7 +11899,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "MKDS5/2-6.35"
 			(at 82.55 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11909,7 +11909,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TerminalBlock_Ningbo-Kagnex:TerminalBlock_Ningbo-Kagnex_HB9500_1x02_P9.5mm"
+		(property "Footprint" "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type701_RT11L02HGLU_1x02_P6.35mm_Horizontal"
 			(at 82.55 105.41 0)
 			(hide yes)
 			(show_name no)

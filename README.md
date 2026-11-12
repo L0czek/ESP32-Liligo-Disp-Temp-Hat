@@ -95,6 +95,7 @@ PSU+ → J11.1 (24V_IN) → R6 → J11.2 (24V_OUT) → relay COMs → heater →
 ```
 
 - The hat sits in the positive feed. No heater current flows in the hat's GND.
+- J11 is a Phoenix MKDS5/2-6.35 screw terminal block (fixed, not pluggable).
 - R6 is a 1 mΩ 4-terminal (Kelvin) shunt, Vishay WSK2512 footprint. Pads 1/4 carry the current,
   pads 2/3 go only to the INA226 inputs. At 18.75 A: 18.75 mV, 0.35 W.
 - U6 is an INA226AIDGS at I²C address `0x40` (A0 = A1 = GND), powered from `VCC`, decoupled by C14.
@@ -215,14 +216,16 @@ Parts picked so far, as input for a BOM at the end. Prices are TME gross, single
 
 | Ref | Part | Footprint | Notes |
 |---|---|---|---|
-| J11 | Degson [`DG638-9.52-02P`](https://www.tme.eu/pl/details/DG638-9.52-02P/), 4.49 zł | `TerminalBlock_Ningbo-Kagnex_HB9500_1x02_P9.5mm` | 32 A, 4 mm² wire, 9.52 mm pitch, 0.9 mm square pins. The footprint is deliberately generic: 9.5 mm pitch, 2 mm holes, 3.3 × 6.6 mm pads, so any 9.5 mm 30 A block (screw or barrier type) or a soldered wire fits. The pin is loose in the hole; hold the block square and fill the joint fully. |
+| J11 | Phoenix [`MKDS5/2-6.35`](https://www.tme.eu/pl/details/MKDS5_2-6.35/), 8.04 zł | `TerminalBlock_MetzConnect_Type701_RT11L02HGLU_1x02_P6.35mm_Horizontal` | 32 A, 4 mm² wire, 6.35 mm pitch, 1 × 1 mm pins in 1.3 mm holes (hole size confirmed on the Phoenix drawing by the user). Exact fit on the stock KiCad footprint, 12.7 × 12.5 mm body. 80 in stock at TME on 2026-11-12. |
 | U6 | TI `INA226AIDGSR` | `TSSOP-10_3x3mm_P0.5mm` | In stock at TME (confirmed by the user, price not looked up). |
 | D1–D4 | Nexperia [`PESD5V0L4UG.115`](https://www.tme.eu/pl/details/PESD5V0L4UG.115/), 1.23 zł | `SOT-353_SC-70-5` | 4-channel ESD clamp, 5 V, common anode. 5900 in stock. |
 | R6 | 1 mΩ 4-terminal 2512, Vishay WSK2512 type | `R_Shunt_Vishay_WSK2512_6332Metric_T2.21mm` | Exact part not picked yet. Needs ≥ 1 W. |
 | L1 | Ferrite bead, 600 Ω at 100 MHz, 0805 | `L_0805_2012Metric` | Exact part not picked yet. |
 
-Considered for J11 and not used: Phoenix `MKDS5/2-6.35` (32 A, 8.04 zł, exact fit on KiCad's Metz
-RT11L 6.35 mm footprint, 1.3 mm holes) and Phoenix `MKDS3/2-5.08` (only 24 A).
+J11 was first given a generic 9.5 mm footprint with 2 mm holes for the Degson `DG638-9.52-02P`
+(32 A, 4.49 zł), to fit whatever 30 A block was on hand. It took 21.6 × 18.9 mm of board and
+was the main reason the layout was tight, so it was replaced by the smaller Phoenix part.
+Phoenix `MKDS3/2-5.08` (24 A) was rejected as too small for a continuous 19 A load.
 
 ## PCB layout tasks
 
@@ -233,24 +236,25 @@ State of the board:
 
 - All parts are placed, on the top side. The outline is 45.7 × 99.7 mm, cut back on the right
   so that the hat is flush with the T-Relay (see "How the hat sits on the T-Relay-8").
-- **Routing is partly restored: 310 of the 495 original track segments and vias are back**
-  (264 segments, 46 vias), put there by script from the original board. All tracks were first
+- **Routing is partly restored: 363 of the 495 original track segments and vias are back**
+  (306 segments, 57 vias), put there by script from the original board. All tracks were first
   removed, because the new parts sit where many of them ran and several pads changed net.
   What came back falls into three groups:
   - **Finished connections.** Tracks whose pads are all still on the same net and moved by no
-    more than 5 mm; track ends were dragged along with pads that moved a little (U1, U3, C6, C7,
-    R3–R5, C8, JP3). This covers the core around U1, U3, U4, U2 and the jumpers.
+    more than 5 mm; track ends were dragged along with pads that moved a little (R3–R5, C8, JP3).
+    This covers the core around U1, U3, U4, U2, the jumpers and the supply filter.
   - **J1's old tracks, as guides.** J1 moved 3.0 mm right and 3.5 mm up, so these still end where
     its holes used to be, about 4.6 mm from the pads. They need to be re-terminated by hand,
     and five of them belong to signals that are now on a different J1 pin (see "J1").
   - **Thermocouple tracks, as guides.** They run from the multiplexers towards the terminals
     and are cut off at x = 98.9, just right of the protection column, where they have to be
     joined to the series resistors. Some are only fragments.
-  Anything that caused a clearance, short or board-edge violation against the new placement
-  was removed piece by piece, so what is left is DRC-clean but has 43 dangling track ends.
-  Some restored tracks cross the area between R6 and J11 where the 24 V copper has to go; move
-  them when routing the heater path. The VCC and GND planes (In1, In2) are kept and refilled.
-- DRC shows no clearance, short or courtyard errors, 138 unconnected items (the routing to do), 43 dangling track ends (expected, see above),
+  Anything that caused a clearance, short or board-edge violation against the new placement,
+  or that ended on a pad of a different net, was removed piece by piece. What is left is
+  DRC-clean but has 34 dangling track ends. Some restored tracks cross the area around R6 and
+  J11 where the 24 V copper has to go; move them when routing the heater path. The VCC and GND
+  planes (In1, In2) are kept and refilled.
+- DRC shows no clearance, short or courtyard errors, 116 unconnected items (the routing to do), 34 dangling track ends (expected, see above),
   and silkscreen warnings.
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
   on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
@@ -272,16 +276,19 @@ Where things are:
 
 - **Terminals J2–J9** are where the original design had them, on the left edge, at an exactly
   uniform 12.70 mm pitch.
-- **Thermocouple protection** is one column (x = 96.9) between the terminals and the
-  multiplexers, mirror-symmetric about the centre of the terminal row (y = 66.7). Each clamp
-  array is next to the connectors it serves (D1: J2/J3, D2: J4/J5, D3: J6/J7, D4: J8/J9).
-- **Cold-junction sensors** are in that column, in the same orientation, each centred in a gap
-  between two terminals and 12.7 mm either side of the row's centre: U7 between J4 and J5
-  (y = 54.0), U8 between J6 and J7 (y = 79.4). Terminal pins run from y = 19.7 to 113.7.
-  C16 and C17 sit at mirrored positions beside them.
+- **Thermocouple protection** is one column between the terminals and the multiplexers,
+  mirror-symmetric about the centre of the terminal row (y = 66.7). Each clamp array is next to
+  the connectors it serves (D1: J2/J3, D2: J4/J5, D3: J6/J7, D4: J8/J9). The two middle groups
+  have each resistor level with its terminal pin; the two end groups have two resistors per row.
+- **Cold-junction sensors** are at the two ends of the terminal row, in the same orientation and
+  39.4 mm either side of its centre: U7 between J2 and J3 (y = 27.3), U8 between J8 and J9
+  (y = 106.1). Terminal pins run from y = 19.7 to 113.7, so firmware interpolates between the
+  two sensors for all but the outermost pins. Each has its capacitor (C16, C17) beside it. U8 is
+  about 30 mm from the shunt.
 - **Heater path** at the right edge above J1: J11 with its wire entry facing outward, R6 directly
-  behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14.
-- **Supply filter** (L1, C10–C13) is below U3, moved from the right to make room for J11.
+  behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14. A corridor
+  about 6 mm wide is free between that column and the protection column.
+- **Supply filter** (L1, C10–C13) is where the original design had it, next to U2.
 - **Pull-ups:** R12 by J12, R13 by U2, R9–R11 (not fitted) in a row above J10.
 
 Routing tasks:
@@ -297,9 +304,6 @@ Routing tasks:
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
 - [ ] **J1 is on the back side.** It is a through-hole part, so its pads are reachable from both
       copper layers as before. Do not move it: its position fixes how the hat sits on the T-Relay.
-- [ ] **J11 footprint check.** The footprint is generic (9.5 mm pitch, 2 mm holes). The default
-      part, Degson DG638-9.52-02P, has a 19.04 × 16 mm body with the pin row 4.9 mm from its
-      back face.
 - [ ] **J10 orientation** against the physical panel module (its header is numbered the other
       way round, see "J10").
 - [ ] **Mechanical support: resting spacers** in H1, H3 and H4 (see "How the hat sits on the
