@@ -246,15 +246,15 @@ State of the board:
   - **J1's old tracks, as guides.** J1 moved 3.0 mm right and 3.5 mm up, so these still end where
     its holes used to be, about 4.6 mm from the pads. They need to be re-terminated by hand,
     and five of them belong to signals that are now on a different J1 pin (see "J1").
-  - **Thermocouple tracks, as guides.** They run from the multiplexers towards the terminals
-    and are cut off at x = 98.9, just right of the protection column, where they have to be
-    joined to the series resistors. Some are only fragments.
+  - **Thermocouple tracks.** The old tracks from the multiplexers towards the terminals were
+    kept up to the protection column and are now joined to the series resistors (see the
+    routing tasks below), so these are finished connections too.
   Anything that caused a clearance, short or board-edge violation against the new placement,
   or that ended on a pad of a different net, was removed piece by piece. What is left is
   DRC-clean but has 34 dangling track ends. Some restored tracks cross the area around R6 and
   J11 where the 24 V copper has to go; move them when routing the heater path. The VCC and GND
   planes (In1, In2) are kept and refilled.
-- DRC shows no clearance, short or courtyard errors, 101 unconnected items (the routing to do), 34 dangling track ends (expected, see above),
+- DRC shows no clearance, short or courtyard errors, 50 unconnected items (the routing to do), 22 dangling track ends (the J1 guides),
   and silkscreen warnings.
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
   on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
@@ -276,15 +276,22 @@ Where things are:
 
 - **Terminals J2–J9** are where the original design had them, on the left edge, at an exactly
   uniform 12.70 mm pitch.
-- **Thermocouple protection** is one column between the terminals and the multiplexers,
-  mirror-symmetric about the centre of the terminal row (y = 66.7). Each clamp array is next to
-  the connectors it serves (D1: J2/J3, D2: J4/J5, D3: J6/J7, D4: J8/J9). The two middle groups
-  have each resistor level with its terminal pin; the two end groups have two resistors per row.
-- **Cold-junction sensors** are at the two ends of the terminal row, in the same orientation and
-  39.4 mm either side of its centre: U7 between J2 and J3 (y = 27.3), U8 between J8 and J9
-  (y = 106.1). Terminal pins run from y = 19.7 to 113.7, so firmware interpolates between the
-  two sensors for all but the outermost pins. Each has its capacitor (C16, C17) beside it. U8 is
-  about 30 mm from the shunt.
+- **Thermocouple protection** is one column between the terminals and the multiplexers: four
+  identical groups, mirror-symmetric about the centre of the terminal row (y = 66.7). Each
+  group has its clamp array in the gap between its two connectors (D1: J2/J3, D2: J4/J5,
+  D3: J6/J7, D4: J8/J9) and a series resistor level with each terminal pin. In a group the
+  two inner lines tap straight down or up to the clamp; the two outer lines tap through the
+  gap between the pads of the inner line's resistor. That keeps terminal → clamp → resistor on
+  the front layer with no crossings. Two lines are special: J2 pin 2 and J9 pin 1 sit beside
+  the mounting holes H2 and H4, so their tracks go round the left of the neighbouring pin.
+- Which clamp channel serves which line was reassigned in the schematic to make that possible
+  (the four channels of an array are interchangeable).
+- **Cold-junction sensors** are just right of the column at the two ends of the terminal row,
+  in the same orientation and 34.4 mm either side of its centre: U7 at (105.9, 32.3), level
+  with J3, and U8 at (105.9, 101.1), level with J8. Terminal pins run from y = 19.7 to 113.7.
+  Each has its capacitor (C16, C17) above it. They are about 16 mm from the terminal pins;
+  they had to leave the column so that all four groups could be identical. U8 is about 26 mm
+  from the shunt.
 - **Heater path** at the right edge above J1: J11 with its wire entry facing outward, R6 directly
   behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14. A corridor
   about 6 mm wide is free between that column and the protection column.
@@ -301,8 +308,11 @@ Routing tasks:
       R7 (through the gap under the shunt body). From there the pair goes to C15 and U6 pins
       10/9; `Vbus` reaches `24V_OUT` on the back layer; supply, ground and C14 are connected.
       Still open on U6: SDA and SCL (pins 4, 5), which belong to the digital routing.
-- [ ] **Thermocouple inputs.** Terminal pad → clamp pin → series resistor → multiplexer, with the
-      `+` and `−` of each channel routed together and no vias if possible.
+- [x] **Thermocouple inputs.** All sixteen lines are routed: terminal pin → clamp → series resistor
+      on the front layer by a fixed pattern, then resistor → multiplexer by a small grid router
+      that joined each resistor to the restored original track of its net. The `+` and `−` of
+      a channel run in the same corridor but are not paired side by side everywhere; tidy by
+      hand if wanted.
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
 - [ ] **J1 is on the back side.** It is a through-hole part, so its pads are reachable from both
       copper layers as before. Do not move it: its position fixes how the hat sits on the T-Relay.
