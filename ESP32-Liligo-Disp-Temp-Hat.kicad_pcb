@@ -19856,6 +19856,69 @@
 			)
 		)
 	)
+	(footprint ""
+		(layer "F.Cu")
+		(uuid "f3d2efa1-0bf4-4c5c-8a9d-a0455878e896")
+		(at 41.51 256.12)
+		(property "Reference" "REF1"
+			(at 0 0 0)
+			(layer "Dwgs.User")
+			(hide yes)
+			(uuid "54989f5d-0f5d-4f09-8a57-5f5f26574fde")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "T-Relay-8 reference model"
+			(at 0 0 0)
+			(layer "Dwgs.User")
+			(hide yes)
+			(uuid "9836aeae-bfc7-46c8-97e4-2e1e574bd6ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "48f4187d-4b2d-4d29-ad31-7f168f9df358")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "582b4450-e862-4b40-a869-213b45b55b4e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(attr board_only exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/3d/T-Relay8-ESP32-3D.stp"
+			(offset
+				(xyz 0 0 -12.6)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "f88650eb-c378-4b69-b343-551fce3477b5")

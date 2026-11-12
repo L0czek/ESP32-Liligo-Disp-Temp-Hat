@@ -236,6 +236,12 @@ State of the board:
   and silkscreen warnings.
 - Layer `Dwgs.User` carries the T-Relay-8 outline from the vendor DXF: board edge, relays,
   ESP32 module, header pins and mounting holes, for reference while routing.
+- Footprint `REF1` (board-only, no pads, excluded from BOM and position files) carries a 3D
+  model of the T-Relay-8, so the 3D viewer shows the hat sitting on it. The model is LilyGO's
+  own STEP file, `3d/T-Relay8-ESP32-3D.stp`, taken unchanged from `dxf/T-Relay8-ESP32-3D.7z` in
+  the vendor repo. It is drawn 11 mm below the hat's underside, which is an assumed stack
+  height for the header and socket; correct the model's Z offset once the real gap is measured.
+  If J1 ever moves on the hat, `REF1` and the `Dwgs.User` outline have to move with it.
 - A rule area "ESP32 antenna keep-out" (x = 98–122, y = 82.4–90, all copper layers) stops
   zone fills above the ESP32's antenna. Tracks and pads are still allowed there, because J12
   sits in that area.
