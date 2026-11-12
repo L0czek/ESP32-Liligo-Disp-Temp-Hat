@@ -234,14 +234,15 @@ State of the board:
   they ran and several pads changed net. The VCC and GND planes (In1, In2) are kept and refilled.
 - DRC shows no clearance, short or courtyard errors, 180 unconnected items (the routing to do),
   and silkscreen warnings.
-- Layer `Dwgs.User` carries the T-Relay-8 outline from the vendor DXF: board edge, relays,
-  ESP32 module, header pins and mounting holes, for reference while routing.
-- Footprint `REF1` (board-only, no pads, excluded from BOM and position files) carries a 3D
-  model of the T-Relay-8, so the 3D viewer shows the hat sitting on it. The model is LilyGO's
-  own STEP file, `3d/T-Relay8-ESP32-3D.stp`, taken unchanged from `dxf/T-Relay8-ESP32-3D.7z` in
-  the vendor repo. It is drawn 11 mm below the hat's underside, which is an assumed stack
-  height for the header and socket; correct the model's Z offset once the real gap is measured.
-  If J1 ever moves on the hat, `REF1` and the `Dwgs.User` outline have to move with it.
+- **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
+  on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
+  DXF) and the 3D model (`3d/T-Relay8-ESP32-3D.stp`, LilyGO's own file, unchanged, from
+  `dxf/T-Relay8-ESP32-3D.7z` in the vendor repo). It has no pads, is board-only, and is excluded
+  from the BOM and position files. It is locked so it is not dragged by accident.
+  - Its anchor is the T-Relay's bottom-left corner. If J1 ever moves on the hat, unlock `REF1`
+    and move it by the same amount; outline and model move together.
+  - The 3D model is drawn 11 mm below the hat's underside, an assumed stack height for the
+    header and socket. Correct the model's Z offset once the real gap is measured.
 - Board coordinates in this README are sheet coordinates in the PCB editor. On 2026-11-12 the
   whole drawing was moved up by 66.04 mm (26 × 2.54) so that the hat and the T-Relay outline
   fit on the A4 sheet; coordinates in commit messages before that are 66.04 mm larger in y.
