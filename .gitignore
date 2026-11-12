@@ -40,3 +40,7 @@ fp-info-cache
 *.kicad_prl
 .history
 gerber.zip
+
+# TME API credentials + cached OAuth Bearer (per-skill)
+.claude/skills/tme-search/.env
+.claude/skills/tme-search/.token-cache.json
