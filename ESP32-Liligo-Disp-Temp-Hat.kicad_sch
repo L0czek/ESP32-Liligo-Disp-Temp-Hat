@@ -17965,6 +17965,717 @@
 		(at 53.34 38.1)
 		(uuid "dc07d156-c1b9-49df-b5af-91d010ba7f49")
 	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 132.08 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "28f1cf87-03b3-4283-a109-83468e163e0e")
+		(property "Reference" "R9"
+			(at 113.03 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 118.11 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 115.57 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 115.57 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8569f4f-9052-465a-aa80-091b32cdf2bb")
+		)
+		(pin "2"
+			(uuid "097ad96c-0d24-4afa-9f9a-2a210a7830de")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "JOYSTICK_PUSH"
+		(shape input)
+		(at 111.76 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "75799f30-8519-4266-b5a9-caf74d1838cb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 119.38 132.08) (xy 121.92 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34331a0a-a05b-4d15-a249-2c4d468eb9bd")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 137.16 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "0407ad27-5a1b-4519-bac8-da23d9bbf8ca")
+		(property "Reference" "R10"
+			(at 113.03 134.62 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 118.11 134.62 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 115.57 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 115.57 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "60428b67-3eee-440d-ad05-86d2c552c4b9")
+		)
+		(pin "2"
+			(uuid "4e5846f1-06fc-41b0-b146-6f467d27d84f")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "ENCODER_A"
+		(shape input)
+		(at 111.76 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0d18ec5e-c7b6-47bf-aad8-57c580732006")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 119.38 137.16) (xy 121.92 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35c40d91-5571-418c-9a38-4ab746e18f9b")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 142.24 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "944faa6b-6776-4f06-92b9-9350bed130d8")
+		(property "Reference" "R11"
+			(at 113.03 139.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 118.11 139.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 115.57 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 115.57 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6f542252-a284-4735-8c59-eca9f606d7a3")
+		)
+		(pin "2"
+			(uuid "4e340c04-d981-4366-a7d3-ec3d650cc9e7")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "ENCODER_B"
+		(shape input)
+		(at 111.76 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8924cbb1-7f25-475a-ad40-99bf0afc31a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 119.38 142.24) (xy 121.92 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2229a525-3a79-443a-9f7c-6e6e00e4dbc7")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 147.32 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ee2466b0-ea0c-4ec3-9109-554a6e8f85e5")
+		(property "Reference" "R12"
+			(at 113.03 144.78 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4K7"
+			(at 118.11 144.78 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 115.57 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 115.57 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "abd48305-dde7-444b-9d1f-a98804c328e7")
+		)
+		(pin "2"
+			(uuid "155ffdea-1f4a-4112-b72a-834489bd6a9c")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "ONEWIRE"
+		(shape input)
+		(at 111.76 147.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bf0fabc1-bdc6-48ec-b132-da6aa8514f17")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 119.38 147.32) (xy 121.92 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b595c87a-279e-407b-87d7-699b07767e57")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 152.4 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4cc14eb1-87f1-4343-9fef-8842abf6a6f8")
+		(property "Reference" "R13"
+			(at 113.03 149.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4K7"
+			(at 118.11 149.86 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 115.57 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 115.57 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "83a76de2-9e0f-4169-8e85-59c3d35272fb")
+		)
+		(pin "2"
+			(uuid "f54f95f6-03b3-47ff-a449-aadddb24d805")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "TC_CS"
+		(shape input)
+		(at 111.76 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "28304a5c-3882-4b2b-b3e7-ae007d5ae825")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 119.38 152.4) (xy 121.92 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a1bb712-aeb5-4c90-ab4e-f5ea20b52bec")
+	)
+	(wire
+		(pts
+			(xy 121.92 129.54) (xy 121.92 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b1a4598-9108-4711-bd89-e71ea001673f")
+	)
+	(wire
+		(pts
+			(xy 121.92 132.08) (xy 121.92 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b61fcc13-d8e8-429b-92ea-008d02576c14")
+	)
+	(wire
+		(pts
+			(xy 121.92 137.16) (xy 121.92 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38ab4cf1-58ef-43e8-b04c-e244adb817a5")
+	)
+	(wire
+		(pts
+			(xy 121.92 142.24) (xy 121.92 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c87d730-7258-42a1-99df-06947815d62e")
+	)
+	(wire
+		(pts
+			(xy 121.92 147.32) (xy 121.92 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a13dbe13-4977-4711-997b-3b8d314b34ec")
+	)
+	(junction
+		(at 121.92 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7e04976d-3335-4256-b953-026fcfdab1da")
+	)
+	(junction
+		(at 121.92 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5c82be5c-cc72-45e4-826d-713f6a74695f")
+	)
+	(junction
+		(at 121.92 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cab200de-0f4e-4475-978f-ad5f2f4b3543")
+	)
+	(junction
+		(at 121.92 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "86c684cf-e26e-47f5-b149-b8869645f202")
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 121.92 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6ef22dd6-5736-4ce6-b1b6-f885f44f7aa7")
+		(property "Reference" "#PWR058"
+			(at 121.92 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 121.92 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 121.92 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3ea4909-b749-4f93-be0a-10a0cb6f1246")
+		)
+		(instances
+			(project "ESP32-Liligo-Disp-Temp-Hat"
+				(path "/009103dd-1548-4237-811a-1a7f9b2e34c5"
+					(reference "#PWR058")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

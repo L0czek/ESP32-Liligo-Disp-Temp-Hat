@@ -153,7 +153,7 @@ Must fix:
 
 - [x] 1. Remap J1. ONEWIRE was on an input-only pin (IO35); it is now on IO22, with the other
       signals shuffled onto input-only pins (table in "J1").
-- [ ] 2. 4.7 kΩ pull-up from ONEWIRE to VCC.
+- [x] 2. Pull-up from ONEWIRE to VCC: R12, 4.7 kΩ.
 - [x] 3. Replace J11 (was rated about 8 A, heater draws about 18.75 A). Now a generic 9.5 mm pitch
       footprint with 2 mm holes; default part Degson `DG638-9.52-02P` (32 A). See "Chosen parts".
 - [x] 4. Current sensing: INA226 on the 24 V side with a 4-terminal shunt (details below).
@@ -162,8 +162,12 @@ Must fix:
 
 Should fix:
 
-- [ ] 6. 10 kΩ pull-ups on ENCODER_A, ENCODER_B, JOYSTICK_PUSH (leave unfitted if the panel has them).
-- [ ] 7. 10 kΩ pull-up on TC_CS, so the MAX31856 stays off MISO (IO2, boot strap) during boot.
+- [x] 6. Pull-ups on JOYSTICK_PUSH, ENCODER_A, ENCODER_B: R9, R10, R11, 10 kΩ, **not fitted (DNP)**
+      because the front panel has its own. Fit them only if a panel without pull-ups is used.
+- [x] 7. Pull-up on TC_CS: R13, 4.7 kΩ (review said 10 kΩ). IO4 has an internal pull-down of about
+      45 kΩ during reset; 4.7 kΩ holds CS at about 3.0 V against it, 10 kΩ only at about 2.7 V,
+      close to the MAX31856's 2.3 V input-high threshold. Keeps the MAX31856 off MISO (IO2, a
+      boot strap pin that must be low to enter the serial bootloader).
 - [ ] 8. Cold-junction sensing: 2× DS18B20Z (SO-8) on the hat, one at each end of the J2–J9 row.
 - [x] 9. I²C pull-ups R4/R5 from 10 kΩ to 4.7 kΩ.
 - [x] 10. L1 value was entered as "100uF". Now a ferrite bead, 600 Ω at 100 MHz, 0805 (footprint changed from 1210).
