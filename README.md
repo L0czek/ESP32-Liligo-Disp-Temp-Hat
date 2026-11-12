@@ -246,35 +246,26 @@ J11 was first given a generic 9.5 mm footprint with 2 mm holes for the Degson `D
 was the main reason the layout was tight, so it was replaced by the smaller Phoenix part.
 Phoenix `MKDS3/2-5.08` (24 A) was rejected as too small for a continuous 19 A load.
 
-## PCB layout tasks
+## PCB layout
 
 The schematic went through a design review (items 1–11; the reasoning for each change is in
 the git history) and the board has been brought in line with it.
 
 State of the board:
 
-- All parts are placed, on the top side. The outline is 45.7 × 99.7 mm, cut back on the right
-  so that the hat is flush with the T-Relay (see "How the hat sits on the T-Relay-8").
-- **Routing is partly restored: 363 of the 495 original track segments and vias are back**
-  (306 segments, 57 vias), put there by script from the original board. All tracks were first
-  removed, because the new parts sit where many of them ran and several pads changed net.
-  What came back falls into three groups:
-  - **Finished connections.** Tracks whose pads are all still on the same net and moved by no
-    more than 5 mm; track ends were dragged along with pads that moved a little (R3–R5, C8, JP3).
-    This covers the core around U1, U3, U4, U2, the jumpers and the supply filter.
-  - **J1's old tracks, as guides.** J1 moved 3.0 mm right and 3.5 mm up, so these still end where
-    its holes used to be, about 4.6 mm from the pads. They need to be re-terminated by hand,
-    and five of them belong to signals that are now on a different J1 pin (see "J1").
-  - **Thermocouple tracks.** The old tracks from the multiplexers towards the terminals were
-    kept up to the protection column and are now joined to the series resistors (see the
-    routing tasks below), so these are finished connections too.
-  Anything that caused a clearance, short or board-edge violation against the new placement,
-  or that ended on a pad of a different net, was removed piece by piece. What is left is
-  DRC-clean but has 34 dangling track ends. Some restored tracks cross the area around R6 and
-  J11 where the 24 V copper has to go; move them when routing the heater path. The VCC and GND
-  planes (In1, In2) are kept and refilled.
-- DRC shows no clearance, short or courtyard errors, 50 unconnected items (the routing to do), 22 dangling track ends (the J1 guides),
-  and silkscreen warnings.
+- **Fully placed and routed.** DRC: no errors, 0 unconnected, schematic parity 0. ERC: 0. The
+  104 remaining DRC warnings are all silkscreen (see "Remaining work").
+- Four layers: front and back for signals, In1 = VCC plane, In2 = GND plane. The outline is
+  45.7 × 99.7 mm, flush with the T-Relay's top and right edges.
+- All parts are on the front except four on the back: the cold-junction sensors U7 and U8
+  with their capacitors C16 and C17. J1 is also mounted from the back.
+- About 8 % of the original board's track length survives unchanged; the rest was redrawn
+  (see the history paragraph at the top). The reasoning for every step is in the commit
+  messages.
+- Signal tracks are 0.3 mm (0.2 mm on stubs to fine-pitch pins), vias 0.6/0.3 mm, clearance
+  0.2 mm; the 24 V nets have their own net class and run as filled zones on both outer layers.
+- The lines to and from J1's left-hand pins use the back layer under the protection column;
+  SPI and I²C to U4 use the strip between the heater copper and the right-hand edge.
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
   on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
   DXF) and the 3D model (`3d/T-Relay8-ESP32-3D.stp`, LilyGO's own file, unchanged, from
@@ -309,114 +300,57 @@ Where things are:
 - **Cold-junction sensors** are on the **back** of the board, under the two ends of the
   protection column, in the same orientation: U7 at (95.05, 33.4) beside J3's upper pin and
   U8 at (95.05, 100.0) beside J8's lower pin. Their centres are about 5.4 mm from the line of
-  terminal pins, with 1.4 mm between their pads and the terminal pads (they were about 19 mm away on the front, which is as close as the
-  thermocouple lines allowed there). C16 and C17 are on the back beside them. These four are
+  terminal pins, with 1.4 mm between their pads and the terminal pads. On the front they could
+  not get nearer than about 19 mm. C16 and C17 are on the back beside them. These four are
   the only bottom-side parts; the review wanted the sensors to read the terminal temperature,
   and that is worth a second assembly side. A via under the column would hit the front-side
   resistors and clamps, so the supply vias sit in the few spots clear on both layers; U8's
   ground uses D4's ground via.
 - **Heater path** at the right edge above J1: J11 with its wire entry facing outward, R6 directly
-  behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14. A corridor
-  about 6 mm wide is free between that column and the protection column.
+  behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15 and U6; C14 is left of
+  U6. The thermocouple lines of J6–J9 run north between that column and the protection column.
 - **Multiplexers** U1 (`+` lines) and U3 (`−` lines) are where the original design had them,
   beside U2: U1 at (104.45, 44.84), U3 at (104.45, 55.64), unrotated, with U5, C9, C6 and C7 at
   their original places too. C6 and C7 are 2.5 mm from the supply pins. The left pin column
   takes channels 0–3 (J2–J5), the right one channels 7–4 (J6–J9).
 - **Supply filter** (L1, C11, C13) is where the original design had it, next to U2. The two
-  bulk capacitors on the VCC side moved while the multiplexers were in the middle and stayed: C12 is under L1, C10 just below J1's supply pins, C14 (U6) left of U6
-  (both sit on the VCC plane through their own vias).
+  bulk capacitors on the VCC side moved while the multiplexers were in the middle and stayed: C12 is under L1 and
+  C10 just below J1's supply pins (both sit on the VCC plane through their own vias).
 - **Pull-ups:** R12 by J12, R13 just below J1 pin 8 (it stood in the SPI strip beside U2), R9–R11 (not fitted) just above their J10 pins.
 - **Track widths:** 0.3 mm for signals, 0.2 mm only for the short stubs onto fine-pitch pins
   (clamp arrays, INA226), 0.8 mm on a few original power tracks, 2 mm class for 24 V.
 
-Routing tasks:
+## Remaining work
 
-- [x] **Heater path.** `24V_IN` and `24V_OUT` are filled zones on both outer layers between J11
-      and R6 (4.5 to 9 mm wide per layer, solid pad connections), stitched front to back with
-      0.8 mm vias. They are sized for about 19 A at 1 oz; ordering 2 oz outer copper is an
-      optional upgrade. The planes underneath are left whole.
-- [x] **Kelvin pair and INA226.** R6's two small sense pads feed only R8 (straight across) and
-      R7 (through the gap under the shunt body). From there the pair goes to C15 and U6 pins
-      10/9; `Vbus` reaches `24V_OUT` on the back layer; supply, ground and C14 are connected.
-      Still open on U6: SDA and SCL (pins 4, 5), which belong to the digital routing.
-- [x] **Thermocouple inputs.** Terminal pin → clamp → series resistor is on the front layer by
-      a fixed pattern. From the resistors to the multiplexers:
-      - J2–J5 `+`: front layer, two lanes (x = 100.0, 100.5) in the 1.9 mm between the column
-        and the multiplexers, straight into U1's left pins. No vias.
-      - J2–J5 `−`: via beside the resistor (x = 99.35), back-layer lanes under the left pad
-        column (x = 100.6–101.8), vias under U3's body.
-      - J6–J9 `−`: via at the resistor, back layer; lanes at x = 104.4–106.35, each ending on
-        its own via under U3, reached from the south. They run 3.8 mm from their `+` partners.
-      - J6–J9 `+`: front layer north at x = 100.6–102.6, then east across the `−` lanes just
-        south of U3 (y = 63.6–65.55), a via, back-layer lanes at x = 109.3–111.4 past R1 and C7,
-        and into U1 from the east through vias under its body. Two vias each; 53–108 mm.
-      - The J8 and J9 lines pass through J1's pin rows (J8 pair in gap 102.95, J9 `+` in
-        108.03, J9 `−` in 105.49).
-      - U1's output: front, one short hop on the back under `TC_A1`, to R1 (9 mm). U3's output:
-        front only, to R2.
-      The `−` and `+` lanes of J6–J9 cannot be stacked exactly: that would close both layers
-      between J1 and U3 and leave `JOYSTICK_CONFIRM` no way across.
-- [x] **Supply and ground.** VCC and GND are inner planes, so supply pads get a 0.6 mm via
-      beside them rather than a track. U1/U3: the two ground pins face each other across the
-      chip and are joined by one track under the body with one via; the supply pin goes to a
-      via and to C6/C7 right beside it; C7's ground is on U3's ground pin. U7/U8: see
-      "Cold-junction sensors". C16/C17 are on the back with the sensors.
-- [x] **Multiplexer control** (`TC_A0`–`TC_A2`, `TC_EN`, U4 P3 → U5). `TC_EN`, `TC_A0` and
-      `TC_A2` link U1 and U3 on the back, as three lanes under the two chip bodies
-      (x = 102.45, 103.1, 103.7). `TC_A1` and U4 P3 → U5 use the original front-side routes.
-      `TC_A0` reaches U4 pin 10 on the back at y = 41.9 with a via under U4.
-- [x] **SPI to U2.** The only way past the 24 V copper is the strip between it and the right
-      board edge (x = 123 to 129, both layers, under J11's body). `TC_CS` and `TC_SCK` run
-      there on the front, `TC_MOSI` and `TC_MISO` on the back, then turn left above J1 into
-      pins 5–8. The same strip is meant for `JOYSTICK_BACK` and the other signals that used
-      to cross where the heater copper is now.
-- [x] **1-Wire, `EXPANDER_INT`, JP3.** J1's four left-hand pins (19–22) are behind the
-      thermocouple lines on both layers. The free way to them is the back layer under the
-      protection column, east of the sensors. 1-Wire: R12 → one via → back layer across the top
-      (y = 26.15) → down the corridor beside the sensors (x = 97.85 past U7, stepping to
-      96.75 above J1 and ending directly on U8's pin) → a 2.4 mm hop on the front into J1 pin 21. `EXPANDER_INT` runs over the top
-      as well (y = 26.7), comes down at x = 113.6, passes under the jumpers to U4/R3,
-      and at the J1 end uses the lane at x = 98.45 and enters pin 19 from above.
-- [x] **I²C.** From the right-hand side, nothing over the top. Front layer, no vias: U6 pins →
-      J1 gaps at x = 110.57 (SDA) and 113.11 (SCL) → diagonals to J10 pins 2 and 3. To U4: one
-      via each just below J1, back layer along J1's underside (y = 94.4 / 95.2), up the
-      right-hand strip (x = 125.75 / 126.35) to vias on the tracks at R4/R5. To the ESP32 pins:
-      from the J10 pins on the back, under the J9 `−` via (two tracks fit between it and H4) and
-      up the corridor to J1 pins 20 and 22.
-- [x] **`JOYSTICK_PUSH`, `ENCODER_A`, `ENCODER_B`.** The pin order at J1 and at J10 differs, so
-      the two that lie west of the I²C pair at J1 cross it on the back. `JOYSTICK_PUSH`: back
-      layer, J1 gap 108.03 → J10 pin 4. `ENCODER_A`: front through gap 105.49, one via, back
-      layer, between J10 pins 3 and 4, and into pin 5 from underneath (that is how it gets past
-      `JOYSTICK_PUSH`). `ENCODER_B`: front, gap 115.65 → pin 6. R9–R11 sit just above their
-      J10 pins. J9's `+` line moved from gap 105.49 to 108.03 to free `ENCODER_A`'s pin, which
-      was enclosed; its `−` line stays in 105.49.
-- [x] **`JOYSTICK_BACK`, `JOYSTICK_CONFIRM`.** Both paths were found with the grid router
-      (`maze.py`) searching the whole board, then redrawn by hand. `JOYSTICK_BACK`: back layer
-      only, J10 pin 7 → J1 gap 110.57 → north along x = 110.1–110.35 just west of the heater
-      copper (under U6) → diagonally to U4's via. It passes the `24V_OUT` zone at 112.75 for
-      3 mm; the fill gives way by about 0.4 mm there. `JOYSTICK_CONFIRM`: 3 mm on the front
-      from J10 pin 1 to a via under J10's body → back layer under the J9 `−` via → corridor
-      lane at x = 97.7/97.6 → front-side hop over `EXPANDER_INT`'s lane at y = 86.5–82.4 →
-      back layer under the J6–J9 `+` lines → via at (103.4, 71.6) → front over the `−` lanes →
-      via at (111.6, 69.0) → back layer north at x = 112.15 → via beside U4 pin 16. Six vias,
-      the most on any signal; it is a push-button.
-- **All nets are routed** (0 unconnected, no DRC errors, parity 0). Remaining DRC warnings are
-      silkscreen only. All but two segments run at multiples of 45°.
-- **Check after every scripted change:** KiCad re-nets a track that touches copper of another
-      net when it saves. `route7a.py`-style scripts compare each track's net before and after
-      the save; three old panel guides had become stubs on `TC4-` this way and were removed.
-- [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
-- [ ] **J1 is on the back side.** It is a through-hole part, so its pads are reachable from both
-      copper layers as before. Do not move it: its position fixes how the hat sits on the T-Relay.
-- [ ] **J10 orientation** against the physical panel module (its header is numbered the other
-      way round, see "J10").
-- [ ] **Mechanical support: resting spacers** in H1, H3 and H4 (see "How the hat sits on the
-      T-Relay-8"). Their length is the board-to-board gap, about 11 mm, to be measured on the
-      real header and socket. H1's spacer is 0.6 mm from the ESP32 module if it is 6 mm wide;
-      a 5 mm one gives more room.
-- [ ] **DRC clean**, with a net class for the 24 V nets.
+- [ ] **Silkscreen.** 104 DRC warnings: text clipped by the board edge (45), over pads (41),
+      overlapping other text (21). Reference labels of moved parts need placing by hand; U7,
+      U8, C16 and C17 have theirs on the back.
+- [ ] **BOM.** Two parts are not picked yet: R6 (1 mΩ four-terminal shunt, 2512, at least 1 W)
+      and L1 (600 Ω at 100 MHz ferrite bead, 0805). Then a full list with TME order codes;
+      the picks made so far are in "Chosen parts".
+- [ ] **A second look by the original reviewer**, especially at the analog part. This layout
+      has been checked by rule checks only.
+- [ ] **Check against the hardware:**
+  - J10's pin order against the real panel module (its header is numbered the other way
+    round, see "J10").
+  - The board-to-board gap, assumed 11 mm. It sets the length of the resting spacers in H1,
+    H3 and H4, and the Z offset of the T-Relay 3D model. H1's spacer is 0.6 mm from the ESP32
+    module if it is 6 mm wide; a 5 mm one gives more room.
+  - That each heater stays within one relay contact's rating (see "Heater current sensing").
+- [ ] **Firmware notes to carry over:** the terminal-to-channel table (J6–J9 run backwards,
+      see "U4 port map"), a settling delay after changing the multiplexer address before a
+      conversion starts, and the INA226 is polled (its Alert pin is not connected).
 
-## Working on the schematic
+Known and accepted:
+
+- The supply via at C8 overlaps its pad by 0.15 mm (as on the original board), and the eight
+  `−` vias beside the protection resistors sit 0.07 mm from the resistor pads.
+- `EXPANDER_INT` runs beside `ONEWIRE` for 72 mm at 0.25–0.3 mm on the back layer.
+- `JOYSTICK_CONFIRM` has six vias; the `+` lines of J6–J9 are 53–108 mm long with two vias each.
+- 24 V copper is 11 mm from U2 and U3; the nearest parts to it are the bulk capacitors
+  C11–C13 at 1.2–1.7 mm.
+
+## Working on the schematic and board files
 
 - Close the KiCad schematic editor (or use File → Revert afterwards) when the `.kicad_sch`
   file is edited outside KiCad, otherwise a save from KiCad overwrites the change.
@@ -428,4 +362,7 @@ Routing tasks:
   ```
 
   and diff the netlist against the one from before the change.
+- When the `.kicad_pcb` is edited by script, compare every track's net before and after KiCad
+  saves it: KiCad silently re-nets a track that touches copper of another net. Remove old
+  tracks before moving the parts they end on.
 - ERC is clean (0 violations). VCC, VAA and GND each carry a `PWR_FLAG` because power comes in through J1.
