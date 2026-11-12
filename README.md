@@ -315,9 +315,9 @@ Where things are:
   one ground via: every closer spot is taken by a thermocouple or control line on one of the
   layers. For slow analog switches fed from a supply plane that is acceptable.
 - **Supply filter** (L1, C11, C13) is where the original design had it, next to U2. The two
-  bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 just below J1's supply pins
+  bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 just below J1's supply pins, C14 (U6) left of U6
   (both sit on the VCC plane through their own vias).
-- **Pull-ups:** R12 by J12, R13 just below J1 pin 8 (it stood in the SPI strip beside U2), R9–R11 (not fitted) in a row above J10.
+- **Pull-ups:** R12 by J12, R13 just below J1 pin 8 (it stood in the SPI strip beside U2), R9–R11 (not fitted) just above their J10 pins.
 - **Track widths:** 0.3 mm for signals, 0.2 mm only for the short stubs onto fine-pitch pins
   (clamp arrays, INA226), 0.8 mm on a few original power tracks, 2 mm class for 24 V.
 
@@ -360,16 +360,25 @@ Routing tasks:
       to cross where the heater copper is now.
 - [x] **1-Wire, `EXPANDER_INT`, JP3.** J1's four left-hand pins (19–22) are behind the
       thermocouple lines on both layers. The free way to them is the back layer under the
-      protection column, east of the sensors: `ONEWIRE` at x = 97.85, `EXPANDER_INT` at 98.45.
-      1-Wire: R12 → one via → back layer across the top (y = 26.15) → down the corridor past
-      U7 (2 mm stub) to J1 pin 21 → a short hop on the front between R27's pads → via → U8.
-      `EXPANDER_INT` runs over the top as well (y = 26.7), comes down beside the U3 bundle,
-      passes under the jumpers to U4/R3, and at the J1 end enters pin 19 from above.
-- [ ] **I²C (all of it), panel signals** (`JOYSTICK_*`, `ENCODER_*`). SDA/SCL are to come from
-      the right-hand side: U6 → J1 gaps → J10 on the front, a branch up the right-hand strip
-      to U4, a branch west to J1 pins 20/22. The panel pins are in a different left-to-right
-      order at J1 and at J10, so `ENCODER_A` and `JOYSTICK_PUSH` must cross the I²C pair.
-      H3 is to be removed to make room past J1's right end.
+      protection column, east of the sensors. 1-Wire: R12 → one via → back layer across the top
+      (y = 26.15) → down the corridor right beside the sensors (x = 96.75, stubs under 1 mm to
+      U7 and U8) → a 2.4 mm hop on the front into J1 pin 21. `EXPANDER_INT` runs over the top
+      as well (y = 26.7), comes down beside the U3 bundle, passes under the jumpers to U4/R3,
+      and at the J1 end uses the lane at x = 98.45 and enters pin 19 from above.
+- [x] **I²C.** From the right-hand side, nothing over the top. Front layer, no vias: U6 pins →
+      J1 gaps at x = 110.57 (SDA) and 113.11 (SCL) → diagonals to J10 pins 2 and 3. To U4: one
+      via each just below J1, back layer along J1's underside (y = 94.4 / 95.2), up the
+      right-hand strip (x = 125.75 / 126.35) to vias on the tracks at R4/R5. To the ESP32 pins:
+      from the J10 pins on the back, under the J9 `−` via (two tracks fit between it and H4) and
+      up the corridor to J1 pins 20 and 22.
+- [x] **`JOYSTICK_PUSH`, `ENCODER_A`, `ENCODER_B`.** The pin order at J1 and at J10 differs, so
+      the two that lie west of the I²C pair at J1 cross it on the back. `JOYSTICK_PUSH`: back
+      layer, J1 gap 108.03 → J10 pin 4. `ENCODER_A`: front through gap 105.49, one via, back
+      layer, between J10 pins 3 and 4, and into pin 5 from underneath (that is how it gets past
+      `JOYSTICK_PUSH`). `ENCODER_B`: front, gap 115.65 → pin 6. R9–R11 sit just above their
+      J10 pins. J9's `+` line moved from gap 105.49 to 108.03 to free `ENCODER_A`'s pin, which
+      was enclosed; its `−` line stays in 105.49.
+- [ ] **`JOYSTICK_BACK`, `JOYSTICK_CONFIRM`** (U4 pins 17, 16 → J10 pins 7, 1): the last two.
 - **Check after every scripted change:** KiCad re-nets a track that touches copper of another
       net when it saves. `route7a.py`-style scripts compare each track's net before and after
       the save; three old panel guides had become stubs on `TC4-` this way and were removed.
