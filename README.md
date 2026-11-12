@@ -309,7 +309,8 @@ Where things are:
 - **Multiplexers** U1 (`+` lines) and U3 (`−` lines) are turned 90° and sit side by side at
   the centre of the terminal row (y = 67.0), right of the protection column. Their north pin
   rows take channels 0–3 from J2–J5, their south rows channels 7–4 from J6–J9. C6 is above U1;
-  C7 is still at its old place about 9 mm from U3 and can move closer.
+  C7 stays at its old place about 9 mm from U3: there is no room for an 0805 beside U3
+  (1.7 mm between it and L1), and for a slow analog switch on a supply plane that is fine.
 - **Supply filter** (L1, C11, C13) is where the original design had it, next to U2. The two
   bulk capacitors on the VCC side made room for U3: C12 is now under L1, C10 in the area the
   multiplexers left (both sit on the VCC plane through their own vias).
@@ -335,7 +336,14 @@ Routing tasks:
       pair in one gap between pins (`+` front, `−` back), with a short diagonal either side.
       U3's output goes straight up to R2; U1's is enclosed by its own lines, so it runs on the
       back under both chips to R1.
-- [ ] **Multiplexer address, enable and supply pins** lost their old guide tracks when the chips
+- [x] **Supply and ground of the new and moved parts.** VCC and GND are inner planes, so every
+      supply pad gets a 0.6 mm via beside it rather than a track. U1/U3: the two ground pins
+      face each other across the chip and are joined by one track under the body with one via
+      below; the supply pin has its via under the body. U7/U8: supply via under the body, ground
+      via right beside the GND pin (the pin is the sensor's main thermal path). C16 also
+      connects straight to J12's supply and ground pins. Vias sit where no `−` line passes on
+      the back. All supply nets are complete; only signal nets are open now.
+- [ ] **Multiplexer address and enable pins** lost their old guide tracks when the chips
       moved (`TC_A0`–`TC_A2`, `TC_EN`, U5); route with the digital nets. The two J1 gaps at
       x = 102.95 and 105.49 are taken on both layers, so the J1 pins beside them escape up or down.
 - [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
