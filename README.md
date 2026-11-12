@@ -249,4 +249,4 @@ Layout only (not done by Claude):
   ```
 
   and diff the netlist against the one from before the change.
-- Baseline ERC: 3 `power_pin_not_driven` violations, 0 others.
+- ERC is clean (0 violations). VCC, VAA and GND each carry a `PWR_FLAG` because power comes in through J1.
