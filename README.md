@@ -131,8 +131,11 @@ PSU+ → J11.1 (24V_IN) → R6 → J11.2 (24V_OUT) → relay COMs → heater →
 - R7/R8 (10 Ω) and C15 (100 nF) filter the sense inputs (TI's recommended input filter, corner
   about 80 kHz). They keep relay switching spikes and RF out of the converter and limit current
   into the inputs during transients. 10 Ω is TI's upper limit; the gain error it adds is negligible.
-- The review asked for 2 mΩ / 3 W. 1 mΩ was chosen because the WSK2512 is a 1 W part and
-  2 mΩ would run it at 0.7 W; resolution is still about 2.5 mA per LSB.
+- The review asked for 2 mΩ / 3 W. 1 mΩ was chosen to keep the dissipation low (0.35 W);
+  resolution is still about 2.5 mA per LSB.
+- Two parts fit (see "BOM"): the true four-terminal Vishay WSK2512 from Mouser, which the
+  footprint was drawn for, or an ordinary two-terminal 1 mΩ strip resistor from TME, which
+  works on the same pads with a gain error of a few percent.
 
 The board controls several heaters independently, one per relay, each under 10 A; 18.75 A
 (450 W at 24 V) is their **sum** (confirmed by the user, 2026-11-12). `24V_OUT` feeds the COM
@@ -280,22 +283,104 @@ Consequences: the hat's pull-ups for the encoder and push button (R9–R11, 10 k
 back-ups, marked do-not-populate. Fit them only if a panel without pull-ups is used. With the panel connected, the I²C bus already has the
 panel's 10 kΩ in parallel with R4/R5.
 
-## Chosen parts
+## BOM
 
-Parts picked so far, as input for a BOM at the end. Prices are TME gross, single unit, checked 2026-11-12.
+TME prices are gross PLN at the quantity needed, checked 2026-11-12. Rules used: common
+resistor and capacitor values and plain pin headers/sockets are assumed to be on hand and
+are only listed, not priced; everything else is the cheapest part that is in stock and sold
+in prototype quantities.
 
-| Ref | Part | Footprint | Notes |
+The parts are split over two orders, TME and Mouser, because the MAX31856 is only at Mouser.
+
+- TME prices are live from TME's API, gross.
+- Mouser prices and stock were read from mouser.pl on 2026-11-12, as displayed there. The
+  pages did not say whether VAT is included; Mouser normally shows net prices.
+- **→ M** in the TME table marks a part that TME has but that is better bought from Mouser,
+  since a Mouser order is needed anyway. The reason is in the notes.
+
+### Order 1: TME
+
+| Ref | Qty | Part | TME | Price | → M | Notes |
+|---|---|---|---|---|---|---|
+| U1, U3 | 2 | TI TMUX1108PWR, TSSOP-16 | [`TMUX1108PWR`](https://www.tme.eu/pl/details/TMUX1108PWR/) | 2 × 28.29 | **→ M** | TME has only 12 left. Mouser has 5,948 at 19.36 zł. |
+| U4 | 1 | TI PCF8574APWR, TSSOP-20 | [`PCF8574APWR`](https://www.tme.eu/pl/details/PCF8574APWR/) | 9.40 | **→ M** | 6.03 zł at Mouser. Stands in for the NXP PCF8574ATS in the schematic, which TME does not list. Pinout checked against TI's datasheet (DGV/PW package, figure 4-3): all 20 pins match the schematic, and the footprint is the same 4.4 mm, 0.65 mm pitch package. |
+| U5 | 1 | TI SN74LVC1G04DBVR, SOT-23-5 | [`SN74LVC1G04DBVR`](https://www.tme.eu/pl/details/SN74LVC1G04DBVR/) | 0.64 | | |
+| U6 | 1 | TI INA226AIDGSR, VSSOP-10 | [`INA226AIDGSR`](https://www.tme.eu/pl/details/INA226AIDGSR/) | 11.06 | | |
+| U7, U8 | 2 | DS18B20Z+, SO-8 | [`DS18B20Z+`](https://www.tme.eu/pl/details/DS18B20Z%2B/) | 2 × 32.94 | | Recommended, not required: see "Cold-junction sensing". C16/C17 go with them. |
+| D1–D4 | 4 | Nexperia PESD5V0L4UG, SOT-353 | [`PESD5V0L4UG.115`](https://www.tme.eu/pl/details/PESD5V0L4UG.115/) | 4 × 1.23 | | |
+| R6 | 1 | Eaton MSMA2512R0010FEN, 1 mΩ 1 % 2 W metal strip, 2512 | [`MSMA2512R0010FEN`](https://www.tme.eu/pl/details/MSMA2512R0010FEN/) | 2.46 | **→ M** | Works (see "R6 on the four-terminal footprint"), but it is a two-terminal part. Mouser has the part the footprint was drawn for: Vishay WSK25121L000FEA, in the Mouser table. Buy one or the other. |
+| L1 | 1 | TDK MPZ2012S601ATD25, 600 Ω at 100 MHz, 2 A, 0805 | [`MPZ2012S601ATD25`](https://www.tme.eu/pl/details/MPZ2012S601ATD25/) | 0.38 | | |
+| R2 | 1 | Yageo RC0805FR-07300RL, 300 Ω 1 %, 0805 | [`RC0805FR-07300RL`](https://www.tme.eu/pl/details/RC0805FR-07300RL/) | 0.20 | | Listed because 300 Ω is not an E12 value. |
+| J11 | 1 | Phoenix MKDS5/2-6.35, 32 A | [`MKDS5/2-6.35`](https://www.tme.eu/pl/details/MKDS5_2-6.35/) | 8.04 | | Exact fit on the stock `TerminalBlock_MetzConnect_Type701_RT11L02HGLU` footprint (hole size confirmed on the Phoenix drawing by the user). |
+| J12 | 1 | JST S3B-PH-SM4-TB | [`S3B-PH-SM4-TB`](https://www.tme.eu/pl/details/S3B-PH-SM4-TB/) | 2.29 | | |
+| J12 cable end | 1 + 3 | JST PHR-3 housing and SPH-002T-P0.5L/C crimp contacts | [`PHR-3`](https://www.tme.eu/pl/details/PHR-3/), [`SPH-002T-P0.5L/C`](https://www.tme.eu/pl/details/SPH-002T-P0.5L_C/) | 0.29 + 3 × 0.44 | | Only if the 1-Wire cable is made up by hand. |
+
+Everything in this table: about 163 zł. With the three **→ M** lines moved to Mouser: about 95 zł.
+
+### Order 2: Mouser
+
+| Ref | Qty | Part | Mouser no. | Price | Stock | Notes |
+|---|---|---|---|---|---|---|
+| U2 | 1 | Analog Devices MAX31856MUD+, TSSOP-14 | `700-MAX31856MUD+` | 53.94 | 4,846 | The reason for this order: TME lists only the MAX31855/MAX31850. |
+| J2–J9 | 8 | Phoenix MCV 1,5/2-G-5,08 header (Phoenix no. 1836299) | `651-1836299` | 8 × 3.22 | 1,038 | TME: stock 0. |
+| J2–J9 plugs | 8 | Phoenix MC 1,5/2-ST-5,08 BK screw plug, black (Phoenix no. 1981238) | `651-1981238` | 8 × 8.80 | 41 | The usual green one (1836079, `651-1836079`, 9.11) has stock 0 at both TME and Mouser; Mouser expects it on 2026-12-11. The black one is the same plug. |
+| R6 | 1 | Vishay WSK25121L000FEA, 1 mΩ 1 % 1 W, four-terminal 2512 | `71-WSK25121L000FEA` | 9.33 | 4,273 | Instead of the TME part: the exact part for the footprint, a true four-terminal shunt. |
+| U1, U3 | 2 | TI TMUX1108PWR | `595-TMUX1108PWR` | 2 × 19.36 | 5,948 | Instead of TME, see above. |
+| U4 | 1 | TI PCF8574APWR | `595-PCF8574APWR` | 6.03 | 183 | Instead of TME, see above. |
+
+The three lines only Mouser can supply (U2, headers, plugs): about 150 zł. With the three
+**→ M** lines as well: about 204 zł.
+
+Every part on the board has a source.
+
+### R6 on the four-terminal footprint
+
+TME sells four-terminal 2512 shunts (Bourns CSS2H/CSI2H-2512K, Vishay WSK2512) only in
+reels or lots of 173 and more, so the pick is an ordinary two-terminal strip resistor.
+
+- **It fits and connects correctly.** On the WSK2512 footprint each end has a current pad
+  (3.3 × 2.03 mm) and a sense pad (1.4 × 0.76 mm) side by side across the part's width, both
+  reaching past the part's end. A 2512 end termination is as wide as the part, so it lands
+  on both. The two pads of one end are then joined by the termination itself, which is the
+  intended connection.
+- **The measurement is still close to four-wire.** The sense track leaves from its own pad
+  under the termination, so it does not share the solder joint or the copper that carries
+  the 19 A.
+- **What is lost:** the sense point is on the termination instead of at the resistive
+  element, so the reading includes a little termination resistance. Expect a fixed gain
+  error of a few percent and somewhat more drift with temperature than a true
+  four-terminal part. Calibrate the gain once in firmware. For monitoring heater current
+  this is not a problem.
+
+### Assumed on hand
+
+| Ref | Qty | Value | Footprint |
 |---|---|---|---|
-| J11 | Phoenix [`MKDS5/2-6.35`](https://www.tme.eu/pl/details/MKDS5_2-6.35/), 8.04 zł | `TerminalBlock_MetzConnect_Type701_RT11L02HGLU_1x02_P6.35mm_Horizontal` | 32 A, 4 mm² wire, 6.35 mm pitch, 1 × 1 mm pins in 1.3 mm holes (hole size confirmed on the Phoenix drawing by the user). Exact fit on the stock KiCad footprint, 12.7 × 12.5 mm body. 80 in stock at TME on 2026-11-12. |
-| U6 | TI `INA226AIDGSR` | `TSSOP-10_3x3mm_P0.5mm` | In stock at TME (confirmed by the user, price not looked up). |
-| D1–D4 | Nexperia [`PESD5V0L4UG.115`](https://www.tme.eu/pl/details/PESD5V0L4UG.115/), 1.23 zł | `SOT-353_SC-70-5` | 4-channel ESD clamp, 5 V, common anode. 5900 in stock. |
-| R6 | 1 mΩ 4-terminal 2512, Vishay WSK2512 type | `R_Shunt_Vishay_WSK2512_6332Metric_T2.21mm` | Exact part not picked yet. Needs ≥ 1 W. |
-| L1 | Ferrite bead, 600 Ω at 100 MHz, 0805 | `L_0805_2012Metric` | Exact part not picked yet. |
+| R1, R14–R29 | 17 | 100 Ω | 0805 |
+| R3 | 1 | 10 kΩ | 0805 |
+| R4, R5, R12, R13 | 4 | 4.7 kΩ | 0805 |
+| R7, R8 | 2 | 10 Ω | 0805 |
+| C1, C4–C9, C14–C17 | 11 | 100 nF | 0805 |
+| C2, C3 | 2 | 10 nF | 0805 |
+| C10–C13 | 4 | 22 µF, 10 V or more, X5R/X7R | 1206. If not on hand: [`GRM31CR61E226KE15L`](https://www.tme.eu/pl/details/GRM31CR61E226KE15L/), 25 V X5R, 1.67 at 10 pieces. |
+| J1 | 1 | 2 × 11 socket, 2.54 mm, 8.5 mm high, soldered on the **bottom** | |
+| P5 on the T-Relay | 1 | 2 × 11 pin header, 2.54 mm | soldered on the T-Relay; with J1 it sets the 11 mm gap |
+| J10 | 1 | 1 × 9 socket, 2.54 mm, right-angle | |
 
-J11 was first given a generic 9.5 mm footprint with 2 mm holes for the Degson `DG638-9.52-02P`
-(32 A, 4.49 zł), to fit whatever 30 A block was on hand. It took 21.6 × 18.9 mm of board and
-was the main reason the layout was tight, so it was replaced by the smaller Phoenix part.
-Phoenix `MKDS3/2-5.08` (24 A) was rejected as too small for a continuous 19 A load.
+Not fitted: R9–R11 (10 kΩ, back-up pull-ups, see "Panel module"), JP1–JP3 (solder jumpers).
+Mechanical: three M3 nylon spacers, 11 mm, for H1, H3 and H4 (H2 stays empty).
+
+### Parts considered and dropped
+
+- J11 was first given a generic 9.5 mm footprint with 2 mm holes for the Degson
+  `DG638-9.52-02P` (32 A, 4.49 zł). It took 21.6 × 18.9 mm of board and was the main reason
+  the layout was tight, so it was replaced by the smaller Phoenix part. Phoenix
+  `MKDS3/2-5.08` (24 A) was rejected as too small for a continuous 19 A load.
+- R6: the review asked for 2 mΩ. 1 mΩ keeps the dissipation at 0.35 W at 18.75 A.
+- J2–J9: the Phoenix headers and plugs cost about 12 zł per channel. The common 5.08 mm
+  pluggable blocks (2EDG / MSTB style) cost under 2 zł per channel at TME, but have 1.0 mm
+  square pins that do not go into the footprint's 1.2 mm holes, so using them would mean a
+  footprint change. Not done; the Phoenix parts are available.
 
 ## PCB layout
 
@@ -423,9 +508,6 @@ Other things to know:
 
 ## Remaining work
 
-- [ ] **BOM.** Two parts are not picked yet: R6 (1 mΩ four-terminal shunt, 2512, at least 1 W)
-      and L1 (600 Ω at 100 MHz ferrite bead, 0805). Then a full list with TME order codes;
-      the picks made so far are in "Chosen parts".
 - [ ] **J10: how the panel connects.** The intent was probably to plug the panel straight
       into J10 (to be confirmed). As drawn that does not work: the natural position, panel
       standing up at the hat's edge and facing outwards, puts VCC on J10 pin 1 (see "Panel
