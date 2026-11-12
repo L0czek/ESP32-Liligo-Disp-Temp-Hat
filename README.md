@@ -296,13 +296,15 @@ Where things are:
   (same layer, 45° corners).
 - Which clamp channel serves which line was reassigned in the schematic to make that possible
   (the four channels of an array are interchangeable).
-- **Cold-junction sensors** are just right of the column at the two ends of the terminal row,
-  in the same orientation and 34.4 mm either side of its centre: U7 at (107.5, 32.3), level
-  with J3, and U8 at (107.5, 101.1), level with J8. Terminal pins run from y = 19.7 to 113.7.
-  Each has its capacitor (C16, C17) above it. They are about 18 mm from the terminal pins
-  (accepted for now: the ground plane under both evens the temperature out);
-  they had to leave the column so that all four groups could be identical. U8 is about 26 mm
-  from the shunt.
+- **Cold-junction sensors** are on the **back** of the board, under the two ends of the
+  protection column, in the same orientation: U7 at (93.95, 33.4) beside J3's upper pin and
+  U8 at (93.95, 100.0) beside J8's lower pin. Their centres are about 4 mm from the line of
+  terminal pins (they were about 19 mm away on the front, which is as close as the
+  thermocouple lines allowed there). C16 and C17 are on the back beside them. These four are
+  the only bottom-side parts; the review wanted the sensors to read the terminal temperature,
+  and that is worth a second assembly side. A via under the column would hit the front-side
+  resistors and clamps, so the supply vias sit in the few spots clear on both layers; U8's
+  ground uses D4's ground via.
 - **Heater path** at the right edge above J1: J11 with its wire entry facing outward, R6 directly
   behind it (pad 1 towards J11 pin 1), then a column with R7, R8, C15, U6 and C14. A corridor
   about 6 mm wide is free between that column and the protection column.
@@ -356,19 +358,18 @@ Routing tasks:
       there on the front, `TC_MOSI` and `TC_MISO` on the back, then turn left above J1 into
       pins 5–8. The same strip is meant for `JOYSTICK_BACK` and the other signals that used
       to cross where the heater copper is now.
-- [x] **1-Wire, `EXPANDER_INT`, ESP32 side of I²C, JP3.** J1's four left-hand pins (19–22) are
-      behind the thermocouple lines on both layers. The one free way to them is the back layer
-      under the protection column (only front-side parts there): four lanes at x = 96.65
-      (`I2C_SDA`), 97.2 (`EXPANDER_INT`), 97.75 (`I2C_SCL`) and 98.3 (`ONEWIRE`). 1-Wire enters
-      the corridor from U7 at y = 35.25, ends on J1 pin 21, goes straight down on the front between J1's first two pin
-      columns (crossing the I²C lines) and continues on the back to U8. `EXPANDER_INT` comes up
-      through the same gap on the back and enters pin 19 from between the pin rows. The other three run up the corridor, cross the
-      top of the board at y = 26.15 to 27.25 (above the first `−` line) only as far as the U3
-      line bundle, come down beside it at x = 113.0 to 114.2 and pass under the jumpers at
-      y = 40.0 to 41.2 to the right side of U4, R4, R5 and R3.
-- [ ] **I²C to U6 and J10, panel signals** (`JOYSTICK_*`, `ENCODER_*`): all in the area below
-      and right of J1; plan as one piece. The two J1 gaps at x = 102.95 and 105.49 are taken on
-      both layers.
+- [x] **1-Wire, `EXPANDER_INT`, JP3.** J1's four left-hand pins (19–22) are behind the
+      thermocouple lines on both layers. The free way to them is the back layer under the
+      protection column, east of the sensors: `ONEWIRE` at x = 97.85, `EXPANDER_INT` at 98.45.
+      1-Wire: R12 → one via → back layer across the top (y = 26.15) → down the corridor past
+      U7 (2 mm stub) to J1 pin 21 → a short hop on the front between R27's pads → via → U8.
+      `EXPANDER_INT` runs over the top as well (y = 26.7), comes down beside the U3 bundle,
+      passes under the jumpers to U4/R3, and at the J1 end enters pin 19 from above.
+- [ ] **I²C (all of it), panel signals** (`JOYSTICK_*`, `ENCODER_*`). SDA/SCL are to come from
+      the right-hand side: U6 → J1 gaps → J10 on the front, a branch up the right-hand strip
+      to U4, a branch west to J1 pins 20/22. The panel pins are in a different left-to-right
+      order at J1 and at J10, so `ENCODER_A` and `JOYSTICK_PUSH` must cross the I²C pair.
+      H3 is to be removed to make room past J1's right end.
 - **Check after every scripted change:** KiCad re-nets a track that touches copper of another
       net when it saves. `route7a.py`-style scripts compare each track's net before and after
       the save; three old panel guides had become stubs on `TC4-` this way and were removed.
