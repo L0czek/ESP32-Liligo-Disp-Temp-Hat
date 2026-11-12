@@ -356,8 +356,17 @@ Routing tasks:
       there on the front, `TC_MOSI` and `TC_MISO` on the back, then turn left above J1 into
       pins 5–8. The same strip is meant for `JOYSTICK_BACK` and the other signals that used
       to cross where the heater copper is now.
-- [ ] **J1 fan-out, 1-Wire, I²C, panel signals.** The two J1 gaps at x = 102.95 and 105.49 are
-      taken on both layers, so the J1 pins beside them escape up or down.
+- [x] **1-Wire, `EXPANDER_INT`, ESP32 side of I²C, JP3.** J1's four left-hand pins (19–22) are
+      behind the thermocouple lines on both layers. The one free way to them is the back layer
+      under the protection column (only front-side parts there): four lanes at x = 96.65
+      (`I2C_SDA`), 97.2 (`EXPANDER_INT`), 97.75 (`I2C_SCL`) and 98.3 (`ONEWIRE`). 1-Wire enters
+      the corridor from U7 at y = 35.25, ends on J1 pin 21, hops on the front past the I²C
+      lines and continues on the back to U8. The other three run up the corridor, across the
+      top of the board at y = 26.15 to 27.25 (above the first `−` line) and down the right
+      side to U4, R4, R5 and R3.
+- [ ] **I²C to U6 and J10, panel signals** (`JOYSTICK_*`, `ENCODER_*`): all in the area below
+      and right of J1; plan as one piece. The two J1 gaps at x = 102.95 and 105.49 are taken on
+      both layers.
 - **Check after every scripted change:** KiCad re-nets a track that touches copper of another
       net when it saves. `route7a.py`-style scripts compare each track's net before and after
       the save; three old panel guides had become stubs on `TC4-` this way and were removed.
