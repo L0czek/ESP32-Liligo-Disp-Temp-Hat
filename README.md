@@ -17,7 +17,7 @@ inputs, heater current measurement, a 1-Wire port and a connector for a front pa
 | I/O expander | U4 (PCF8574A), U5 (74LVC1G04), JP1–JP3 | Mux address and enable, MAX31856 status, two panel buttons. |
 | Front panel | J10 (1x9 socket) | I²C display, encoder, buttons. |
 | Heater current | J11, R6 (shunt), U6 (INA226) | High-side shunt in the +24 V feed, read over I²C. See "Heater current sensing". |
-| 1-Wire | J12 (JST PH 3-pin) | External DS18B20 probes. |
+| 1-Wire | J12 (JST PH 3-pin), R12, U7, U8 | External DS18B20 probes on J12, plus two optional on-board DS18B20Z (U7, U8) for cold-junction sensing. |
 | Supply | L1, C10–C14 | `VCC` = 3V3 from the T-Relay; `VAA` = analog rail for U2, filtered by ferrite bead L1. |
 
 ## J1: connection to the T-Relay-8
@@ -92,6 +92,22 @@ review's wording "J11.2 → relay COMs" (plural), the 8 relays and the 8 thermoc
 - Still to confirm with the owner: each heater must stay within one relay contact's rating
   (believed to be about 10 A on the T-Relay-8). A single 18.75 A heater on one relay would
   not be acceptable.
+
+## Cold-junction sensing (optional)
+
+A thermocouple reading is the tip temperature minus the temperature of the terminals J2–J9,
+so an error in the terminal temperature goes into every reading one for one. The MAX31856
+uses its own internal sensor for this, which measures the chip, not the terminals.
+
+U7 and U8 are two DS18B20Z on the `ONEWIRE` bus (shared with J12, pulled up by R12). Firmware
+can read them, interpolate along the terminal row and write the result into the MAX31856's
+cold-junction register in place of the internal sensor.
+
+- Optional: if this accuracy is not needed, leave U7, U8, C16 and C17 unfitted and let the
+  MAX31856 use its internal sensor. They are not flagged DNP in the schematic.
+- Layout: one sensor at each end of the J2–J9 row, close to the terminals, each with its
+  capacitor (C16, C17) next to it. Keep the shunt, J11, L1 and the 24 V copper away from the
+  terminals and from U2, and group the terminals close to U2 if possible.
 
 ## U4 (PCF8574A) port map
 
@@ -175,15 +191,16 @@ Should fix:
       45 kΩ during reset; 4.7 kΩ holds CS at about 3.0 V against it, 10 kΩ only at about 2.7 V,
       close to the MAX31856's 2.3 V input-high threshold. Keeps the MAX31856 off MISO (IO2, a
       boot strap pin that must be low to enter the serial bootloader).
-- [ ] 8. Cold-junction sensing: 2× DS18B20Z (SO-8) on the hat, one at each end of the J2–J9 row.
+- [x] 8. Cold-junction sensing: U7, U8 (DS18B20Z, SO-8) on the 1-Wire bus with C16, C17. **Optional**:
+      see "Cold-junction sensing". Placement is a layout task.
 - [x] 9. I²C pull-ups R4/R5 from 10 kΩ to 4.7 kΩ.
 - [x] 10. L1 value was entered as "100uF". Now a ferrite bead, 600 Ω at 100 MHz, 0805 (footprint changed from 1210).
 - [x] 11. C10–C13 from 20 µF to 22 µF.
 
 Layout only (not done by Claude):
 
-- Keep the shunt, J11, L1 and 24 V copper away from J2–J9 and U2; group the terminals close to U2.
-- Wide copper (ideally 2 oz) on both layers for the heater path.
+- Thermal layout around the terminals: see "Cold-junction sensing".
+- Wide copper (ideally 2 oz) on both layers for the 24 V heater path.
 - 15. Check J1 position and mounting holes against the T-Relay outline (`dxf/` in the vendor repo).
 
 ## Working on the schematic
