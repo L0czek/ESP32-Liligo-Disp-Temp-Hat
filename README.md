@@ -360,8 +360,9 @@ Routing tasks:
       behind the thermocouple lines on both layers. The one free way to them is the back layer
       under the protection column (only front-side parts there): four lanes at x = 96.65
       (`I2C_SDA`), 97.2 (`EXPANDER_INT`), 97.75 (`I2C_SCL`) and 98.3 (`ONEWIRE`). 1-Wire enters
-      the corridor from U7 at y = 35.25, ends on J1 pin 21, hops on the front past the I²C
-      lines and continues on the back to U8. The other three run up the corridor, across the
+      the corridor from U7 at y = 35.25, ends on J1 pin 21, goes straight down on the front between J1's first two pin
+      columns (crossing the I²C lines) and continues on the back to U8. `EXPANDER_INT` comes up
+      through the same gap on the back and enters pin 19 from between the pin rows. The other three run up the corridor, across the
       top of the board at y = 26.15 to 27.25 (above the first `−` line) and down the right
       side to U4, R4, R5 and R3.
 - [ ] **I²C to U6 and J10, panel signals** (`JOYSTICK_*`, `ENCODER_*`): all in the area below
