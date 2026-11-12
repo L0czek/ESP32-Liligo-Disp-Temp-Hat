@@ -272,8 +272,12 @@ Routing tasks:
       back face.
 - [ ] **J10 orientation** against the physical panel module (its header is numbered the other
       way round, see "J10").
-- [ ] **Mechanical support.** Not solved: H1–H4 match no hole on the T-Relay
-      (see "How the hat sits on the T-Relay-8").
+- [ ] **Mechanical support: resting spacers.** No hole on the hat can be screwed to the T-Relay
+      (its two holes under the hat are inside the terminal column, and the terminals fill the
+      board's height). Instead H1, moved to (123, 92), and H4, where it always was, both sit over
+      bare T-Relay board. Fit a spacer of the board-to-board height in each (about 11 mm, to be
+      measured on the real header and socket). They carry the push when plugs go into the
+      terminals; they do not hold the hat down. H2 and H3 have nothing underneath.
 - [ ] **DRC clean**, with a net class for the 24 V nets.
 
 ## Working on the schematic
