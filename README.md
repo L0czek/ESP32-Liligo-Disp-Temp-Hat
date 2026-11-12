@@ -378,7 +378,18 @@ Routing tasks:
       `JOYSTICK_PUSH`). `ENCODER_B`: front, gap 115.65 → pin 6. R9–R11 sit just above their
       J10 pins. J9's `+` line moved from gap 105.49 to 108.03 to free `ENCODER_A`'s pin, which
       was enclosed; its `−` line stays in 105.49.
-- [ ] **`JOYSTICK_BACK`, `JOYSTICK_CONFIRM`** (U4 pins 17, 16 → J10 pins 7, 1): the last two.
+- [x] **`JOYSTICK_BACK`, `JOYSTICK_CONFIRM`.** Both paths were found with the grid router
+      (`maze.py`) searching the whole board, then redrawn by hand. `JOYSTICK_BACK`: back layer
+      only, J10 pin 7 → J1 gap 110.57 → north along x = 110.1–110.35 just west of the heater
+      copper (under U6) → diagonally to U4's via. It passes the `24V_OUT` zone at 112.75 for
+      3 mm; the fill gives way by about 0.4 mm there. `JOYSTICK_CONFIRM`: 3 mm on the front
+      from J10 pin 1 to a via under J10's body → back layer under the J9 `−` via (which moved
+      0.8 mm up so three tracks fit) → corridor lane at x = 97.3/97.6 → front-side hop over
+      `EXPANDER_INT`'s lane at y = 54 → back through the gap between the J4 and J5 `−` lines
+      → via at (106.8, 46.5) → front along the band north of R1 to U4 pin 16. Four vias, the
+      most on any signal; it is a push-button.
+- **All nets are routed** (0 unconnected, no DRC errors, parity 0). Remaining DRC warnings are
+      silkscreen only.
 - **Check after every scripted change:** KiCad re-nets a track that touches copper of another
       net when it saves. `route7a.py`-style scripts compare each track's net before and after
       the save; three old panel guides had become stubs on `TC4-` this way and were removed.
