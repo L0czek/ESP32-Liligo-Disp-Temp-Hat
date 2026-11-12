@@ -300,7 +300,9 @@ Phoenix `MKDS3/2-5.08` (24 A) was rejected as too small for a continuous 19 A lo
 ## PCB layout
 
 State: **0 unconnected, no DRC errors on copper** (clearance, shorts, holes, edge, dangling
-ends all 0), schematic parity 0, ERC 0. What DRC still lists is silkscreen only (102 warnings).
+ends all 0), schematic parity 0, ERC 0. What DRC still lists is 34 silkscreen warnings, all of one kind: the outlines of J9 and J10
+cross the board edge by a few hundredths of a millimetre, because both parts sit flush with
+it. The fab clips them; nothing is lost.
 
 Placement:
 
@@ -367,6 +369,37 @@ Routing:
   pin pitch) and J1's left-hand corner.
 - The channel order is the original one (J2 = channel 0 … J9 = channel 7).
 
+Silkscreen, reference designators:
+
+- All 78 are 1.0 mm high, 0.15 mm stroke (the board's minimum text height is 1.0 mm), clear
+  of pads, of other parts' bodies, of each other and of via holes.
+- **Protection column:** each name directly to the right of its own part, so the names
+  follow the stagger of the parts (the user's choice over one aligned column). Where a via
+  sits right after the pad the name starts after the via (R16, R18, R21, R22, R28). R19 is
+  above its part, R26 is 0.6 mm higher and R24 0.1 mm lower than its part, all because of
+  vias; R29 is 0.15 mm higher to leave room for H4's name.
+- **J3–J9:** in the gap above each terminal, at x = 84. J2 has no gap above it (board edge),
+  so its name stands upright to the right of it.
+- **Elsewhere:** horizontal and beside the part, on the side away from its neighbour:
+  pairs C12|C10 and C13|C11 outwards, C1–C3 to the right, R3–R5 to the left, JP1–JP3 in a
+  row above. Only R6 and R9–R11 are upright, for lack of width.
+- **Back:** U7/U8 on the side away from the terminals, C16/C17 above.
+
+Silkscreen, functional labels (board-level text and lines, not part of any footprint, so
+"update footprints from library" leaves them alone):
+
+- **Thermocouple channel:** `TC1`…`TC7` beside the terminal's name in the gap above J3–J9;
+  `TC0` upright beside J2's name.
+- **Thermocouple polarity:** there is no room for a mark at each pin, so there is one
+  pictogram, at (97.3–101.9, 97.0–104.6) below J1's left end: a terminal drawn the same way
+  round as the real ones, upper pin `-`, lower pin `+`, headed `TC0-7`. Pin 1 (`+`) is the
+  lower pin of every terminal.
+- **J11:** `OUT COM` above the block (upper terminal, to the relay COMs) and `IN +24V`
+  below it (lower terminal, from the supply). J11's own name moved left to make room.
+- **J12:** `3V3 GND DQ` below the pads, in pad order. The words are spread wider than the
+  2 mm pad pitch, and `3V3` sits left of its pad because of the via below it.
+- **J10:** `CON` above pin 1 and `VCC` above pin 9, the two ends of the panel's header.
+
 Other things to know:
 
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
@@ -390,8 +423,6 @@ Other things to know:
 
 ## Remaining work
 
-- [ ] **Silkscreen.** 102 DRC warnings: text over pads, text over the board edge, overlapping
-      references. Nothing has been tidied since the parts moved.
 - [ ] **BOM.** Two parts are not picked yet: R6 (1 mΩ four-terminal shunt, 2512, at least 1 W)
       and L1 (600 Ω at 100 MHz ferrite bead, 0805). Then a full list with TME order codes;
       the picks made so far are in "Chosen parts".
