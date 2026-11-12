@@ -46,22 +46,23 @@ From the vendor DXF and STEP model (T-Relay board is 85 × 170 mm). With J1 mate
 the hat at (x, y) is above the T-Relay point (x − 41.54, y − 19.99) mm, measured from the
 T-Relay's top-left corner with the relays on the left.
 
-- **The hat is not lined up with the T-Relay's edges.** During hand routing everything except
-  J1 was moved 3.3 mm to the left on the hat (equivalently: J1 sits 3.3 mm further right on
-  the hat than in the original design, at the original height).
-  - It covers the T-Relay from x = 39.0 mm to past the right edge, and from 3.5 mm above the
-    top edge down to y = 96.2 mm.
-  - It overhangs by **3.5 mm at the top** and **2.3 mm on the right**. The T-Relay's top edge
-    is at hat y = 19.99 and its right edge at hat x = 126.54, both drawn by `REF1`.
+- **The hat's top and right edges are flush with the T-Relay's.** The outline is 46.0 × 99.7 mm
+  (it was 48.3 mm wide; 2.3 mm were cut off on the right). It covers the T-Relay from
+  x = 39.0 mm to the right edge and from the top edge down to y = 99.7 mm.
+  - Relative to the original design, everything except J1 sits 3.3 mm further left and
+    3.5 mm further down on the sheet; J1 and `REF1` did not move.
+  - The T-Relay's top edge is at hat y = 19.99 and its right edge at hat x = 126.54.
 - **Relays** are 15.7 mm tall and end at x = 37.7 mm, 1.3 mm from the hat's left edge.
-- **The hat's top end covers part of the ESP32 antenna.** The module sits at T-Relay
-  x = 59–77.5 mm, y = −6.4 to 25.6 mm, which is hat x = 100.5–119.0, y = 13.6–45.6. Its antenna
-  end sticks out 6.4 mm past the T-Relay's top edge and the hat covers 3.5 mm of that.
-- **Not rechecked for this position:** whether any hat hole lines up with a T-Relay hole, and
-  what is under H1–H4 for resting spacers. The T-Relay's two upper Ø4 mm holes are at hat
-  coordinates (91.5, 37.6) and (89.6, 93.5), in the protection column, so screwing the
-  boards together still looks ruled out. The checks against the STEP model on the scripted
-  branch were made for another position and do not carry over.
+- **The ESP32 antenna is not under the hat.** The module sits at T-Relay x = 59–77.5 mm,
+  y = −6.4 to 25.6 mm; its antenna end sticks out past the T-Relay's top edge, where the hat
+  stops.
+- **Mounting holes** are M3 with a 6.4 mm pad, as in the original. H1 is at (122.7, 23.8) and
+  H3 at (122.9, 104.1): both had to move in from the cut edge, and H3 also up, because the
+  corner beside J10 is too narrow for it. These two spots were checked against the STEP
+  model on the scripted branch to be over bare T-Relay board. H2 and H4 are at their original
+  places and not rechecked.
+  - Plain 4 mm holes (the T-Relay's size) were tried and do not help: the stock footprint's
+    keep-out is 8.5 mm across, more than the M3 pad, and H4 would not fit between J9 and J10.
 - **J12 sits above the ESP32 module's top end**, so the 1-Wire cable leaves across the antenna.
   This was looked at and accepted; moving J12 to the top-left corner was tried and rejected.
 
@@ -238,20 +239,38 @@ The schematic went through a design review (items 1–11; the reasoning for each
 the git history). The board was then routed by hand on top of the original layout (branch
 `hand-routed`), and `master` is that routing after a scripted clean-up.
 
-State: **0 unconnected, no DRC errors on copper** (clearance, shorts, holes, dangling ends all
-0), schematic parity 0, ERC 0. What DRC still lists is silkscreen only (104 warnings).
+State: **0 unconnected, no DRC errors on copper** (clearance, shorts, holes, edge, dangling
+ends all 0), schematic parity 0, ERC 0. What DRC still lists is silkscreen only (104 warnings).
+
+After the clean-up the board was moved 3.5 mm down relative to J1 and cut to the T-Relay's
+right edge (script `tools/move_board.py`, decisions in `tools/move_overrides.py`). That put
+J1 3.5 mm closer to the heater copper and its left pins onto three tracks, so these parts
+were redrawn:
+
+- **Right-hand bundle on the back** (SDA, 1-Wire, MOSI, `JOYSTICK_BACK`, MISO): nested corners
+  below the heater copper, then along J1's top row at 0.55–0.6 mm pitch into their pins.
+- **Chip select and R13:** R13 sits on the track between J1 pins 7 and 5; the line leaves it
+  to the right under the heater copper and turns up outside it.
+- **I²C from U6:** SCL changes to the back just above J1; SDA stays on the front.
+- **TC6−, TC7− and `JOYSTICK_CONFIRM`** turn 3.3–3.5 mm earlier to pass above J1's left pins;
+  TC5+'s via moved 0.9 mm to make room. R19 and R24 are back 0.57 mm off their pin axis, as
+  in the hand routing, because R24 level with its pin leaves only 0.2 mm gaps there.
+- **Pull-ups R3–R5 and C8** are 0.7 mm further left. Their vias sit between the pad rows
+  instead of at the edge; `EXPANDER_INT` runs down their left side into R3, SCL passes
+  between R3's pads.
+- **Lanes on the front right:** CS 123.57, SCK 124.3, `EXPANDER_INT` 125.05, SCL 125.8, at
+  least 0.6 mm from the new edge.
 
 What the hand routing did:
 
-- **Everything except J1 and `REF1` sits 3.3 mm further left** than in the original design,
-  at the original height. The outline is still 48.3 × 99.7 mm.
+- **Everything except J1 and `REF1` sits 3.3 mm further left** than in the original design.
 - **The protection column is at x = 91.1–92.7**, 4.7 mm from the terminal pins. Each group is
   terminal → series resistor → clamp on the front layer. The outer line of a group runs
   straight down between the pads of the inner resistor to the clamp.
 - **Thermocouple lines to the multiplexers** run as one bundle on the front between the column
   and U1/U3, with the lower channels crossing on the back.
-- **Cold-junction sensors U7 and U8 are on the back** under the column, at (91.75, 32.3) and
-  (91.75, 101.7), with C16 and C17 beside them.
+- **Cold-junction sensors U7 and U8 are on the back** under the column, at (91.75, 35.8) and
+  (91.75, 105.2), with C16 and C17 beside them.
 - **Heater path** as before: `24V_IN` and `24V_OUT` zones on both outer layers between J11 and
   R6 with fifteen 0.8 mm stitching vias, Kelvin pair to U6.
 - **SPI, I²C, 1-Wire and the panel lines** go round the heater copper on the right: five
@@ -364,8 +383,7 @@ Routing practice:
 ## Remaining work
 
 - [x] **Routing** (by hand, then cleaned up).
-- [ ] **Decide how the hat should sit on the T-Relay** (it overhangs 3.5 mm at the top and 2.3 mm on
-      the right, see "How the hat sits"), then trim the outline and recheck the spacer positions.
+- [x] **Fit to the T-Relay**: top and right edges flush.
 - [ ] **Silkscreen** once the parts are final.
 - [ ] **BOM.** Two parts are not picked yet: R6 (1 mΩ four-terminal shunt, 2512, at least 1 W)
       and L1 (600 Ω at 100 MHz ferrite bead, 0805). Then a full list with TME order codes;
