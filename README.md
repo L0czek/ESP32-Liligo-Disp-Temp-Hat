@@ -112,6 +112,20 @@ Consequences: the hat's pull-ups for the encoder and push button (review item 6)
 back-ups and can stay unfitted. With the panel connected, the I²C bus already has the
 panel's 10 kΩ in parallel with R4/R5.
 
+## Chosen parts
+
+Parts picked so far, as input for a BOM at the end. Prices are TME gross, single unit, checked 2026-11-12.
+
+| Ref | Part | Footprint | Notes |
+|---|---|---|---|
+| J11 | Degson [`DG638-9.52-02P`](https://www.tme.eu/pl/details/DG638-9.52-02P/), 4.49 zł | `TerminalBlock_Ningbo-Kagnex_HB9500_1x02_P9.5mm` | 32 A, 4 mm² wire, 9.52 mm pitch, 0.9 mm square pins. The footprint is deliberately generic: 9.5 mm pitch, 2 mm holes, 3.3 × 6.6 mm pads, so any 9.5 mm 30 A block (screw or barrier type) or a soldered wire fits. The pin is loose in the hole; hold the block square and fill the joint fully. |
+| U6 | TI `INA226AIDGSR` | `TSSOP-10_3x3mm_P0.5mm` | In stock at TME (confirmed by the user, price not looked up). |
+| R6 | 1 mΩ 4-terminal 2512, Vishay WSK2512 type | `R_Shunt_Vishay_WSK2512_6332Metric_T2.21mm` | Exact part not picked yet. Needs ≥ 1 W. |
+| L1 | Ferrite bead, 600 Ω at 100 MHz, 0805 | `L_0805_2012Metric` | Exact part not picked yet. |
+
+Considered for J11 and not used: Phoenix `MKDS5/2-6.35` (32 A, 8.04 zł, exact fit on KiCad's Metz
+RT11L 6.35 mm footprint, 1.3 mm holes) and Phoenix `MKDS3/2-5.08` (only 24 A).
+
 ## Review fixes in progress
 
 A design review found the items below. Only the schematic is being changed by Claude;
@@ -123,9 +137,8 @@ Must fix:
 
 - [ ] 1. Remap J1 (table above). ONEWIRE is on an input-only pin.
 - [ ] 2. 4.7 kΩ pull-up from ONEWIRE to VCC.
-- [ ] 3. Replace J11 (rated about 8 A, heater draws about 18.75 A). Chosen part: Degson
-      [`DG638-9.52-02P`](https://www.tme.eu/pl/details/DG638-9.52-02P/) (32 A, 4 mm², 9.52 mm pitch).
-      No stock KiCad footprint fits it, so the schematic still carries the old footprint.
+- [x] 3. Replace J11 (was rated about 8 A, heater draws about 18.75 A). Now a generic 9.5 mm pitch
+      footprint with 2 mm holes; default part Degson `DG638-9.52-02P` (32 A). See "Chosen parts".
 - [x] 4. Current sensing: INA226 on the 24 V side with a 4-terminal shunt (details below).
 - [ ] 5. Protect the 16 thermocouple lines: series resistor on each line and low-leakage ESD/TVS clamps
       at the terminals. Use insulated (ungrounded-junction) probes only.
