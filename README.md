@@ -233,16 +233,24 @@ State of the board:
 
 - All parts are placed, on the top side. The outline is 45.7 × 99.7 mm, cut back on the right
   so that the hat is flush with the T-Relay (see "How the hat sits on the T-Relay-8").
-- **Routing is partly restored.** All tracks were first removed, because the new parts sit where
-  many of them ran and several pads changed net. Then 137 original track segments and vias (of 495) were
-  put back by script: only those whose pads are all still on the same net and have not moved
-  by more than 2 mm (ends on slightly moved pads were stretched to fit), and only if DRC stayed
-  clean with them. That covers the core around U1, U3, U4, U2 and the jumpers: the multiplexer
-  outputs and input filter (U1/U3 → R1/R2/C1–C3 → U2), `TC_A2`, `TC_DRDY`, `TC_FAULT`, the
-  U4–U5 enable line, the JP1/JP2 address lines, and the local VCC/GND stubs and plane vias.
-  Everything that touches J1, J11, the terminals, the I²C pull-ups or the supply filter still
-  has to be routed. The VCC and GND planes (In1, In2) are kept and refilled.
-- DRC shows no clearance, short or courtyard errors, 139 unconnected items (the routing to do),
+- **Routing is partly restored: 310 of the 495 original track segments and vias are back**
+  (264 segments, 46 vias), put there by script from the original board. All tracks were first
+  removed, because the new parts sit where many of them ran and several pads changed net.
+  What came back falls into three groups:
+  - **Finished connections.** Tracks whose pads are all still on the same net and moved by no
+    more than 5 mm; track ends were dragged along with pads that moved a little (U1, U3, C6, C7,
+    R3–R5, C8, JP3). This covers the core around U1, U3, U4, U2 and the jumpers.
+  - **J1's old tracks, as guides.** J1 moved 3.0 mm right and 3.5 mm up, so these still end where
+    its holes used to be, about 4.6 mm from the pads. They need to be re-terminated by hand,
+    and five of them belong to signals that are now on a different J1 pin (see "J1").
+  - **Thermocouple tracks, as guides.** They run from the multiplexers towards the terminals
+    and are cut off at x = 98.9, just right of the protection column, where they have to be
+    joined to the series resistors. Some are only fragments.
+  Anything that caused a clearance, short or board-edge violation against the new placement
+  was removed piece by piece, so what is left is DRC-clean but has 43 dangling track ends.
+  Some restored tracks cross the area between R6 and J11 where the 24 V copper has to go; move
+  them when routing the heater path. The VCC and GND planes (In1, In2) are kept and refilled.
+- DRC shows no clearance, short or courtyard errors, 138 unconnected items (the routing to do), 43 dangling track ends (expected, see above),
   and silkscreen warnings.
 - **Footprint `REF1` is the T-Relay-8 reference, as one object.** It holds both the 2D outline
   on `Dwgs.User` (board edge, relays, ESP32 module, header pins, mounting holes, from the vendor
