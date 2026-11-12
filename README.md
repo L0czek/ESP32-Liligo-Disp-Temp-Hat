@@ -224,47 +224,56 @@ RT11L 6.35 mm footprint, 1.3 mm holes) and Phoenix `MKDS3/2-5.08` (only 24 A).
 ## PCB layout tasks
 
 The schematic went through a design review (items 1–11; the reasoning for each change is in
-the git history). The board now has to catch up. "Update PCB from Schematic" has been run, so
-the new footprints are on the board but unplaced, and nothing has been routed for them.
+the git history) and the board has been brought in line with it.
 
-What the update brought in:
+State of the board:
 
-- New footprints: R7–R29, C15–C17, D1–D4, U7, U8.
-- Replaced footprints: U6 (now TSSOP-10), R6 (4-terminal 2512), L1 (0805, was 1210),
-  J11 (9.5 mm terminal block).
-- Existing parts on different nets: J1 pins 10, 15, 16, 20, 22; J11 (was heater return and GND,
-  now `24V_IN` / `24V_OUT`); C14 (was VAA, now VCC); J2–J9 (now feed the clamps and series
-  resistors, no longer the multiplexers directly). Old tracks on these pads are wrong and
-  have to go.
+- All parts are placed, on the top side, inside the original 48 × 100 mm outline.
+  Parts that were already on the board have not moved.
+- **Nothing is routed.** All old tracks and vias were removed, because the new parts sit where
+  they ran and several pads changed net. The VCC and GND planes (In1, In2) are kept and refilled.
+- DRC shows no clearance, short or courtyard errors, 180 unconnected items (the routing to do),
+  and silkscreen warnings.
+- Layer `Dwgs.User` carries the T-Relay-8 outline from the vendor DXF: board edge, relays,
+  ESP32 module, header pins and mounting holes, for reference while routing.
+- A rule area "ESP32 antenna keep-out" (x = 98–122, y = 82.4–90, all copper layers) stops
+  zone fills above the ESP32's antenna. Tracks and pads are still allowed there, because J12
+  sits in that area.
 
-Tasks:
+Where the new parts are:
 
+- **Thermocouple protection** in one column (x ≈ 97) between the terminals and the multiplexers.
+  Each clamp array is between its two connectors (D1: J2/J3, D2: J4/J5, D3: J6/J7, D4: J8/J9),
+  with the 100 Ω resistors next to the pads they serve. The ends of the column, at J2/J3 and
+  J8/J9, are tight.
+- **Cold-junction sensors** in the same column: U7 between J3 and J4, U8 between J6 and J7,
+  each with its capacitor beside it. They are not at the two ends of the row (the mounting
+  holes and J1 are in the way); firmware should treat them as two points along the row at
+  y = 105.3 and 145.4 mm (terminals run from y = 86 to 180 mm).
+- **Heater path** at the right edge: J11 with its wire entry facing outward, R6 directly behind
+  it (pad 1 towards J11 pin 1), then R7/R8/C15, U6 and C14 to the left.
+- **Pull-ups:** R12 by J12, R13 by U2, R9–R11 (not fitted) in a row above J10.
+
+Routing tasks:
+
+- [ ] **Heater path** (`24V_IN`, `24V_OUT` between J11 and R6): short, wide copper on both outer
+      layers, ideally 2 oz, sized for about 19 A. The inner planes are VCC and GND, so cut them
+      back under this copper. Keep clearance between 24 V and the 3.3 V circuitry.
+- [ ] **Kelvin routing at the shunt.** R6 pads 2 and 3 as a tight pair to R7/R8, then C15,
+      then U6 pins 10/9. Nothing else connects to those two tracks. `Vbus` (U6 pin 8) gets a
+      thin track from `24V_OUT`.
+- [ ] **Thermocouple inputs.** Terminal pad → clamp pin → series resistor → multiplexer, with the
+      `+` and `−` of each channel routed together and no vias if possible.
+- [ ] **Keep heat and noise away from the terminals and U2**: no 24 V copper near J2–J9 or U2.
 - [ ] **J1 stays where it is, on the front layer.** Do not flip it (see "J1"). The socket is
       soldered from the bottom.
-- [ ] **Mechanical support.** Decide how the hat is held besides the header; H1–H4 match no hole
-      on the T-Relay (see "How the hat sits on the T-Relay-8").
-- [ ] **Antenna keep-out.** Remove plane and track copper above the ESP32 antenna, roughly
-      x = 98–122, y = 82.5–90 on all layers.
-- [ ] **Heater path** (J11, R6, `24V_IN`, `24V_OUT`): short, wide copper on both layers, ideally
-      2 oz, sized for about 19 A. Remove the old ground connection at J11. No heater current may
-      flow in GND any more. Keep clearance between 24 V copper and the 3.3 V circuitry.
 - [ ] **J11 footprint check.** The footprint is generic (9.5 mm pitch, 2 mm holes). The default
       part, Degson DG638-9.52-02P, has a 19.04 × 16 mm body with the pin row 4.9 mm from its
-      back face; make sure the courtyard and the wire-entry side suit it.
-- [ ] **Kelvin routing at the shunt.** Route R6 pads 2 and 3 as a tight pair to R7/R8, then C15,
-      then U6 pins 10/9. Nothing else connects to those two tracks. C15 and C14 close to U6.
-      The `Vbus` pin gets a thin track from `24V_OUT`.
-- [ ] **Thermocouple inputs.** Place each clamp array right at its two connectors (D1: J2/J3,
-      D2: J4/J5, D3: J6/J7, D4: J8/J9), then R14–R29, then the multiplexers. Route the `+` and
-      `−` of each channel together.
-- [ ] **Keep heat and noise away from the terminals.** Shunt, J11, L1 and all 24 V copper away
-      from J2–J9 and U2; group the terminals close to U2 if possible.
-- [ ] **Cold-junction sensors.** U7 and U8 at the two ends of the J2–J9 row, close to the
-      terminals, each with its capacitor (C16, C17) beside it.
-- [ ] **Pull-ups near what they serve.** R12 by J12, R13 by U2, R9–R11 by J10. R9–R11 are not
-      fitted (the panel has its own pull-ups) but need their footprints.
+      back face.
 - [ ] **J10 orientation** against the physical panel module (its header is numbered the other
       way round, see "J10").
+- [ ] **Mechanical support.** Not solved: H1–H4 match no hole on the T-Relay
+      (see "How the hat sits on the T-Relay-8").
 - [ ] **DRC clean**, with a net class for the 24 V nets.
 
 ## Working on the schematic
