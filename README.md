@@ -267,8 +267,14 @@ What the hand routing did:
 - **The protection column is at x = 91.1–92.7**, 4.7 mm from the terminal pins. Each group is
   terminal → series resistor → clamp on the front layer. The outer line of a group runs
   straight down between the pads of the inner resistor to the clamp.
-- **Thermocouple lines to the multiplexers** run as one bundle on the front between the column
-  and U1/U3, with the lower channels crossing on the back.
+- **Thermocouple lines to the multiplexers:** the `−` lines run on the front between the
+  column and U3; the `+` lines of channels 4–7 run on the back to vias beside U1.
+  - Each pair ends on two chips 11 mm apart, so its last stretch is always split. Mean
+    distance between the two lines of a pair: channels 0–2 1.0–1.8 mm, channel 3 4.8 mm,
+    channels 4–6 3.4–4.2 mm, channel 7 10.6 mm.
+  - **TC7+ still goes round the outside of the terminal row** (x = 82). Bringing it inside
+    needs the lane beside J1's left pins, which `JOYSTICK_CONFIRM` uses on the back, and a
+    different order of the three vias beside U1. That is the largest pickup loop left.
 - **Cold-junction sensors U7 and U8 are on the back** under the column, at (91.75, 32.06) and
   (91.75, 108.30): mirror images about the middle of the terminal row (y = 70.18). C16 and C17
   sit 4.8 mm above their sensor, at x = 90.54.
