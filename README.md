@@ -30,7 +30,7 @@ with T-Relay P5 pin 2. In general hat odd pin n ↔ P5 pin n+1, hat even pin n �
 This is what you get from a socket mounted on the underside of the hat, facing down onto the
 T-Relay's pins, so it is intended and the schematic needs no change for it.
 
-For layout (review item 15): J1 is a socket soldered on the **bottom** of the hat. Put the
+For layout: J1 is a socket soldered on the **bottom** of the hat. Put the
 footprint on the back side so silkscreen, courtyard and 3D model are on the correct side, and
 check that pad 1 sits over the T-Relay's 3V3 pin (P5 pin 2). If the rows end up swapped, 3V3
 lands on GND. In the board as of 2026-11-12 the J1 footprint is still on the front side.
@@ -41,7 +41,7 @@ lands on GND. In the board as of 2026-11-12 the J1 footprint is still on the fro
 | 2, 4 | 1, 3 | GND | GND | |
 | 5 | 6 | IO2 | TC_MISO | Boot strap. LilyGO names this net `GPIO2/MISO`. |
 | 6 | 5 | IO14 | TC_SCK | LilyGO: `GPIO14/CLK` |
-| 7 | 8 | IO4 | TC_CS | |
+| 7 | 8 | IO4 | TC_CS | Pulled up by R13 (4.7 kΩ) so the MAX31856 stays deselected, and off IO2, during boot |
 | 8 | 7 | IO15 | TC_MOSI | Boot strap. LilyGO: `GPIO15/MOSI` |
 | 9, 11, 12, 13, 14 | 10, 12, 11, 14, 13 | NC | — | Not connected on the T-Relay |
 | 10 | 9 | IO35 | ENCODER_B | Input-only |
@@ -180,8 +180,8 @@ generic module, not measured on our unit):
   The module's own schematic numbers the header the other way round (pin 1 = 3V3), so
   check the physical orientation of J10 in layout.
 
-Consequences: the hat's pull-ups for the encoder and push button (review item 6) are
-back-ups and can stay unfitted. With the panel connected, the I²C bus already has the
+Consequences: the hat's pull-ups for the encoder and push button (R9–R11, 10 kΩ) are
+back-ups, marked do-not-populate. Fit them only if a panel without pull-ups is used. With the panel connected, the I²C bus already has the
 panel's 10 kΩ in parallel with R4/R5.
 
 ## Chosen parts
@@ -199,43 +199,48 @@ Parts picked so far, as input for a BOM at the end. Prices are TME gross, single
 Considered for J11 and not used: Phoenix `MKDS5/2-6.35` (32 A, 8.04 zł, exact fit on KiCad's Metz
 RT11L 6.35 mm footprint, 1.3 mm holes) and Phoenix `MKDS3/2-5.08` (only 24 A).
 
-## Review fixes in progress
+## PCB layout tasks
 
-A design review found the items below. Only the schematic is being changed by Claude;
-the PCB layout is done by hand afterwards. Items 12–14 of the review are deliberately
-out of scope. The review text for items 5, 7, 8 and 10 arrived truncated, so missing
-values are chosen during the work and recorded here.
+The schematic went through a design review (items 1–11; the reasoning for each change is in
+the git history). The board now has to catch up. "Update PCB from Schematic" has been run, so
+the new footprints are on the board but unplaced, and nothing has been routed for them.
 
-Must fix:
+What the update brought in:
 
-- [x] 1. Remap J1. ONEWIRE was on an input-only pin (IO35); it is now on IO22, with the other
-      signals shuffled onto input-only pins (table in "J1").
-- [x] 2. Pull-up from ONEWIRE to VCC: R12, 4.7 kΩ.
-- [x] 3. Replace J11 (was rated about 8 A, heater draws about 18.75 A). Now a generic 9.5 mm pitch
-      footprint with 2 mm holes; default part Degson `DG638-9.52-02P` (32 A). See "Chosen parts".
-- [x] 4. Current sensing: INA226 on the 24 V side with a 4-terminal shunt (details below).
-- [x] 5. Protect the 16 thermocouple lines: ESD clamp arrays D1–D4 at the terminals, 100 Ω series
-      resistors R14–R29, R2 raised to 300 Ω. See "Thermocouple input protection".
+- New footprints: R7–R29, C15–C17, D1–D4, U7, U8.
+- Replaced footprints: U6 (now TSSOP-10), R6 (4-terminal 2512), L1 (0805, was 1210),
+  J11 (9.5 mm terminal block).
+- Existing parts on different nets: J1 pins 10, 15, 16, 20, 22; J11 (was heater return and GND,
+  now `24V_IN` / `24V_OUT`); C14 (was VAA, now VCC); J2–J9 (now feed the clamps and series
+  resistors, no longer the multiplexers directly). Old tracks on these pads are wrong and
+  have to go.
 
-Should fix:
+Tasks:
 
-- [x] 6. Pull-ups on JOYSTICK_PUSH, ENCODER_A, ENCODER_B: R9, R10, R11, 10 kΩ, **not fitted (DNP)**
-      because the front panel has its own. Fit them only if a panel without pull-ups is used.
-- [x] 7. Pull-up on TC_CS: R13, 4.7 kΩ (review said 10 kΩ). IO4 has an internal pull-down of about
-      45 kΩ during reset; 4.7 kΩ holds CS at about 3.0 V against it, 10 kΩ only at about 2.7 V,
-      close to the MAX31856's 2.3 V input-high threshold. Keeps the MAX31856 off MISO (IO2, a
-      boot strap pin that must be low to enter the serial bootloader).
-- [x] 8. Cold-junction sensing: U7, U8 (DS18B20Z, SO-8) on the 1-Wire bus with C16, C17. **Optional**:
-      see "Cold-junction sensing". Placement is a layout task.
-- [x] 9. I²C pull-ups R4/R5 from 10 kΩ to 4.7 kΩ.
-- [x] 10. L1 value was entered as "100uF". Now a ferrite bead, 600 Ω at 100 MHz, 0805 (footprint changed from 1210).
-- [x] 11. C10–C13 from 20 µF to 22 µF.
-
-Layout only (not done by Claude):
-
-- Thermal layout around the terminals: see "Cold-junction sensing".
-- Wide copper (ideally 2 oz) on both layers for the 24 V heater path.
-- 15. Check J1 position and mounting holes against the T-Relay outline (`dxf/` in the vendor repo).
+- [ ] **J1 on the bottom side.** Flip the footprint to the back and check pad 1 sits over the
+      T-Relay's 3V3 pin (P5 pin 2). See "J1". Swapped rows would short 3V3 to GND.
+- [ ] **J1 position and mounting holes** against the T-Relay-8 outline (`dxf/` in the vendor repo).
+- [ ] **Heater path** (J11, R6, `24V_IN`, `24V_OUT`): short, wide copper on both layers, ideally
+      2 oz, sized for about 19 A. Remove the old ground connection at J11. No heater current may
+      flow in GND any more. Keep clearance between 24 V copper and the 3.3 V circuitry.
+- [ ] **J11 footprint check.** The footprint is generic (9.5 mm pitch, 2 mm holes). The default
+      part, Degson DG638-9.52-02P, has a 19.04 × 16 mm body with the pin row 4.9 mm from its
+      back face; make sure the courtyard and the wire-entry side suit it.
+- [ ] **Kelvin routing at the shunt.** Route R6 pads 2 and 3 as a tight pair to R7/R8, then C15,
+      then U6 pins 10/9. Nothing else connects to those two tracks. C15 and C14 close to U6.
+      The `Vbus` pin gets a thin track from `24V_OUT`.
+- [ ] **Thermocouple inputs.** Place each clamp array right at its two connectors (D1: J2/J3,
+      D2: J4/J5, D3: J6/J7, D4: J8/J9), then R14–R29, then the multiplexers. Route the `+` and
+      `−` of each channel together.
+- [ ] **Keep heat and noise away from the terminals.** Shunt, J11, L1 and all 24 V copper away
+      from J2–J9 and U2; group the terminals close to U2 if possible.
+- [ ] **Cold-junction sensors.** U7 and U8 at the two ends of the J2–J9 row, close to the
+      terminals, each with its capacitor (C16, C17) beside it.
+- [ ] **Pull-ups near what they serve.** R12 by J12, R13 by U2, R9–R11 by J10. R9–R11 are not
+      fitted (the panel has its own pull-ups) but need their footprints.
+- [ ] **J10 orientation** against the physical panel module (its header is numbered the other
+      way round, see "J10").
+- [ ] **DRC clean**, with a net class for the 24 V nets.
 
 ## Working on the schematic
 
