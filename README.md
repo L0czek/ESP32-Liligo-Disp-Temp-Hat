@@ -54,9 +54,11 @@ T-Relay's top-left corner with the relays on the left.
   hat coordinates (94.6, 34.1) and (92.6, 89.9): right against the J2–J9 terminal column, with
   no room for a screw head beside the terminal bodies.
 - **Three hat holes sit over bare T-Relay board** (checked against the STEP model) and can take
-  resting spacers of the board-to-board height: H1 at (125.6, 26.0), H3 at (125.9, 100.6) and
-  H4 at (97.3, 112.4). H2 at (97.8, 20.3) is above the T-Relay's reset button, so it gets none.
-  The hat also covers that reset button.
+  resting spacers of the board-to-board height: H1 in the top-right corner at (125.7, 20.3),
+  H3 at (125.9, 100.6) and H4 at (97.3, 112.4). H2 at (97.8, 20.3) is above the T-Relay's reset
+  button, so it gets none. The hat also covers that reset button.
+- **J12 sits above the ESP32 module's top end**, so the 1-Wire cable leaves across the antenna.
+  This was looked at and accepted; moving J12 to the top-left corner was tried and rejected.
 
 | J1 = P5 pin | ESP32 | Signal | Notes |
 |---|---|---|---|
@@ -254,9 +256,9 @@ State of the board:
 - Board coordinates in this README are sheet coordinates in the PCB editor. On 2026-11-12 the
   whole drawing was moved up by 66.04 mm (26 × 2.54) so that the hat and the T-Relay outline
   fit on the A4 sheet; coordinates in commit messages before that are 66.04 mm larger in y.
-- A rule area "ESP32 antenna keep-out" (x = 101–125, y = 16.4–24, all copper layers) stops
-  zone fills along the top edge next to the ESP32's antenna. Tracks and pads are still allowed
-  there, because J12 sits in that area.
+- There is no antenna keep-out. One was added when the hat covered half the antenna and removed
+  once the hat became flush with the T-Relay's top edge, where it only cut a corner out of the
+  VCC plane and kept the planes away from J12's ground mounting pads.
 
 Where things are:
 
@@ -294,7 +296,7 @@ Routing tasks:
       way round, see "J10").
 - [ ] **Mechanical support: resting spacers** in H1, H3 and H4 (see "How the hat sits on the
       T-Relay-8"). Their length is the board-to-board gap, about 11 mm, to be measured on the
-      real header and socket. H1's spacer is 0.5 mm from the ESP32 module if it is 6 mm wide;
+      real header and socket. H1's spacer is 0.6 mm from the ESP32 module if it is 6 mm wide;
       a 5 mm one gives more room.
 - [ ] **DRC clean**, with a net class for the 24 V nets.
 
